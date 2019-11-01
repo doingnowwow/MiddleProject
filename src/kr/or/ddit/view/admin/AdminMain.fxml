@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:controller="kr.or.ddit.view.admin.AdminMainController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <Label text="관리자 창" BorderPane.alignment="CENTER" />
+   </top>
+   <center>
+      <Button fx:id="btn_black" mnemonicParsing="false" prefHeight="48.0" prefWidth="106.0" text="블랙리스트 관리" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>

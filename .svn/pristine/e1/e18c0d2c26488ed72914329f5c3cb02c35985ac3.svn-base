@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane fx:controller="kr.or.ddit.view.hotelmymenu.main.main_cominfo_controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <top>
+      <AnchorPane prefHeight="173.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="top" fitHeight="173.0" fitWidth="1280.0">
+               <image>
+                  <Image url="@../../A_TeachingMaterial/5.MiddelProject/other/산출물/00.%20fx%20image/마이페이지_사업자/topimg_1280x173.gif" />
+               </image>
+            </ImageView>
+            <Button fx:id="facebook" layoutX="61.0" layoutY="36.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0" text="facebook" />
+            <Button fx:id="instar" layoutX="136.0" layoutY="36.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="33.0" text="instar" />
+            <Button fx:id="kakao" layoutX="211.0" layoutY="37.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="33.0" text="kakao" />
+            <Button fx:id="home" layoutX="455.0" layoutY="7.0" mnemonicParsing="false" prefHeight="101.0" prefWidth="367.0" text="home" />
+            <Button fx:id="login" layoutX="1057.0" layoutY="55.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="43.0" text="login" />
+            <Button fx:id="join" layoutX="1117.0" layoutY="56.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="29.0" text="join" />
+            <Button fx:id="hotel" layoutX="228.0" layoutY="138.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="121.0" text="hotel" />
+            <Button fx:id="dogsale" layoutX="461.0" layoutY="140.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="122.0" text="dogsale" />
+            <Button fx:id="shop" layoutX="697.0" layoutY="138.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="119.0" text="shop" />
+            <Button fx:id="qna" layoutX="932.0" layoutY="137.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="121.0" text="qna" />
+         </children>
+      </AnchorPane>
+   </top>
+   <left>
+      <AnchorPane prefHeight="1475.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="left" fitHeight="1475.0" fitWidth="290.0">
+               <image>
+                  <Image url="@../../A_TeachingMaterial/5.MiddelProject/other/산출물/00.%20fx%20image/마이페이지_사업자/leftimg_290x1475.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="hotelimg" fitHeight="173.0" fitWidth="244.0" layoutX="25.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="com_info" layoutX="81.0" layoutY="333.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="132.0" text="com_info" />
+            <Button fx:id="hotel_detail" layoutX="79.0" layoutY="437.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="113.0" text="hotel_detail" />
+            <Button fx:id="hotel_book" layoutX="78.0" layoutY="473.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="115.0" text="hotel_book" />
+            <Button fx:id="dogsale_status" layoutX="81.0" layoutY="606.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="109.0" text="dogsale_insert" />
+            <Button fx:id="dogsale_status" layoutX="81.0" layoutY="641.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="109.0" text="dogsale_status" />
+         </children>
+      </AnchorPane>
+   </left>
+   <center>
+      <AnchorPane prefHeight="1475.0" prefWidth="990.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="1475.0" fitWidth="990.0" layoutX="-1.0">
+               <image>
+                  <Image url="@../../A_TeachingMaterial/5.MiddelProject/other/산출물/00.%20fx%20image/마이페이지_사업자/center_990x1475/center_사업자-정보수정_990x1475.gif" />
+               </image>
+            </ImageView>
+            <TextField fx:id="id_input" layoutX="460.0" layoutY="264.0" prefHeight="10.0" prefWidth="112.0" />
+            <PasswordField fx:id="pass_input" layoutX="413.0" layoutY="293.0" prefHeight="18.0" prefWidth="159.0" />
+            <Button fx:id="commit" layoutX="413.0" layoutY="323.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="159.0" text="commit" />
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <AnchorPane prefHeight="152.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fx:id="bottom" fitHeight="152.0" fitWidth="1280.0" layoutX="1.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../../A_TeachingMaterial/5.MiddelProject/other/산출물/00.%20fx%20image/마이페이지_사업자/bottomimg_1280x152.gif" />
+               </image>
+            </ImageView>
+            <Button layoutX="420.0" layoutY="30.0" mnemonicParsing="false" text="userule" />
+            <Button fx:id="infomanag" layoutX="420.0" layoutY="60.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="98.0" text="infomanag" />
+            <Button fx:id="ques" layoutX="607.0" layoutY="23.0" mnemonicParsing="false" prefHeight="100.0" prefWidth="283.0" text="ques" />
+            <Button fx:id="facebook_bottom" layoutX="986.0" layoutY="55.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0" text="facebook" />
+            <Button layoutX="1061.0" layoutY="56.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="33.0" text="instar" />
+            <Button fx:id="kakao_bottom" layoutX="1135.0" layoutY="55.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0" text="kakao" />
+         </children>
+      </AnchorPane>
+   </bottom>
+</BorderPane>

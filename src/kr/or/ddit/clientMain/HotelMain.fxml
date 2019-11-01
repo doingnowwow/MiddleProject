@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:controller="kr.or.ddit.clientMain.MainHotelPageController" fx:id="mainHotelScrollPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane fx:id="mainHotelAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1280.0">
+         <children>
+            <ImageView fx:id="mainHotelBackGroundImage" fitHeight="1800.0" fitWidth="1280.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="mainHotel/00.-mainpage_호텔_1280x1800.gif" />  <!--mainHotel/00.-mainpage_호텔_1280x1800.gif  -->
+               </image>
+            </ImageView>
+            <Button fx:id="mainFaceBookTopBtn" layoutX="60.0" layoutY="26.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="35.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainInstarTopBtn" layoutX="134.0" layoutY="26.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="36.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainKakaoTopBtn" layoutX="211.0" layoutY="26.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="33.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainLogoBtn" layoutX="457.0" layoutY="-2.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="365.0" style="-fx-background-color: transparent;" text="홈페이지" />
+            <Button fx:id="mainLoginBtn" layoutX="1000.0" layoutY="46.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text = "로그인" />
+            <Button fx:id="mainJoinBtn" layoutX="1110.0" layoutY="44.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="100.0" text = "회원가입" />
+            <Button fx:id="mainBarHotelBtn" layoutX="222.0" layoutY="129.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" style="-fx-background-color: transparent;" text="호텔" />
+            <Button fx:id="mainBarPetSaleBtn" layoutX="457.0" layoutY="129.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" style="-fx-background-color: transparent;" text="분양" />
+            <Button fx:id="mainBarShopBtn" layoutX="684.0" layoutY="122.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" style="-fx-background-color: transparent;" text="쇼핑몰" />
+            <Button fx:id="mainBarQnABtn" layoutX="918.0" layoutY="129.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="138.0" style="-fx-background-color: transparent;" text="게시판" />
+            <Button fx:id="mainSearchBtn" layoutX="960.0" layoutY="341.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="96.0" text="검색" />
+            <TextField fx:id="mainKeywordBtn" layoutX="229.0" layoutY="347.0" prefHeight="33.0" prefWidth="312.0" />
+            <ChoiceBox fx:id="mainAlignBtn" layoutX="822.0" layoutY="347.0" prefHeight="33.0" prefWidth="101.0" />
+            <DatePicker fx:id="mainCheckInBtn" layoutX="562.0" layoutY="347.0" prefHeight="33.0" prefWidth="119.0" />
+            <DatePicker fx:id="mainCheckOutBtn" layoutX="689.0" layoutY="347.0" prefHeight="33.0" prefWidth="110.0" />
+            <Button fx:id="mainDelLunaInfoBtn" layoutX="58.0" layoutY="1663.0" mnemonicParsing="false" prefHeight="92.0" prefWidth="305.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainQuestionBtn" layoutX="607.0" layoutY="1670.0" mnemonicParsing="false" prefHeight="97.0" prefWidth="293.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainFaceBookLowBtn" layoutX="983.0" layoutY="1692.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainInstarLowBtn" layoutX="1056.0" layoutY="1692.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;" text="B" />
+            <Button fx:id="mainKakaoLowBtn" layoutX="1133.0" layoutY="1692.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="34.0" style="-fx-background-color: transparent;" text="B" />
+            <ImageView fx:id="mainImage1" fitHeight="204.0" fitWidth="209.0" layoutX="185.0" layoutY="641.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage2" fitHeight="204.0" fitWidth="209.0" layoutX="422.0" layoutY="641.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage3" fitHeight="204.0" fitWidth="209.0" layoutX="657.0" layoutY="641.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage4" fitHeight="204.0" fitWidth="209.0" layoutX="883.0" layoutY="641.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage5" fitHeight="204.0" fitWidth="209.0" layoutX="185.0" layoutY="947.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage6" fitHeight="204.0" fitWidth="209.0" layoutX="422.0" layoutY="947.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage7" fitHeight="204.0" fitWidth="209.0" layoutX="657.0" layoutY="947.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage8" fitHeight="204.0" fitWidth="209.0" layoutX="891.0" layoutY="947.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage12" fitHeight="204.0" fitWidth="209.0" layoutX="891.0" layoutY="1253.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage11" fitHeight="204.0" fitWidth="209.0" layoutX="657.0" layoutY="1253.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage10" fitHeight="204.0" fitWidth="209.0" layoutX="422.0" layoutY="1253.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="mainImage9" fitHeight="204.0" fitWidth="209.0" layoutX="185.0" layoutY="1247.0" pickOnBounds="true" preserveRatio="true" />
+            <Pagination fx:id="mainHotelPageNationBtn" layoutX="2.0" layoutY="191.0" prefHeight="1454.0" prefWidth="1257.0" />
+            <Button fx:id="mainClassificationBtn1" layoutX="211.0" layoutY="487.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="165.0" text="Button" />
+            <Button fx:id="mainClassificationBtn2" layoutX="430.0" layoutY="487.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="165.0" text="Button" />
+            <Button fx:id="mainClassificationBtn3" layoutX="679.0" layoutY="487.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="165.0" text="Button" />
+            <Button fx:id="mainClassificationBtn4" layoutX="913.0" layoutY="487.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="165.0" text="Button" />
+         </children>
+      </AnchorPane>
+  </content>
+</ScrollPane>

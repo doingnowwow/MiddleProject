@@ -1,0 +1,531 @@
+package kr.or.ddit.view.main.hotel.center.paycheck;
+
+import java.io.IOException;
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
+import kr.or.ddit.clientMain.LoginSession;
+import kr.or.ddit.service.book.BookService;
+import kr.or.ddit.service.bookInfo.BookInfoService;
+import kr.or.ddit.service.com.ComService;
+import kr.or.ddit.service.hotel.HotelService;
+import kr.or.ddit.service.member.MemberService;
+import kr.or.ddit.service.memberSearch.MemberSearchService;
+import kr.or.ddit.service.point.PointService;
+import kr.or.ddit.vo.BookVO;
+import kr.or.ddit.vo.BookingInfoVO;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.HotelVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.PointVO;
+import kr.or.ddit.vo.ResBookVO;
+
+//승재 백업용 저장
+public class hotel_payCheck_controller implements Initializable {
+
+	@FXML ImageView hotel_Rimg;
+	@FXML Text hotel_Rname;
+	@FXML Text hotel_Raddr;
+	@FXML TextField save_mileage;
+	@FXML TextField hotelUse_mileage;
+	@FXML TextField res_maileage;
+	@FXML Text reserv_info;
+	@FXML Text hotelreserv_respay;
+	@FXML Button reservButton;
+	@FXML CheckBox chk_saveMaileage;
+	@FXML Label status;
+	
+	//결제 상세정보
+	@FXML TextField hotel_name;
+	@FXML TextField hotel_addr;
+	@FXML TextField hotel_tel;
+	@FXML TextField hotel_email;
+	@FXML TextField reserv_dogNum;
+	@FXML TextField reserv_contents;
+	@FXML RadioButton credit;
+	@FXML RadioButton bank;
+	
+
+	// 네트워크 관련
+	private Registry reg;
+	HotelService cs_hotel;
+	ComService cs_com;
+	BookService cs_book;
+	PointService cs_point;
+	MemberService cs_mem;
+	
+	
+	// 가져오기용 VO
+	BookVO book = LoginSession.bookssion;
+	MemberVO memInfo = LoginSession.session;
+	HotelVO hotel = new HotelVO();
+	List<HotelVO> hotelInfo;
+	ComVO com = new ComVO();
+	ComVO comInfo = new ComVO();
+	
+	// 저장용 VO
+	MemberVO saveMem = new MemberVO();
+	BookVO saveBook = new BookVO();
+	BookingInfoVO saveBookInfo = new BookingInfoVO();
+	PointVO savePoint = new PointVO();
+	int saveHotelReserv_no; // 저장용 호텔번호
+	
+	// 호텔 내용 삽입
+	int hotelNum; // 검색용
+	String hotelName;
+	String add1;
+	String add2;
+	String hotelAddr;
+	String hotelTel;
+	String hotelEmail;
+	
+	// 마일리지 내용 삽입
+	int mileage; //현재 마일리지
+	String Mileagetxt;
+	
+	String use_Mileagetxt; // 사용 마일리지
+	int use_Mileage; 
+	
+	int save_Mileage; // 저장될 최종 마일리지
+	int insertMileage; // 적립금
+	int res_insertMileage; //최종 적립 마일리지
+	String save_Mileagetxt;
+	String saveDate;
+	
+	
+	// 가격 내용 삽입
+	int hotelPrice;
+	
+	int res_hotelPrice;
+	String res_hotelPricetxt;
+	
+	// 예약 기간
+	String sDate;
+	String eDate;
+	
+	// 요청사항
+	String dogNumtxt; // 예약견 수
+	int dogNum; 
+	String request;
+	
+	// 결제여부
+	String book_check;
+	
+	// 마일리지 사용 여부
+	Boolean checkMileage;
+	
+	// 결제완료 화면으로 넘기기위한 객체 생성
+	ResBookVO save_resBook = new ResBookVO();
+	@FXML ImageView prod_img;
+	
+	// 예약자
+	String reserv_name;
+	
+	Date save_sDate;
+	Date save_eDate;
+	
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		checkMileage = false;
+		
+		
+		System.out.println(
+				LoginSession.session.getMem_no() + ", "
+				+ LoginSession.session.getMem_id()+ ", "
+				+ LoginSession.session.getMem_pw()+ ", "
+				+ LoginSession.session.getMem_name()+ ", "
+				+ LoginSession.session.getMem_tel()+ ", "
+				+ LoginSession.session.getMem_addr1()+ ", "
+				+ LoginSession.session.getMem_addr2()+ ", "
+				+ LoginSession.session.getMem_point()+ ", "
+				+ LoginSession.session.getMem_level()
+				);
+		
+		reserv_name = LoginSession.session.getMem_name();
+		
+		hotelNum = book.getHotel_no();
+		hotelPrice = book.getBook_price();
+		sDate = book.getBook_checkin();
+		eDate = book.getBook_checkout();
+		mileage = LoginSession.session.getMem_point();
+		
+		hotel.setHotel_no(hotelNum);
+		
+		
+		
+
+		//DB연결
+		try {
+			reg = LocateRegistry.getRegistry("localhost", 8888);
+			cs_hotel = (HotelService) reg.lookup("hotelService");
+			cs_com = (ComService) reg.lookup("comservice");
+			cs_book = (BookService) reg.lookup("bookService");
+			cs_point = (PointService) reg.lookup("pointService");
+			cs_mem = (MemberService) reg.lookup("memberService");
+			
+//			 이제부터는 불러온 객체의 메서드를 호출해서 사용할 수 있다.
+			//hotelInfo = cs_hotel.hoNoSearch(hotel);
+			saveHotelReserv_no = cs_book.selectMaxBook_no() + 1;
+			hotelInfo = cs_hotel.hoNoSearch(hotel);
+			
+			//saveHotelReserv_no = cs
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+
+		//호텔 성공
+		String com_notxt = hotelInfo.get(0).getCom_no().trim();
+		int com_no = Integer.parseInt(com_notxt);
+		com.setCom_no(com_no);
+		
+		System.out.println("사업자 번호" + com_no);
+		
+		try {
+			comInfo = cs_com.searchCom(com);
+		} catch (RemoteException e2) {
+			e2.printStackTrace();
+		}
+		
+		System.out.println("이메일 가져왔니 "  + comInfo.getCom_email());
+		System.out.println(saveHotelReserv_no + "숫자불렀다");
+		System.out.println( "호텔 가져왔니" + 
+				hotelInfo.get(0).getHotel_name());
+
+		
+		
+		System.out.println(" 이미지 : " + hotelInfo.get(0).getImg());
+		/**
+		 * 상단부 기능  -- 이미지 및 주소
+		 */
+		
+		//상단부 호텔 이미지
+		String hoimage = hotelInfo.get(0).getImg();
+		hotel_Rimg.setImage(new Image(hoimage));
+		
+		hotelName = hotelInfo.get(0).getHotel_name();
+		String hotelAddr1 = hotelInfo.get(0).getHotel_addr1();
+		String hotelAddr2 = hotelInfo.get(0).getHotel_addr1();
+		hotelAddr = hotelAddr1 + " " + hotelAddr2;
+		
+		
+		//상단부 호텔기본정보
+		hotel_Rname.setText(hotelName); // 이름 표출
+		hotel_Raddr.setText(hotelAddr); // 주소 표출
+		//상세정보
+		hotel_name.setText(hotelName);
+		hotel_addr.setText(hotelAddr);
+		hotel_tel.setText(hotelInfo.get(0).getHotel_tel());//전화번호
+		hotel_email.setText(comInfo.getCom_email());//이메일
+		
+		//상단부 마일리지 정리
+		Mileagetxt = Integer.toString(mileage);
+		save_mileage.setText(Mileagetxt);
+		
+		
+
+		//사용 마일리지 입력에 따른 이벤트
+		hotelUse_mileage.setOnKeyReleased(e->{
+			//동적인 정보 저장
+			use_Mileagetxt = hotelUse_mileage.getText().trim();
+			use_Mileage = Integer.parseInt(use_Mileagetxt); // 사용 마일리지
+			
+			if(mileage >= use_Mileage) {
+				save_Mileage = sumMaileage(mileage, use_Mileage);
+				save_Mileagetxt = Integer.toString(save_Mileage);
+				res_maileage.setText(save_Mileagetxt.trim());
+			}else {
+				res_maileage.setText("0");
+				status.setText("마일리지 허용치를 넘겼습니다.");
+			}
+		});
+		
+		
+		//상단부 가격
+		res_hotelPrice = hotelPrice;
+		res_hotelPricetxt = Integer.toString(res_hotelPrice) + "원"; //bookvo book_price금액
+		hotelreserv_respay.setText(res_hotelPricetxt);
+		
+		
+		//체크버튼을 통한 마일리지 사용
+		chk_saveMaileage.setOnAction(e->{
+			if(chk_saveMaileage.isSelected()) {
+				if(mileage >= use_Mileage) {
+					res_hotelPrice = sumMaileage(hotelPrice, use_Mileage);
+					res_hotelPricetxt = Integer.toString(res_hotelPrice) + "원"; //bookvo book_price금액
+					hotelreserv_respay.setText(res_hotelPricetxt);
+				}
+				
+			} else {
+				res_hotelPrice = hotelPrice;
+				res_hotelPricetxt = Integer.toString(res_hotelPrice) + "원";
+				hotelreserv_respay.setText(res_hotelPricetxt);
+			}
+		});
+
+	
+
+		/**
+		 * 상단부 기능  -- 기간
+		 */
+		//기간 계산 수식 만들어야함 -- 
+		
+		String reservInfo = "(" + sDate + "~" + eDate + ")";
+		reserv_info.setText(reservInfo);
+		
+		//기타 사항
+
+		
+		/**
+		 * 추가 예약 정보 삽입
+		 */
+		reserv_dogNum.setOnKeyReleased(e->{
+			dogNumtxt = reserv_dogNum.getText().trim();
+			dogNum = Integer.parseInt(dogNumtxt);
+		});
+		
+		reserv_contents.setOnKeyReleased(e->{
+			request = reserv_contents.getText().trim();
+		});
+		
+		
+		//결제방식 선택
+		ToggleGroup radio = new ToggleGroup();
+		credit.setToggleGroup(radio);
+		bank.setToggleGroup(radio);
+		credit.setSelected(true);
+		
+		credit.setOnAction(e->{
+			book_check = "신용 결제";
+		});
+		
+		bank.setOnAction(e->{
+			book_check = "무통장 입금";
+		});
+		
+		
+		
+		
+		 //예약버튼 기능
+	 	reservButton.setOnAction(e->{
+			
+			// BOOK 테이블 저장
+			saveBook.setBook_no(saveHotelReserv_no); //호텔예약번호  1
+			saveBook.setBook_person(reserv_name); ; //예약자 이름 1
+			saveBook.setBook_date(sDate); //예약한날짜 1
+			saveBook.setBook_checkin(sDate);// 체크인 날짜 1
+			saveBook.setBook_checkout(eDate); // 체크아웃 날짜 1
+			saveBook.setBook_state("예약"); //예약상태
+			saveBook.setBook_check(book_check); // 결제여부 == 제작필요
+			saveBook.setBook_dog_cnt(dogNum);// 예약강아지수 1
+			saveBook.setBook_price(res_hotelPrice); //금액 1
+			saveBook.setMem_no(memInfo.getMem_no()); //회원번호 1
+			saveBook.setHotel_no(hotelNum); // 호텔번호 1
+			saveBook.setHotel_name(hotelName);  // 호텔이름 1
+			saveBook.setBook_request(request);
+			
+			
+			System.out.println("예약 정보"
+					+saveBook.getBook_no()
+					+saveBook.getBook_person()
+					+saveBook.getBook_date()
+					+saveBook.getBook_checkin()
+					+saveBook.getBook_checkout()
+					+saveBook.getBook_state()
+					+saveBook.getBook_check()
+					+saveBook.getBook_dog_cnt()
+					+saveBook.getBook_price()
+					+saveBook.getMem_no()
+					+saveBook.getHotel_no()
+					+saveBook.getHotel_name()
+					);
+			
+			
+		
+			
+			//포인트 적립
+			//사용 및 적립날짜 생성
+			SimpleDateFormat sdate = new SimpleDateFormat("yyyy/MM/dd");
+			Date sysdate = new Date();
+//			saveDate = sdate.format(sysdate);
+			
+
+			try {
+				save_sDate = sdate.parse(sDate);
+				save_eDate = sdate.parse(eDate);
+			} catch (ParseException e2) {
+				e2.printStackTrace();
+			}
+			System.out.println("시작날짜 : " + sDate);
+			System.out.println("끝날짜 : " + eDate);
+			
+			//마일리지 사용여부 판단 메소드
+			if(checkMileage){
+				savePoint.setPoint_money(0); // 적립금
+				savePoint.setPoint_use(use_Mileage); //사용 적립금
+				
+				savePoint.setUse_date(save_sDate);; // 사용날짜
+				savePoint.setSave_date(null); //적립날짜
+				savePoint.setPoint_contents("호텔 예약 포인트 사용"); //포인트 적립 이유
+			} else{
+				insertMileage = res_hotelPrice / 10; // 적립금 계산
+				res_insertMileage = insertMileage + mileage; // 적립금 최종
+				
+				savePoint.setPoint_money(insertMileage); // 적립금
+				savePoint.setPoint_use(0); //사용 적립금
+				savePoint.setUse_date(null); // 사용날짜
+				savePoint.setSave_date(save_eDate); //적립날짜
+				savePoint.setPoint_contents("호텔 예약 포인트 적립"); //포인트 적립 이유
+			}
+			
+			
+			saveMem.setMem_no(memInfo.getMem_no());
+			saveMem.setMem_point(res_insertMileage);
+
+			savePoint.setMem_no(memInfo.getMem_no()); // 회원번호
+			savePoint.setPoint_mypoint(res_insertMileage); //총 포인트 내역
+			
+			System.out.println("예약 후 포인트 정보" +
+					+savePoint.getMem_no() + ", "// 회원번호
+					+savePoint.getPoint_mypoint()+ ", " //총 포인트 내역
+					+savePoint.getPoint_money()+ ", " // 적립금
+					+savePoint.getPoint_use()+ ", " //사용 적립금
+					+savePoint.getPoint_use_date()+ ", " // 사용날짜
+					+savePoint.getPoint_save_date()+ ", " //적립날짜
+					+savePoint.getPoint_contents() //포인트 적립 이유
+					);
+					
+			
+			save_resBook.setHimg(hoimage);
+			save_resBook.setrNo(saveHotelReserv_no);
+			save_resBook.sethAddr(hotelAddr);
+			save_resBook.setcEmail(hotelEmail);
+			save_resBook.setrPrice(res_hotelPrice);
+			save_resBook.setrPriod(hotelAddr);
+			
+			System.out.println(
+					save_resBook.getHimg()
+					+save_resBook.getrNo()
+					+save_resBook.gethAddr()
+					+save_resBook.getcEmail()
+					+save_resBook.getrPrice()
+					+save_resBook.getrPriod()
+					);
+			
+			LoginSession.resBookssion = save_resBook;
+			
+			System.out.println("예약 정보"
+						+saveBook.getBook_no()
+						+saveBook.getBook_person()
+						+saveBook.getBook_date()
+						+saveBook.getBook_checkin()
+						+saveBook.getBook_checkout()
+						+saveBook.getBook_state()
+						+saveBook.getBook_check()
+						+saveBook.getBook_dog_cnt()
+						+saveBook.getBook_price()
+						+saveBook.getMem_no()
+						+saveBook.getHotel_no()
+						+saveBook.getHotel_name()
+						+saveBook.getsDate()
+						+saveBook.geteDate()
+						);
+				
+		 		System.out.println();
+				System.out.println();
+		 		
+				System.out.println("예약상세정보" +
+						+saveBookInfo.getBook_no()+ ", " //호텔예약번호 1
+						+saveBookInfo.getHotel_no()+ ", " //호텔번호 1
+						+saveBookInfo.getBooking_dognum()+ ", " //애견수 1
+						+saveBookInfo.getBooking_request() //요청사항 1	
+						);
+				System.out.println();
+				System.out.println();
+		 		
+				System.out.println("예약 후 포인트 정보" +
+						+savePoint.getMem_no() + ", "// 회원번호
+						+savePoint.getPoint_mypoint()+ ", " //총 포인트 내역
+						+savePoint.getGen_date()+ ", "
+						+savePoint.getPoint_money()+ ", " // 적립금
+						+savePoint.getPoint_use()+ ", " //사용 적립금
+						+savePoint.getPoint_use_date()+ ", " // 사용날짜
+						+savePoint.getPoint_save_date()+ ", " //적립날짜
+						+savePoint.getPoint_contents() //포인트 적립 이유
+						);
+				System.out.println();
+				System.out.println();
+		 		
+				System.out.println("결제로가는 예약 정보" +
+						save_resBook.getHimg()
+						+save_resBook.getrNo()
+						+save_resBook.gethName()
+						+save_resBook.gethAddr()
+						+save_resBook.getcEmail()
+						+save_resBook.getrPrice()
+						+save_resBook.getrPriod()
+						);
+				LoginSession.session.setMem_point(res_insertMileage);
+		 		
+		 		try {
+		 			//결제 정보 저장
+					cs_book.insertBookReserv(saveBook);
+					cs_point.insertPointReserv(savePoint);
+					cs_mem.updategrade(saveMem);
+					saveChk();//결제완료 확인창
+		 			LoginSession.startMain.HotelpaycompleteLink();
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+	 		
+	 	});
+ 	 
+
+	}
+	
+
+	
+	
+	
+	//마일리지 계산 메소드
+	private int sumMaileage(int myMile, int useMile) {
+		int sum;
+		sum = myMile - useMile;
+		return sum;
+	}
+	
+	//저장확인
+	private void saveChk() {
+		Alert alertInformation = new Alert(AlertType.INFORMATION);
+		alertInformation.setTitle("호텔예약 결제완료");
+		alertInformation.setHeaderText("호텔예약 결제완료");
+		alertInformation.setContentText("오늘도 이용해주셔서 감사합니다.");
+		alertInformation.showAndWait(); // Alert창 보이기
+	}
+	
+
+}

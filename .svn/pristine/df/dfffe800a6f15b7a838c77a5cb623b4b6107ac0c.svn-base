@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.requeSelse.mypage_hotel_center_requeSalse_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="/hotelmymenu/center/center_사업자-분양-신청현황_990x1475.gif" />
+         </image>
+      </ImageView>
+      <TableView fx:id="myTable" layoutX="106.0" layoutY="110.0" prefHeight="575.0" prefWidth="781.0">
+        <columns>
+          <TableColumn fx:id="petnoCol" prefWidth="66.0" text="애견 번호" />
+            <TableColumn fx:id="petnameCol" prefWidth="72.0" text="애견 이름" />
+            <TableColumn fx:id="petguCol" prefWidth="89.0" text="애견 종" />
+          <TableColumn fx:id="memnameCol" minWidth="0.0" prefWidth="65.0" text="회원 이름" />
+            <TableColumn fx:id="appdayCol" prefWidth="139.0" text="신청날짜" />
+            <TableColumn fx:id="memtelCol" prefWidth="179.0" text="TEL" />
+            <TableColumn fx:id="checkCol" prefWidth="82.0" text="승인 여부" />
+        </columns>
+      </TableView>
+<!--       <Pagination fx:id="pnation" layoutX="94.0" layoutY="97.0" prefHeight="641.0" prefWidth="803.0" /> -->
+   </children>
+</AnchorPane>

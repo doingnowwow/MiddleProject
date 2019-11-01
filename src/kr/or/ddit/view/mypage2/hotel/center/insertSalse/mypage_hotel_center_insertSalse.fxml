@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.insertSalse.mypage_hotel_center_insertSalse_controller">
+   <children>
+      <ScrollPane prefHeight="1475.0" prefWidth="990.0" />
+      <ImageView fitHeight="1475.0" fitWidth="990.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="page2" fitHeight="1475.0" fitWidth="990.0" layoutX="1.0">
+         <image>
+            <Image url="/hotelmymenu/center/center_사업자-분양-등록관리_990x1475.gif" />
+         </image>
+      </ImageView>
+      <TextField fx:id="title" layoutX="222.0" layoutY="146.0" prefHeight="25.0" prefWidth="662.0" />
+      <TextField fx:id="dog_name" layoutX="573.0" layoutY="308.0" prefHeight="30.0" prefWidth="310.0" />
+      <TextField fx:id="dog_gu" layoutX="573.0" layoutY="347.0" prefHeight="30.0" prefWidth="310.0" />
+      <TextField fx:id="dog_size" layoutX="573.0" layoutY="387.0" prefHeight="30.0" prefWidth="310.0" />
+      <TextField fx:id="dog_gen" layoutX="573.0" layoutY="428.0" prefHeight="30.0" prefWidth="310.0" />
+      <TextField fx:id="dog_bir" layoutX="573.0" layoutY="467.0" prefHeight="30.0" prefWidth="310.0" />
+      <TextField fx:id="dog_detail" layoutX="573.0" layoutY="507.0" prefHeight="30.0" prefWidth="310.0" />
+      <Button fx:id="commit" layoutX="800.0" layoutY="545.0" mnemonicParsing="false" opacity="0.0" prefHeight="30.0" prefWidth="84.0" text="등록" />
+      <Button fx:id="cancel" layoutX="698.0" layoutY="550.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="84.0" text="취소" />
+      <Button fx:id="photo" layoutX="108.0" layoutY="557.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="90.0" text="Button" />
+      <TableView fx:id="table_check" layoutX="106.0" layoutY="699.0" prefHeight="345.0" prefWidth="781.0">
+        <columns>
+          <TableColumn fx:id="col_no" prefWidth="37.0" text="No" />
+          <TableColumn fx:id="col_name" prefWidth="85.0" text="애견명" />
+            <TableColumn fx:id="col_gu" prefWidth="93.0" text="애견종" />
+            <TableColumn fx:id="col_size" prefWidth="62.0" text="애견크기" />
+            <TableColumn fx:id="col_gen" prefWidth="78.0" text="애견성별" />
+            <TableColumn fx:id="col_bir" minWidth="0.0" prefWidth="98.0" text="애견 생일" />
+            <TableColumn fx:id="col_detail" minWidth="0.0" prefWidth="132.0" text="애견상세정보" />
+            <TableColumn fx:id="col_detail1" prefWidth="195.0" text="애견상세안내" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="page" layoutX="108.0" layoutY="700.0" prefHeight="407.0" prefWidth="781.0" />
+      <TextArea fx:id="textarea" layoutX="221.0" layoutY="180.0" prefHeight="112.0" prefWidth="662.0" />
+      <Button fx:id="modify" layoutX="800.0" layoutY="1114.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="84.0" text="수정" />
+      <Button fx:id="delete" layoutX="701.0" layoutY="1114.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="78.0" text="삭제" />
+      <ImageView fx:id="imgview" fitHeight="238.0" fitWidth="256.0" layoutX="106.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

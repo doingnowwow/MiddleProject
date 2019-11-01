@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane fx:id="human_main_scroll" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.human.main.mypage_human_main_controller">
+  <content>
+	<BorderPane fx:id="reMyInfoLinkRoot" prefHeight="1475.0" prefWidth="1280.0">
+	   <left>
+	      <AnchorPane prefHeight="1475.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+	         <children>
+	            <ImageView fitHeight="1475.0" fitWidth="290.0">
+	               <image>
+	                  <Image url="/humanmymenu/etc/mypage_human_leftimg_290x1475.gif" />
+	               </image>
+	            </ImageView>
+	            <Button fx:id="myinfo" layoutX="67.0" layoutY="251.0" mnemonicParsing="false" onAction="#myHotelInfoLink" opacity="0.0" prefHeight="25.0" prefWidth="124.0" text="myinfo" />
+	            <Button fx:id="rankandmileage" layoutX="67.0" layoutY="287.0" mnemonicParsing="false" onAction="#humanRankInfoLink" opacity="0.0" prefHeight="25.0" prefWidth="185.0" text="rankandmileage" />
+	            <Button fx:id="cart" layoutX="73.0" layoutY="392.0" mnemonicParsing="false" onAction="#humanCartLink" opacity="0.0" prefHeight="25.0" prefWidth="124.0" text="cart" />
+	            <Button fx:id="reserv" layoutX="67.0" layoutY="496.0" mnemonicParsing="false" onAction="#humanResevLink" opacity="0.0" prefHeight="25.0" prefWidth="132.0" text="reserv" />
+	            <Button fx:id="myact" layoutX="67.0" layoutY="599.0" mnemonicParsing="false" onAction="#humanMyactLink" opacity="0.0" prefHeight="25.0" prefWidth="124.0" text="myact" />
+	            <Button fx:id="lovedog" layoutX="67.0" layoutY="635.0" mnemonicParsing="false" onAction="#humanLoveDogLink" opacity="0.0" prefHeight="25.0" prefWidth="124.0" text="lovedog" />
+	         </children>
+	      </AnchorPane>
+	   </left>
+	   <center>
+	      <AnchorPane prefHeight="1475.0" prefWidth="990.0" BorderPane.alignment="CENTER" />
+	   </center>
+	</BorderPane>
+  </content>
+</ScrollPane>

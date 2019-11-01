@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.hotel.main.main_hotel_controller">
+    <children>
+       <ImageView fitHeight="1475.0" fitWidth="1280.0">
+          <image>
+             <Image url="/mainHotel/center/Hotlemain_1280x1475.gif" />
+          </image>
+		</ImageView>
+       <TextField fx:id="keysearch" layoutX="229.0" layoutY="195.0" prefHeight="25.0" prefWidth="315.0" text="keyseach" />
+       <DatePicker fx:id="book_checkin" layoutX="566.0" layoutY="195.0" prefHeight="25.0" prefWidth="111.0" />
+       <DatePicker fx:id="book_checkout" layoutX="686.0" layoutY="195.0" prefHeight="25.0" prefWidth="111.0" />
+       <ComboBox fx:id="selectkind" layoutX="820.0" layoutY="195.0" prefHeight="25.0" prefWidth="97.0" promptText="selectkind" />
+       <Button fx:id="searchButton" layoutX="965.0" layoutY="195.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="90.0" text="searchbutton" />
+       <ImageView fx:id="hotel1_img" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel1_text" layoutX="184.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel2_img" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel2_text" layoutX="421.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel3_img" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel3_text" layoutX="660.0" layoutY="696.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel4_img" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel4_text" layoutX="888.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel5_img" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel5_text" layoutX="184.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel6_img" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel6_text" layoutX="421.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel7_img" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel8_text" layoutX="888.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel8_img" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel9_text" layoutX="184.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel9_img" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel10_text" layoutX="421.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel10_img" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel11_text" layoutX="660.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel11_img" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel12_text" layoutX="888.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="hotel12_img" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel7_text" layoutX="660.0" layoutY="1002.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+    </children>
+ </AnchorPane>

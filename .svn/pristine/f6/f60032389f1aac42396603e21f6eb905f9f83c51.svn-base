@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:controller="kr.or.ddit.view.mypage2.master.center.info_detail.Master_info_detail_controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="/mastermymenu/center/center_관리자-정보수정_detail_990x1475.gif" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

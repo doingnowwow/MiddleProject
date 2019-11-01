@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.reserv.myhotel_center_reserv_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0" layoutY="-14.0">
+         <image>
+            <Image url="/hotelmymenu/center/center_사업자-호텔예약현황_990x1475.gif" />
+         </image>
+      </ImageView>
+      <TableView fx:id="infoTable" layoutX="104.0" layoutY="142.0" opacity="0.63" prefHeight="390.0" prefWidth="775.0">
+        <columns>
+            <TableColumn fx:id="reservDayCol" prefWidth="139.0" text="예약일" />
+            <TableColumn fx:id="dogCntCol" prefWidth="92.0" text="애견 숫자" />
+            <TableColumn fx:id="priceCol" prefWidth="103.0" text="금액" />
+            <TableColumn fx:id="AppDayCol" prefWidth="190.0" text="신청 날짜" />
+            <TableColumn fx:id="telCol" prefWidth="160.0" text="전화번호" />
+            <TableColumn fx:id="statusCol" prefWidth="82.0" text="상태" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pnation" layoutX="103.0" layoutY="142.0" prefHeight="447.0" prefWidth="775.0" />
+      <Label fx:id="sellsumLabel" alignment="CENTER_RIGHT" layoutX="351.0" layoutY="643.0" prefHeight="60.0" prefWidth="527.0" textAlignment="RIGHT">
+         <font>
+            <Font name="System Bold" size="41.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="yearPick" layoutX="539.0" layoutY="103.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="monthPick" layoutX="702.0" layoutY="103.0" prefHeight="23.0" prefWidth="85.0" />
+      <Button fx:id="dateBtn" layoutX="793.0" layoutY="101.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="85.0" style="-fx-background-color: transparent;" text="검색" underline="true" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,308 @@
+package kr.or.ddit.vo;
+
+import java.io.Serializable;
+
+public class ProdPayVO implements Serializable{
+	
+	
+	
+	private int mem_no;
+    private int cart_id;
+    private String prod_name;
+    private String prod_img;
+    private int point_no;
+    private int cart_qty;
+    private int point_money;
+    private int point_use;
+    private String point_use_date;
+    private String point_save_date;
+    private String point_content;
+    private int point_mypoint;
+    private int prod_cost;
+    private int sumprice;
+    private String mem_name;
+	private String mem_addr2;
+    private String mem_addr1;
+    private String prod_info; 
+	private int prod_pay_no; //결제번호
+	private int buy_no; // 구매번호
+	private int prod_id; //물건번호
+	private String prod_pay_gu; // 결제종류
+	private String prod_pay_date; // 결제일
+	private String del_addr1; // 배송지1
+	private String del_addr2; //배송지2
+	private String del_detail; //배송요구사항
+    
+    
+    
+    public String getProd_name() {
+		return prod_name;
+	}
+
+
+	public void setProd_name(String prod_name) {
+		this.prod_name = prod_name;
+	}
+
+
+	public String getProd_img() {
+		return prod_img;
+	}
+
+
+	public void setProd_img(String prod_img) {
+		this.prod_img = prod_img;
+	}
+
+
+	public int getPoint_no() {
+		return point_no;
+	}
+
+
+	public void setPoint_no(int point_no) {
+		this.point_no = point_no;
+	}
+
+
+	public int getCart_qty() {
+		return cart_qty;
+	}
+
+
+	public void setCart_qty(int cart_qty) {
+		this.cart_qty = cart_qty;
+	}
+
+
+	public int getPoint_money() {
+		return point_money;
+	}
+
+
+	public void setPoint_money(int point_money) {
+		this.point_money = point_money;
+	}
+
+
+	public int getPoint_use() {
+		return point_use;
+	}
+
+
+	public void setPoint_use(int point_use) {
+		this.point_use = point_use;
+	}
+
+
+	public String getpoint_use_date() {
+		return point_use_date;
+	}
+
+
+	public void setpoint_use_date(String point_use_date) {
+		this.point_use_date = point_use_date;
+	}
+
+
+	public String getPoint_save_date() {
+		return point_save_date;
+	}
+
+
+	public void setPoint_save_date(String point_save_date) {
+		this.point_save_date = point_save_date;
+	}
+
+
+	public String getPoint_content() {
+		return point_content;
+	}
+
+
+	public void setPoint_content(String point_content) {
+		this.point_content = point_content;
+	}
+
+
+	public int getPoint_mypoint() {
+		return point_mypoint;
+	}
+
+
+	public void setPoint_mypoint(int point_mypoint) {
+		this.point_mypoint = point_mypoint;
+	}
+
+
+	public int getProd_cost() {
+		return prod_cost;
+	}
+
+
+	public void setProd_cost(int prod_cost) {
+		this.prod_cost = prod_cost;
+	}
+
+
+	public int getSumprice() {
+		return sumprice;
+	}
+
+
+	public void setSumprice(int sumprice) {
+		this.sumprice = sumprice;
+	}
+
+
+	public String getMem_name() {
+		return mem_name;
+	}
+
+
+	public void setMem_name(String mem_name) {
+		this.mem_name = mem_name;
+	}
+
+
+	public String getMem_addr2() {
+		return mem_addr2;
+	}
+
+
+	public void setMem_addr2(String mem_addr2) {
+		this.mem_addr2 = mem_addr2;
+	}
+
+
+	public String getMem_addr1() {
+		return mem_addr1;
+	}
+
+
+	public void setMem_addr1(String mem_addr1) {
+		this.mem_addr1 = mem_addr1;
+	}
+
+
+	
+	
+	public ProdPayVO() {
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public int getProd_pay_no() {
+		return prod_pay_no;
+	}
+
+
+	public void setProd_pay_no(int prod_pay_no) {
+		this.prod_pay_no = prod_pay_no;
+	}
+
+
+	public int getCart_id() {
+		return cart_id;
+	}
+
+
+	public void setCart_id(int cart_id) {
+		this.cart_id = cart_id;
+	}
+
+
+	public int getBuy_no() {
+		return buy_no;
+	}
+
+
+	public void setBuy_no(int buy_no) {
+		this.buy_no = buy_no;
+	}
+
+
+	public int getProd_id() {
+		return prod_id;
+	}
+
+
+	public void setProd_id(int prod_id) {
+		this.prod_id = prod_id;
+	}
+
+
+	public int getMem_no() {
+		return mem_no;
+	}
+
+
+	public void setMem_no(int mem_no) {
+		this.mem_no = mem_no;
+	}
+
+
+	public String getProd_pay_gu() {
+		return prod_pay_gu;
+	}
+
+
+	public void setProd_pay_gu(String prod_pay_gu) {
+		this.prod_pay_gu = prod_pay_gu;
+	}
+
+
+	public String getProd_pay_date() {
+		return prod_pay_date;
+	}
+
+
+	public void setProd_pay_date(String prod_pay_date) {
+		this.prod_pay_date = prod_pay_date;
+	}
+
+
+	public String getDel_addr1() {
+		return del_addr1;
+	}
+
+
+	public void setDel_addr1(String del_addr1) {
+		this.del_addr1 = del_addr1;
+	}
+
+
+	public String getDel_addr2() {
+		return del_addr2;
+	}
+
+
+	public void setDel_addr2(String del_addr2) {
+		this.del_addr2 = del_addr2;
+	}
+
+
+	public String getDel_detail() {
+		return del_detail;
+	}
+
+
+	public void setDel_detail(String del_detail) {
+		this.del_detail = del_detail;
+	}
+
+
+	public String getProd_info() {
+		return prod_info;
+	}
+
+
+	public void setProd_info(String prod_info) {
+		this.prod_info = prod_info;
+	}
+
+
+	
+	
+	
+}

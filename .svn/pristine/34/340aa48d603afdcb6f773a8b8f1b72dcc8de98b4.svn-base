@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.center.productinsert.Master_productInsert_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url= "/mastermymenu/center/center_관리자-물품등록관리_990x1475.gif"/>
+         </image>
+      </ImageView>
+      <TextField fx:id="prodNameTF" layoutX="295.0" layoutY="135.0" prefHeight="32.0" prefWidth="569.0" />
+      <TextField fx:id="prodCntTF" layoutX="295.0" layoutY="175.0" prefHeight="32.0" prefWidth="399.0" />
+      <TextField fx:id="prodPriceTF" layoutX="295.0" layoutY="215.0" prefHeight="32.0" prefWidth="399.0" />
+      <TextArea fx:id="prodDetailTA" layoutX="198.0" layoutY="673.0" prefHeight="32.0" prefWidth="448.0" />
+      <Button fx:id="cancelBtn" layoutX="710.0" layoutY="673.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="82.0" style="-fx-background-radius: 10;" text="취소" />
+      <Button fx:id="confirmBtn" layoutX="801.0" layoutY="673.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="82.0" style="-fx-background-radius: 10;" text="등록" />
+      <Button fx:id="prodFindBtn" layoutX="801.0" layoutY="788.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="82.0" style="-fx-background-radius: 10;" text="검색" />
+      <TextField fx:id="prodFindTF" layoutX="597.0" layoutY="792.0" prefHeight="23.0" prefWidth="194.0" />
+      <TableView fx:id="prodTable" layoutX="107.0" layoutY="822.0" prefHeight="361.0" prefWidth="775.0">
+        <columns>
+          <TableColumn fx:id="prodIdCol" prefWidth="75.0" text="아이디" />
+          <TableColumn fx:id="prodNameCol" prefWidth="75.0" text="이름" />
+            <TableColumn fx:id="prodStockCol" prefWidth="75.0" text="재고량" />
+            <TableColumn fx:id="prodCostCol" prefWidth="75.0" text="가격" />
+            <TableColumn fx:id="prodGuCol" prefWidth="75.0" text="종류" />
+            <TableColumn fx:id="prodInfoCol" prefWidth="310.0" text="정보" />
+            <TableColumn fx:id="prodComCol" prefWidth="89.0" text="납품회사" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pnation" layoutX="99.0" layoutY="968.0" prefHeight="211.0" prefWidth="788.0" />
+      <Button fx:id="prodModiBtn" layoutX="801.0" layoutY="1183.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="82.0" style="-fx-background-radius: 10;" text="수정" />
+      <Label alignment="CENTER" layoutX="694.0" layoutY="175.0" prefHeight="32.0" prefWidth="39.0" text="개">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="694.0" layoutY="215.0" prefHeight="32.0" prefWidth="39.0" text="원">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="prodManuTF" layoutX="295.0" layoutY="295.0" prefHeight="32.0" prefWidth="399.0" />
+      <ChoiceBox fx:id="prodGuCB" layoutX="295.0" layoutY="255.0" prefHeight="32.0" prefWidth="141.0" />
+      <Label layoutX="443.0" layoutY="255.0" prefHeight="15.0" prefWidth="250.0" text="A1 : 사료(음식)     B1 : 용품 " />
+      <Label layoutX="443.0" layoutY="271.0" prefHeight="15.0" prefWidth="250.0" text="C1 :  장난감         D1 : 기타" />
+      <TextField fx:id="fileAddTF" layoutX="436.0" layoutY="342.0" prefHeight="32.0" prefWidth="448.0" />
+      <Button fx:id="fileAddBtn" layoutX="81.0" layoutY="673.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="112.0" text="첨부" />
+      <Button fx:id="prodDelBtn" layoutX="710.0" layoutY="1183.0" mnemonicParsing="false" opacity="0.0" prefHeight="32.0" prefWidth="82.0" style="-fx-background-radius: 10;" text="삭제" />
+   </children>
+</AnchorPane>

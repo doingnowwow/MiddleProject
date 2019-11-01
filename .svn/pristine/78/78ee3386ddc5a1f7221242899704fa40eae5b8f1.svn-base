@@ -1,0 +1,57 @@
+package kr.or.ddit.view.mypage2.master.center.info_main;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.layout.AnchorPane;
+import kr.or.ddit.clientMain.LoginSession;
+import kr.or.ddit.view.mypage2.master.main.mapage_Master_controller;
+
+public class Master_info_main_controller implements Initializable{
+
+	
+	public mapage_Master_controller mainCon;
+	
+	public mapage_Master_controller getMainCon() {
+		return mainCon;
+	}
+	public void setMainCon(mapage_Master_controller mainCon) {
+		this.mainCon = mainCon;
+	}
+
+
+
+	@FXML Button move;
+	
+	
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+		
+		
+	}
+	
+	@FXML public void moving() {
+		System.out.println("dddd");
+
+		
+		
+		
+//		try {
+//			mainCon.masterBlacklistLink();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+	}
+	
+	
+
+}

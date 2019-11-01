@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.view.ShopReview.ShopReviewController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="656.0" prefWidth="834.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane layoutX="71.0" layoutY="164.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="438.0" prefWidth="692.0">
+         <center>
+            <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <columns>
+                  <TableColumn fx:id="review_no" prefWidth="99.0" text="리뷰번호" />
+                  <TableColumn fx:id="view_writer" prefWidth="84.0" text="작성자" />
+                  <TableColumn fx:id="view_contetn" prefWidth="265.0" text="내용" />
+                  <TableColumn fx:id="veiw_star" prefWidth="45.0" text="평점" />
+                  <TableColumn fx:id="date" prefWidth="115.0" text="날짜" />
+                  <TableColumn fx:id="mem_no" prefWidth="83.0" text="회원번호" />
+               </columns>
+            </TableView>
+         </center>
+      </BorderPane>
+      <TextArea fx:id="content" layoutX="257.0" layoutY="63.0" prefHeight="80.0" prefWidth="265.0" />
+      <TextField fx:id="writer" layoutX="63.0" layoutY="103.0" prefHeight="33.0" prefWidth="176.0" />
+      <TextField fx:id="star" layoutX="536.0" layoutY="110.0" prefHeight="33.0" prefWidth="98.0" />
+      <Button fx:id="okBtn" layoutX="703.0" layoutY="30.0" mnemonicParsing="false" text="등록" />
+      <Button fx:id="updateBtn" layoutX="703.0" layoutY="77.0" mnemonicParsing="false" text="수정" />
+      <Button fx:id="deleteBtn" layoutX="703.0" layoutY="127.0" mnemonicParsing="false" text="삭제" />
+      <Label layoutX="63.0" layoutY="67.0" text="작성자" />
+      <Label layoutX="257.0" layoutY="30.0" text="내용" />
+      <Label layoutX="536.0" layoutY="78.0" text="평점" />
+   </children>
+</AnchorPane>

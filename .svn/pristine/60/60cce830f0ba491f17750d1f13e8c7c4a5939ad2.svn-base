@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.center.memberadmin.Master_memberadmin_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0" layoutY="1.0">
+         <image>
+            <Image url=  "/mastermymenu/center/center_관리자-회원-및-사업장-관리_990x1475.gif"/>
+         </image>
+      </ImageView>
+      <TableView fx:id="comTable" layoutX="108.0" layoutY="709.0" prefHeight="325.0" prefWidth="776.0">
+        <columns>
+          <TableColumn fx:id="comidCol" prefWidth="70.0" text="아이디" />
+          <TableColumn fx:id="comemailCol" prefWidth="94.0" text="이메일" />
+            <TableColumn fx:id="comnameCol" prefWidth="61.0" text="대표명" />
+            <TableColumn fx:id="honameCol" prefWidth="83.0" text="호텔이름" />
+            <TableColumn fx:id="comtelCol" prefWidth="98.0" text="전화번호" />
+            <TableColumn fx:id="hotelCol" prefWidth="106.0" text="호텔 전화번호" />
+            <TableColumn fx:id="hoinfoCol" prefWidth="263.0" text="호텔 소개" />
+        </columns>
+      </TableView>
+      <TabPane layoutX="108.0" layoutY="142.0" prefHeight="418.0" prefWidth="776.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="회원 검색 ">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="memTable" layoutX="18.0" layoutY="53.0" prefHeight="267.0" prefWidth="739.0">
+                          <columns>
+                            <TableColumn fx:id="memidCol" prefWidth="75.0" text="아이디" />
+                            <TableColumn fx:id="mememailCol" prefWidth="105.0" text="이메일" />
+                              <TableColumn fx:id="memnameCol" prefWidth="56.0" text="이름" />
+                              <TableColumn fx:id="memtelCol" prefWidth="94.0" text="전화번호" />
+                              <TableColumn fx:id="memadd1Col" prefWidth="137.0" text="주소" />
+                              <TableColumn fx:id="memadd2Col" prefWidth="134.0" text="상세주소" />
+                              <TableColumn fx:id="mempointCol" prefWidth="73.0" text="포인트" />
+                              <TableColumn fx:id="memgradeCol" prefWidth="64.0" text="등급" />
+                          </columns>
+                        </TableView>
+                        <Pagination fx:id="mempnation" layoutX="10.0" layoutY="40.0" prefHeight="335.0" prefWidth="755.0" />
+                        <TextField fx:id="memSearTF" layoutX="85.0" layoutY="6.0" prefHeight="23.0" prefWidth="156.0" />
+                        <Label layoutX="14.0" layoutY="9.0" text="회원 검색 : " />
+                        <Button fx:id="memSearBtn" layoutX="694.0" layoutY="6.0" mnemonicParsing="false" opacity="0.0" prefHeight="23.0" prefWidth="70.0" text="조회" underline="true" />
+                        <ImageView fitHeight="29.0" fitWidth="137.0" layoutX="689.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url= "/mastermymenu/center/회원-및-사업장-관리_조회버튼_60x22.gif"/>
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="회원의 애견 검색">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="petTable" layoutX="18.0" layoutY="53.0" prefHeight="267.0" prefWidth="741.0">
+                          <columns>
+                            <TableColumn fx:id="petmemidCol" prefWidth="75.0" text="회원 아이디" />
+                            <TableColumn fx:id="petnameCol" prefWidth="75.0" text="애견 이름" />
+                              <TableColumn fx:id="petguCol" prefWidth="75.0" text="애견 종" />
+                              <TableColumn fx:id="petgenCol" prefWidth="75.0" text="애견 성별" />
+                              <TableColumn fx:id="petsizeCol" prefWidth="75.0" text="애견 크기" />
+                              <TableColumn fx:id="petbirCol" prefWidth="87.0" text="애견 생일" />
+                              <TableColumn fx:id="petinfoCol" prefWidth="307.0" text="애견 정보" />
+                          </columns>
+                        </TableView>
+                        <Pagination fx:id="petpnation" layoutX="9.0" layoutY="40.0" prefHeight="335.0" prefWidth="757.0" />
+                        <Button fx:id="petsearbtn" layoutX="694.0" layoutY="6.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="70.0" text="조회" underline="true" />
+                        <Label layoutX="14.0" layoutY="9.0" text="애견 검색 : " />
+                        <TextField fx:id="petsearTF" layoutX="85.0" layoutY="6.0" prefHeight="23.0" prefWidth="156.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+      <Pagination fx:id="compnation" layoutX="101.0" layoutY="701.0" prefHeight="384.0" prefWidth="792.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="41.0" layoutX="791.0" layoutY="519.0" stroke="#fcfcfc" strokeType="INSIDE" width="100.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="41.0" layoutX="786.0" layoutY="1034.0" stroke="#fcfcfc" strokeType="INSIDE" width="100.0" />
+      <Label layoutX="118.0" layoutY="660.0" text="사업자 검색 : " />
+      <TextField fx:id="comsearTF" layoutX="200.0" layoutY="657.0" prefHeight="23.0" prefWidth="257.0" />
+      <ImageView fitHeight="29.0" fitWidth="137.0" layoutX="751.0" layoutY="654.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="/mastermymenu/center/회원-및-사업장-관리_조회버튼_60x22.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="comsearbtn" layoutX="756.0" layoutY="657.0" mnemonicParsing="false" opacity="0.0" prefHeight="23.0" prefWidth="70.0" text="조회" underline="true" />
+   </children>
+</AnchorPane>

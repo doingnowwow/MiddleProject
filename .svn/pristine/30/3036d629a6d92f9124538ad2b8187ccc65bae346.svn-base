@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.cart2.CartController">
+   <children>
+      <AnchorPane prefHeight="1475.0" prefWidth="990.0">
+         <children>
+            <TableView fx:id="cart_table" layoutX="11.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="963.0">
+              <columns>
+                <TableColumn fx:id="cart_no" prefWidth="72.0" text="구매날짜" />
+                <TableColumn fx:id="prod_gu_nm" prefWidth="92.0" text="상품분류" />
+                <TableColumn fx:id="prod_name" prefWidth="108.0" text="상품이름" />
+                <TableColumn fx:id="cart_qty" prefWidth="75.0" text="수량" />
+                <TableColumn fx:id="prod_total_cost" prefWidth="234.0" text="결제가" />
+                <TableColumn fx:id="prod_info" prefWidth="253.0" text="상품정보" />
+              </columns>
+            </TableView>
+            <Pagination fx:id="pagination" layoutX="1.0" layoutY="192.0" prefHeight="444.0" prefWidth="1087.0" />
+            <Label layoutX="395.0" layoutY="63.0" prefHeight="55.0" prefWidth="298.0" text="My Cart List">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <Label layoutX="148.0" layoutY="131.0" prefHeight="50.0" prefWidth="170.0" text="총 가격  :">
+               <font>
+                  <Font name="HYGothic-Medium" size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="totalCost" alignment="CENTER_RIGHT" layoutX="280.0" layoutY="137.0" prefHeight="34.0" prefWidth="216.0" textAlignment="JUSTIFY">
+	            <font>
+	               <Font size="36.0" />
+	            </font>
+            </Label>
+            <Label layoutX="510.0" layoutY="135.0" text="￦">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button fx:id="buyBtn" layoutX="780.0" layoutY="141.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="94.0" text="구매하기" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:id="main_scroll" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.main.hotelmypage_main_controller">
+  <content>
+	<BorderPane fx:id="main_boder" prefHeight="1475.0" prefWidth="1280.0">
+	   <left>
+	      <AnchorPane prefHeight="1475.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+	         <children>
+	            <ImageView fx:id="left" fitHeight="1475.0" fitWidth="290.0">
+	               <image>
+	                  <Image url="/hotelmymenu/etc/leftimg_290x1475.gif" />
+	               </image>
+	            </ImageView>
+	            <ImageView fx:id="hotelimg" fitHeight="173.0" fitWidth="244.0" layoutX="25.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" />
+	            <Button fx:id="com_info" layoutX="81.0" layoutY="333.0" mnemonicParsing="false" onAction="#myHotelInfoLink" prefHeight="23.0" prefWidth="132.0" text="com_info" />
+	            <Button fx:id="hotel_detail" layoutX="79.0" layoutY="437.0" mnemonicParsing="false" onAction="#hotelManager" prefHeight="23.0" prefWidth="113.0" text="hotel_detail" />
+	            <Button fx:id="hotel_book" layoutX="78.0" layoutY="473.0" mnemonicParsing="false" onAction="#hotelReservLink" prefHeight="23.0" prefWidth="115.0" text="hotel_book" />
+	            <Button fx:id="dogsale_insert" layoutX="81.0" layoutY="606.0" mnemonicParsing="false" onAction="#salesInsertLink" prefHeight="23.0" prefWidth="109.0" text="dogsale_insert" />
+	            <Button fx:id="dogsale_status" layoutX="81.0" layoutY="641.0" mnemonicParsing="false" onAction="#salesReservLink" prefHeight="23.0" prefWidth="109.0" text="dogsale_status" />
+	         </children>
+	      </AnchorPane>
+	   </left>
+	   <center>
+	      <AnchorPane prefHeight="1475.0" prefWidth="990.0" BorderPane.alignment="CENTER" />
+	   </center>
+	</BorderPane>
+  </content>
+</ScrollPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.center.blacklist.Master_blacklist_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url= "/mastermymenu/center/center_관리자-블랙리스트관리_990x1475.gif"/>
+         </image>
+      </ImageView>
+      <TableView fx:id="table_black" layoutX="102.0" layoutY="135.0" prefHeight="334.0" prefWidth="786.0">
+        <columns>
+          <TableColumn fx:id="memnoCol" prefWidth="43.33332824707031" text="No" />
+          <TableColumn fx:id="memidCol" prefWidth="143.6666717529297" text="회원아이디" />
+            <TableColumn fx:id="cancelnumCol" prefWidth="82.0" text="파양횟수" />
+            <TableColumn fx:id="emailCol" prefWidth="223.66668701171875" text="이메일" />
+            <TableColumn fx:id="telCol" prefWidth="177.66668701171875" text="전화번호" />
+        </columns>
+      </TableView>
+      <TextField fx:id="addmemTF" layoutX="499.0" layoutY="500.0" prefHeight="23.0" prefWidth="287.0" promptText="블랙리스트에 추가할 회원아이디를 적어주세요" />
+      <Button fx:id="addBtn" layoutX="792.0" layoutY="500.0" mnemonicParsing="false" opacity="0.0" prefHeight="23.0" prefWidth="103.0" text="추가" />
+   </children>
+</AnchorPane>

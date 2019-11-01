@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:controller="kr.or.ddit.view.mypage2.human.center.cart.mypage_human_center_cart_controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="/humanmymenu/center/center_일반회원_장바구니_990x1475.gif" />
+         </image>
+      </ImageView>
+      <AnchorPane fx:id="cart_board" layoutX="46.0" layoutY="129.0" prefHeight="347.0" prefWidth="898.0">
+         <children>
+            <ImageView fx:id="cart_product_imgview1" fitHeight="83.0" fitWidth="82.0" layoutX="121.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+            <ScrollBar layoutX="877.0" orientation="VERTICAL" prefHeight="347.0" prefWidth="21.0" />
+            <CheckBox fx:id="cart_product_checkbox1" layoutX="89.0" layoutY="48.0" mnemonicParsing="false" />
+            <Text fx:id="cart_product_name1" layoutX="217.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="244.68994140625">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Text>
+            <Text fx:id="cart_product_price1" layoutX="477.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="95.0">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Text>
+            <Button fx:id="cart_product_modifi" layoutX="584.0" layoutY="28.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="수정" />
+            <Button fx:id="cart_product_modifi1" layoutX="584.0" layoutY="56.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="70.0" text="삭제" />
+            <Text fx:id="cart_product_name11" layoutX="680.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="122.68994140625">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <CheckBox layoutX="44.0" layoutY="97.0" mnemonicParsing="false" text="전체선택" />
+      <Button layoutX="119.0" layoutY="95.0" mnemonicParsing="false" text="selectDelete" />
+      <Text fx:id="product_num" layoutX="860.0" layoutY="530.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text fx:id="sum_price" layoutX="860.0" layoutY="572.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Text>
+      <Text layoutX="822.0" layoutY="683.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT">
+         <font>
+            <Font size="46.0" />
+         </font>
+      </Text>
+      <Button layoutX="406.0" layoutY="748.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="181.0" text="Button" />
+   </children>
+</AnchorPane>

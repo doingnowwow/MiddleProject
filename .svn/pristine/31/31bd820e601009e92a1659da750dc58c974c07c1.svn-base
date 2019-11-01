@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="380.0" prefWidth="400.0" style="-fx-background-color: Parent change = null;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.login.SearchPWController">
+   <children>
+      <Text fontSmoothingType="LCD" layoutX="69.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="비밀번호찾기" textAlignment="CENTER" wrappingWidth="291.0">
+         <font>
+            <Font name="Cambria" size="25.0" />
+         </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디" textAlignment="CENTER" wrappingWidth="72.0">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="69.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text layoutX="40.0" layoutY="224.0" strokeType="OUTSIDE" strokeWidth="0.0" text="전화번호" textAlignment="CENTER">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="id" layoutX="155.0" layoutY="95.0" prefHeight="29.0" prefWidth="227.0" promptText="아이디를 입력해주세요" />
+      <TextField fx:id="name" layoutX="156.0" layoutY="152.0" prefHeight="29.0" prefWidth="227.0" promptText="이름을 입력해주세요" />
+      <TextField fx:id="tel" layoutX="157.0" layoutY="203.0" prefHeight="29.0" prefWidth="227.0" promptText="-빼고입력 예)01012345678" />
+      <Button fx:id="okBtn" layoutX="69.0" layoutY="274.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="115.0" style="-fx-background-color: #CEECF5;" text="확인" />
+      <Button fx:id="cancelBtn" layoutX="231.0" layoutY="274.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="129.0" style="-fx-background-color: #CEECF5;" text="취소" />
+   </children>
+</Pane>

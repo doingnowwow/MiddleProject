@@ -1,0 +1,65 @@
+package kr.or.ddit.service.dogSale;
+
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+import java.util.List;
+
+
+import kr.or.ddit.dao.dogSale.DogSaleDao;
+import kr.or.ddit.dao.dogSale.DogSaleDaoImpl;
+import kr.or.ddit.vo.DogSaleVO;
+
+public class DogSaleServiceImpl extends UnicastRemoteObject implements DogSaleService {
+	
+	
+	private static DogSaleServiceImpl DogSaleService;
+	
+	private DogSaleDao dogSaleDao;
+	
+	
+	
+	private DogSaleServiceImpl() throws RemoteException{
+		dogSaleDao = DogSaleDaoImpl.getInstance();
+	}
+	
+	public static DogSaleServiceImpl getInstance() throws RemoteException {
+		if(DogSaleService == null) {
+			DogSaleService = new DogSaleServiceImpl();
+		
+			
+		}
+		return DogSaleService;
+	}
+
+	@Override
+	public List<DogSaleVO> getAllDogSale(DogSaleVO vo) throws RemoteException {
+		return dogSaleDao.getAllDogSale(vo);
+	}
+
+	@Override
+	public int insertDogSale(DogSaleVO vo) throws RemoteException {
+		return dogSaleDao.insertDogSale(vo);
+	}
+
+	@Override
+	public int updateDogSale(DogSaleVO vo) throws RemoteException {
+		return dogSaleDao.updateDogSale(vo);
+	}
+
+	@Override
+	public int deleteDogSale(int com_no) throws RemoteException {
+		return dogSaleDao.deleteDogSale(com_no);
+	}
+
+	@Override
+	public List<DogSaleVO> getSearchDogSale(DogSaleVO vo) throws RemoteException {
+		return dogSaleDao.getSearchDogSale(vo);
+	}
+   
+
+	
+	
+	
+	
+	
+}

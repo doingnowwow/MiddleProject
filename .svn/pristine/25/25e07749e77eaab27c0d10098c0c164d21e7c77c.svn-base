@@ -1,0 +1,50 @@
+package kr.or.ddit.vo;
+
+import java.io.Serializable;
+
+public class LikeVO implements Serializable {
+
+	private int mem_no; //회원번호
+	private String dog_no; //애견번호
+	private int com_no; //사업자 회원번호
+	
+	public LikeVO() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "LikeVO [mem_no=" + mem_no
+						+ ", dog_no=" + dog_no
+						+ ", com_no=" + com_no + "]";
+	}
+
+	public int getMem_no() {
+		return mem_no;
+	}
+
+	public void setMem_no(int mem_no) {
+		this.mem_no = mem_no;
+	}
+
+	public String getDog_no() {
+		return dog_no;
+	}
+
+	public void setDog_no(String dog_no) {
+		this.dog_no = dog_no;
+	}
+
+	public int getCom_no() {
+		return com_no;
+	}
+
+	public void setCom_no(int com_no) {
+		this.com_no = com_no;
+	}
+
+
+	
+	
+	
+}

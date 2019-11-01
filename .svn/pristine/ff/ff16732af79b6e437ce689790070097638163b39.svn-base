@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.cart2.CartController">
+   <content>
+      <AnchorPane prefHeight="800.0" prefWidth="1000.0">
+         <children>
+            <TableView fx:id="cart_table" layoutX="11.0" layoutY="111.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="376.0" prefWidth="1078.0">
+              <columns>
+                <TableColumn fx:id="prod_id" prefWidth="149.0" text="상품번호" />
+                <TableColumn fx:id="prod_name" prefWidth="292.0" text="상품이름" />
+                  <TableColumn fx:id="prod_info" prefWidth="402.0" text="상품정보" />
+                  <TableColumn fx:id="prod_cost" prefWidth="234.0" text="가격" />
+              </columns>
+            </TableView>
+            <Label layoutX="456.0" layoutY="21.0" prefHeight="65.0" prefWidth="200.0" text="장바구니">
+               <font>
+                  <Font size="46.0" />
+               </font>
+            </Label>
+            <Pagination fx:id="pagination" layoutX="468.0" layoutY="357.0" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

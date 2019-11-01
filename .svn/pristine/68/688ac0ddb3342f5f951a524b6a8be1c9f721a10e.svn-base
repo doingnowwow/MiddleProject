@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.insertSalse.mypage_hotel_center_insertSalse_controller">
+   <children>
+      <ScrollPane prefHeight="1475.0" prefWidth="990.0" />
+      <ImageView fitHeight="1475.0" fitWidth="990.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="1475.0" fitWidth="990.0" layoutX="1.0">
+         <image>
+            <Image url="@../../../../../../../../../img/hotelmymenu/center/center_사업자-분양-등록관리_990x1475.gif" />
+         </image>
+      </ImageView>
+      <TextField fx:id="title" layoutX="222.0" layoutY="146.0" prefHeight="32.0" prefWidth="662.0" />
+      <TextField fx:id="dog_name" layoutX="293.0" layoutY="466.0" prefHeight="38.0" prefWidth="594.0" />
+      <TextField fx:id="dog_gu" layoutX="293.0" layoutY="504.0" prefHeight="40.0" prefWidth="594.0" />
+      <TextField fx:id="dog_size" layoutX="293.0" layoutY="544.0" prefHeight="40.0" prefWidth="594.0" />
+      <TextField fx:id="dog_gen" layoutX="293.0" layoutY="584.0" prefHeight="40.0" prefWidth="594.0" />
+      <TextField fx:id="dog_bir" layoutX="293.0" layoutY="624.0" prefHeight="40.0" prefWidth="594.0" />
+      <TextField fx:id="dog_detail" layoutX="293.0" layoutY="664.0" prefHeight="40.0" prefWidth="594.0" />
+      <Button fx:id="commit" layoutX="799.0" layoutY="773.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="등록" />
+      <Button fx:id="cancel" layoutX="692.0" layoutY="773.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="90.0" text="취소" />
+      <Button fx:id="photo" layoutX="107.0" layoutY="714.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="140.0" text="Button" />
+      <TableView fx:id="table_check" layoutX="103.0" layoutY="902.0" prefHeight="386.0" prefWidth="781.0">
+        <columns>
+          <TableColumn fx:id="col_no" prefWidth="37.0" text="No" />
+          <TableColumn fx:id="col_name" prefWidth="85.0" text="애견명" />
+            <TableColumn fx:id="col_gu" prefWidth="93.0" text="애견종" />
+            <TableColumn fx:id="col_size" prefWidth="62.0" text="애견크기" />
+            <TableColumn fx:id="col_gen" prefWidth="78.0" text="애견성별" />
+            <TableColumn fx:id="col_bir" minWidth="0.0" prefWidth="98.0" text="애견 생일" />
+            <TableColumn fx:id="col_detail" minWidth="0.0" prefWidth="132.0" text="애견상세정보" />
+            <TableColumn fx:id="col_detail1" prefWidth="195.0" text="애견상세안내" />
+        </columns>
+      </TableView>
+<!--       <Pagination fx:id="page" layoutX="104.0" layoutY="900.0" prefHeight="392.0" prefWidth="781.0" /> -->
+      <Text fx:id="text1" layoutX="258.0" layoutY="742.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="text2" layoutX="399.0" layoutY="741.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="text3" layoutX="539.0" layoutY="741.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Text fx:id="text4" layoutX="692.0" layoutY="740.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <TextArea fx:id="textarea" layoutX="107.0" layoutY="190.0" prefHeight="254.0" prefWidth="776.0" />
+      <Button fx:id="modify" layoutX="635.0" layoutY="868.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="78.0" text="수정" />
+      <Button fx:id="delete" layoutX="713.0" layoutY="868.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="78.0" text="삭제" />
+   </children>
+</AnchorPane>

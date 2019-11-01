@@ -1,0 +1,35 @@
+package kr.or.ddit.view.mypage2.human.center.cart;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.fxml.FXML;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.image.ImageView;
+import javafx.scene.control.CheckBox;
+import javafx.scene.text.Text;
+import javafx.scene.control.Button;
+
+
+//작업하지마시오
+public class mypage_human_center_cart_controller implements Initializable{
+
+	@FXML AnchorPane cart_board;
+	@FXML ImageView cart_product_imgview1;
+	@FXML CheckBox cart_product_checkbox1;
+	@FXML Text cart_product_name1;
+	@FXML Text cart_product_price1;
+	@FXML Button cart_product_modifi;
+	@FXML Button cart_product_modifi1;
+	@FXML Text cart_product_name11;
+	@FXML Text product_num;
+	@FXML Text sum_price;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1475.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.hotel.center.hoteldetailpage.main_hotel_detailpage_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="1280.0">
+         <image>
+            <Image url="/mainHotel/center/main_hotel_detail-1280x1875.gif" />
+         </image>
+      </ImageView>
+      <Label fx:id="ho_telLabel" layoutX="757.0" layoutY="570.0" prefHeight="27.0" prefWidth="178.0" text="호텔 전화번호 넣는곳">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="bookend_date" layoutX="837.0" layoutY="621.0" prefHeight="30.0" prefWidth="150.0" promptText="퇴실" />
+      <Label fx:id="ho_addrLabel" layoutX="754.0" layoutY="527.0" prefHeight="27.0" prefWidth="341.0" text="호텔 주소 넣는곳">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="hotel_img" fitHeight="393.0" fitWidth="393.0" layoutX="193.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="book_btn" layoutX="1011.0" layoutY="666.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="72.0" text="예약" />
+      <DatePicker fx:id="bookst_date" layoutX="670.0" layoutY="621.0" prefHeight="30.0" prefWidth="150.0" promptText="입실" />
+      <Label fx:id="ho_nameLabel" layoutX="652.0" layoutY="406.0" prefHeight="74.0" prefWidth="393.0" text="00 호텔">
+         <font>
+            <Font name="System Bold" size="56.0" />
+         </font>
+      </Label>
+      <Label layoutX="954.0" layoutY="669.0" prefHeight="37.0" prefWidth="33.0" text="원">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="moneyLabel" alignment="CENTER_RIGHT" layoutX="790.0" layoutY="669.0" prefHeight="37.0" prefWidth="159.0" text="Label">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="review_tb" layoutX="648.0" layoutY="1001.0" prefHeight="194.0" prefWidth="414.0">
+        <columns>
+          <TableColumn fx:id="contentCol" prefWidth="232.0" text="내용" />
+          <TableColumn fx:id="writerCol" minWidth="6.0" prefWidth="67.0" text="작성자" />
+            <TableColumn fx:id="writeDateCol" prefWidth="78.0" text="작성 날짜" />
+            <TableColumn fx:id="starCol" prefWidth="36.0" text="별점" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pnation" layoutX="648.0" layoutY="1001.0" prefHeight="246.0" prefWidth="414.0" />
+      <TextArea fx:id="hotelInfoTA" layoutX="648.0" layoutY="814.0" prefHeight="124.0" prefWidth="414.0" />
+      <TextField fx:id="reviewTF" layoutX="648.0" layoutY="948.0" prefHeight="44.0" prefWidth="257.0" />
+      <Button fx:id="reviewBtn" layoutX="988.0" layoutY="948.0" mnemonicParsing="false" opacity="0.0" prefHeight="44.0" prefWidth="72.0" text="버튼" />
+      <Button fx:id="dateConfirmBtn" layoutX="1011.0" layoutY="626.0" mnemonicParsing="false" opacity="0.0" prefHeight="30.0" prefWidth="72.0" text="확인" />
+      <ImageView fx:id="mapImg" fitHeight="400.0" fitWidth="400.0" layoutX="230.0" layoutY="815.0" pickOnBounds="true" preserveRatio="true" />
+      <ChoiceBox fx:id="restarCB" layoutX="910.0" layoutY="968.0" prefHeight="23.0" prefWidth="72.0" />
+      <Label layoutX="911.0" layoutY="948.0" text="별점" />
+      <Label layoutX="648.0" layoutY="815.0" prefHeight="124.0" prefWidth="414.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>

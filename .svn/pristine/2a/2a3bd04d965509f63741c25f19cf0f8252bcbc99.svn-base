@@ -1,0 +1,146 @@
+package kr.or.ddit.view.main.salse.center;
+
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.util.Callback;
+import kr.or.ddit.service.book.BookService;
+import kr.or.ddit.service.dogSale.DogSaleService;
+import kr.or.ddit.util.DataModel;
+import kr.or.ddit.vo.BookVO;
+import kr.or.ddit.vo.DogSaleVO;
+import javafx.fxml.FXML;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.ImageView;
+import javafx.scene.control.Label;
+
+public class petsale_detail_controller implements Initializable{
+	
+	private Registry reg;
+	private DogSaleService dogSaleService;
+	private static ArrayList<DogSaleVO> list = new ArrayList<>(); 
+	private ObservableList<DogSaleVO> allTableData;
+	@FXML TextArea dog_intro1;
+	@FXML ImageView dog_Img;
+	@FXML Label dog_name;
+	@FXML Label birthday;
+	@FXML Label gender;
+	@FXML Label gubun;
+	@FXML TextArea dog_intro2;
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// rmi연결
+		DogSaleVO vo = new DogSaleVO();
+	    try {   
+	       reg = LocateRegistry.getRegistry("localhost", 8888);
+	       DogSaleService dogSaleService = (DogSaleService) reg.lookup("dogsaleService");
+	       
+	    }catch (RemoteException e) {
+	       System.out.println("실패 ㅋ");
+	       e.printStackTrace();
+	    }catch(NotBoundException e) {
+	       e.printStackTrace();
+	    }
+		
+	}   
+
+	
+		public void selectList(DogSaleVO vo) {
+			try {
+				list = (ArrayList<DogSaleVO>) dogSaleService.getAllDogSale(vo);
+			
+			allTableData = FXCollections.observableArrayList(list);
+		    
+		    allTableData.setAll(list.get(1));
+//		    allTableData.add(vo);
+		    
+		    System.out.println("list = " + list.size());
+		    System.out.println("allTableData = " + allTableData.size());
+		    
+		    DogSaleVO data = allTableData.get(1);
+		    
+		    String dName = data.getDog_name();
+		    String dImg = data.getDog_picture();
+		    int dBirth = data.getDog_bir();
+		    String dGen = data.getDog_gender();
+		    String dGu = data.getDog_gu();
+		    String dIntro1 = data.getDog_intro();
+		    String dIntro2 = data.getDog_
+		    	
+		    		
+		    		
+		    	
+			} catch (RemoteException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}  
+		    
+
+		    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	}
+	
+	
+	
+	
+	
+	
+	
+
+	
+	    
+	
+		
+      	
+/*	    @Override
+	    public Node call(Integer pageIndex) {
+	       from = pageIndex * itemsForPage;
+	       to = from + itemsForPage -1;
+	       hotelBookTb.setItems(getTableViewData(from, to));
+	       return hotelBookTb;
+	    }
+		     
+	    private ObservableList<BookVO> getTableViewData(int from, int to) {
+		currentPageData = FXCollections.observableArrayList(); //초기화
+		    int totSize = allTableData.size();
+		       
+		    for(int i=from; i<=to && i<totSize; i++) {
+		       currentPageData.add(allTableData.get(i));
+		    }
+		    return currentPageData;*/
+	}
+	
+	
+	
+	
+	
+

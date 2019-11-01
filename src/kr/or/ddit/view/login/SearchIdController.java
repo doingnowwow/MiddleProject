@@ -1,0 +1,183 @@
+package kr.or.ddit.view.login;
+
+import java.io.IOException;
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import kr.or.ddit.service.ILogin.ILoginService;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.MemberVO;
+
+public class SearchIdController implements Initializable{
+
+	@FXML Button findPwBtn;
+	@FXML TextField id;
+	@FXML TextField tel;
+	@FXML Button okBtn;
+	@FXML Button cacelBtn;
+	
+	
+	private Registry reg;
+	private ILoginService iLog;
+	
+	List<MemberVO>	memlist = new ArrayList<MemberVO>();
+	List<ComVO> comlist = new ArrayList<ComVO>();
+	
+	private MemberVO mv = new MemberVO();
+	private ComVO cv = new ComVO();
+	
+	String user = null;
+		
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		try {
+			reg = LocateRegistry.getRegistry("localhost",8888);
+			System.out.println("오류나는지 확인해보기");
+			iLog = (ILoginService) reg.lookup("LoginUser");
+		}catch(RemoteException e ) {
+			e.printStackTrace();
+		}catch(NotBoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		okBtn.setOnAction(e->{
+			if(id.getText().isEmpty()|| tel.getText().isEmpty()) {
+				errMsg("아이디 찾기 에러", "입력하지 않은 정보가 있습니다 다시확인해주세요");
+				return;
+			}
+			
+			
+			String mem_name = id.getText();
+			String mem_tel = tel.getText();
+			
+			String com_ceo = id.getText();
+			String com_tel = tel.getText();
+			
+			
+			ArrayList<ComVO> cList = new ArrayList<>();
+			ArrayList<MemberVO> mList = new ArrayList<>();
+			
+			ComVO cvo = new ComVO();
+			cvo.setCom_name(com_ceo);
+			cvo.setCom_tel(com_tel);
+			
+						
+			MemberVO mvo = new MemberVO	();
+			mvo.setMem_name(mem_name);
+			mvo.setMem_tel(mem_tel);
+			System.out.println(mvo.getMem_name());
+			
+			
+		//기업회원 아이디찾기는 ..아직 안됩니다 .. . . . ..ㅇ네..	
+			
+			try {
+				mList = (ArrayList<MemberVO>) iLog.idSearch(mvo);
+				cList = (ArrayList<ComVO>) iLog.isCom(cvo);
+				
+			}catch(RemoteException e1) {
+				e1.printStackTrace();
+			}
+			
+			
+			if(mList.size()>0 ) {
+				//infoMsg("입력하신 정보에 일치하는 아이디가 있습니다.", cList.get(0).getCom_id());
+				infoMsg("입력하신 정보에 일치하는 아이디가 있습니다.", mList.get(0).getMem_id());
+				Stage stage = (Stage) okBtn.getScene().getWindow();
+				stage.close();
+				
+			/*}else if(cList.size()>0){
+				infoMsg("입력하신 정보에 일치하는 아이디가 있습니다.", cList.get(0).getCom_id());
+				Stage stage = (Stage) okBtn.getScene().getWindow();
+				stage.close();*/
+			}else {
+				errMsg("아이디 찾기 에러 !","해당 정보에 해당하는 id가 존재하지 않습니다!");
+				
+				return;
+			}
+		});
+		
+		
+		
+		
+		cacelBtn.setOnAction(e->{
+			
+			try {
+	            Parent change = FXMLLoader.load(getClass().getResource("Login_all.fxml"));
+	            Scene scene = new Scene(change);
+	            Stage primaryStage = (Stage)cacelBtn.getScene().getWindow();
+	            primaryStage.setScene(scene);
+	         }catch (Exception i) {
+	            i.printStackTrace();
+	         }
+			
+			
+			
+			
+			
+		});
+		
+		
+		findPwBtn.setOnAction(e->{
+			
+			Parent change = null;
+			try {
+				change = FXMLLoader.load(getClass().getResource("SearchPw.fxml"));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+             Scene scene = new Scene(change);
+             Stage primaryStage = (Stage)findPwBtn.getScene().getWindow();
+             primaryStage.setScene(scene);
+			
+		});
+		
+		
+		
+	}
+
+	
+		
+	
+	
+	private void errMsg(String headerText, String msg) {
+		Alert errAlert = new Alert(AlertType.ERROR);
+        errAlert.setTitle("오류");
+        errAlert.setHeaderText(headerText);
+        errAlert.setContentText(msg);
+        errAlert.showAndWait();		
+	}
+	
+	
+	 private void infoMsg(String headerText, String msg) {
+         Alert errAlert = new Alert(AlertType.INFORMATION);
+         errAlert.setTitle("아이디를 잊으셧나요?^^;");
+         errAlert.setHeaderText(headerText);
+         errAlert.setContentText(msg);
+         errAlert.showAndWait();
+      }
+
+	
+	
+	
+	
+}

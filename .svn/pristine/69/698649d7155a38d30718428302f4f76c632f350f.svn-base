@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:controller="kr.or.ddit.view.petSaleDetail.PetSaleDetailController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane fx:id="AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="1784.0" fitWidth="1264.0">
+               <image>
+                  <Image url="mainPetSale/분양-게시판-상세_1280x1800.gif" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="faceBookBtn" layoutX="61.0" layoutY="40.0" prefHeight="28.0" prefWidth="33.0" />
+            <JFXButton fx:id="instargramBtn" layoutX="135.0" layoutY="40.0" prefHeight="28.0" prefWidth="33.0" />
+            <JFXButton fx:id="kakaoBtn" layoutX="210.0" layoutY="40.0" prefHeight="28.0" prefWidth="33.0" />
+            <JFXButton fx:id="lowFaceBookBtn" layoutX="973.0" layoutY="1690.0" prefHeight="33.0" prefWidth="33.0" />
+            <JFXButton fx:id="lowInstagramBtn" layoutX="1047.0" layoutY="1689.0" prefHeight="33.0" prefWidth="33.0" />
+            <JFXButton fx:id="lowKakaoBtn" layoutX="1122.0" layoutY="1688.0" prefHeight="35.0" prefWidth="33.0" />
+            <JFXButton fx:id="barHotelBtn" layoutX="224.0" layoutY="140.0" prefHeight="23.0" prefWidth="118.0" />
+            <JFXButton fx:id="barPetSaleBtn" layoutX="457.0" layoutY="140.0" prefHeight="23.0" prefWidth="118.0" />
+            <JFXButton fx:id="barShopBtn" layoutX="688.0" layoutY="140.0" prefHeight="23.0" prefWidth="118.0" />
+            <JFXButton fx:id="barQnAbtn" layoutX="920.0" layoutY="140.0" prefHeight="23.0" prefWidth="118.0" />
+            <JFXButton fx:id="LogoBtn" layoutX="451.0" layoutY="8.0" prefHeight="98.0" prefWidth="362.0" />
+            <Button fx:id="logout" layoutX="1040.0" layoutY="58.0" mnemonicParsing="false" style="-fx-background-color: white;" text="Logout" />
+            <Button fx:id="myPage" layoutX="1099.0" layoutY="57.0" mnemonicParsing="false" style="-fx-background-color: white;" text="myPage" />
+            <ImageView fx:id="puppyPic1" fitHeight="343.0" fitWidth="340.0" layoutX="189.0" layoutY="495.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="puppyPic2" fitHeight="104.0" fitWidth="104.0" layoutX="542.0" layoutY="496.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="puppyPic3" fitHeight="102.0" fitWidth="104.0" layoutX="542.0" layoutY="615.0" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="puppyPic4" fitHeight="102.0" fitWidth="104.0" layoutX="542.0" layoutY="733.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="puppyName" layoutX="719.0" layoutY="518.0" prefHeight="61.0" prefWidth="168.0" text="강아지이름" />
+            <Label fx:id="puppyBreed" layoutX="898.0" layoutY="518.0" prefHeight="61.0" prefWidth="92.0" text="견종" />
+            <Label fx:id="puppyAge" layoutX="994.0" layoutY="518.0" prefHeight="61.0" prefWidth="92.0" text="나이" />
+            <JFXButton fx:id="companyInfo" layoutX="50.0" layoutY="1661.0" prefHeight="95.0" prefWidth="298.0" />
+            <JFXButton fx:id="question" layoutX="600.0" layoutY="1661.0" prefHeight="96.0" prefWidth="276.0" />
+            <TabPane layoutX="189.0" layoutY="900.0" prefHeight="682.0" prefWidth="887.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="pictureTab" text="사진">
+                     <content>
+                        <AnchorPane fx:id="pictureArncoPane" prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="picTabPic1" fitHeight="326.0" fitWidth="423.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="picTabPic2" fitHeight="326.0" fitWidth="423.0" layoutX="450.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="picTabPic3" fitHeight="289.0" fitWidth="423.0" layoutX="14.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true" />
+                              <ImageView fx:id="picTabPic4" fitHeight="280.0" fitWidth="423.0" layoutX="450.0" layoutY="359.0" pickOnBounds="true" preserveRatio="true" />
+                           </children>
+                        </AnchorPane>
+                     </content></Tab>
+                <Tab fx:id="saleInfoTab" text="분양 전 정보">
+                  <content>
+                    <AnchorPane fx:id="saleConfirmAnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <Pane fx:id="locationPane" layoutX="45.0" layoutY="42.0" prefHeight="336.0" prefWidth="346.0" />
+                              <Pane fx:id="addInfoPane" layoutX="422.0" layoutY="42.0" prefHeight="336.0" prefWidth="430.0" />
+                              <Pane fx:id="saleConfirmPane" layoutX="45.0" layoutY="419.0" prefHeight="215.0" prefWidth="806.0" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+              </tabs>
+            </TabPane>
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

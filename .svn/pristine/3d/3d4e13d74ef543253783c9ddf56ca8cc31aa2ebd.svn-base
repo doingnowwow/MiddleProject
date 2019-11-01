@@ -1,0 +1,37 @@
+package kr.or.ddit.vo;
+
+import java.io.Serializable;
+
+public class BlackVO implements Serializable{
+	private int mem_no; //회원번호
+	private int black_cnt; //파양횟수
+	
+	public BlackVO() {
+
+	}
+
+	@Override
+	public String toString() {
+		return "BlackVO [mem_no=" + mem_no + ", black_cnt=" + black_cnt + "]";
+	}
+
+	public int getMem_no() {
+		return mem_no;
+	}
+
+	public void setMem_no(int mem_no) {
+		this.mem_no = mem_no;
+	}
+
+	public int getBlack_cnt() {
+		return black_cnt;
+	}
+
+	public void setBlack_cnt(int black_cnt) {
+		this.black_cnt = black_cnt;
+	}
+	
+	
+	
+	
+}

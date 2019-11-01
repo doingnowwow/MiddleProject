@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.salse.main.main_petsale_controller">
+    <children>
+       <Pagination layoutX="81.0" layoutY="444.0" prefHeight="980.0" prefWidth="1116.0" />
+       <ImageView fitHeight="1475.0" fitWidth="1280.0">
+          <image>
+             <Image url="/mainPetSale/main_Petsale_1280x1475.gif" />
+          </image>
+       </ImageView>
+       <ImageView fx:id="saledog1_img" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel1_text" layoutX="184.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog2_img" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel2_text" layoutX="421.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog3_img" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel3_text" layoutX="660.0" layoutY="696.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog4_img" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel4_text" layoutX="888.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog5_img" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel5_text" layoutX="184.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog6_img" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel6_text" layoutX="421.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       
+       <Label fx:id="hotel7_text" layoutX="660.0" layoutY="1010.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog7_img" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel8_text" layoutX="888.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog8_img" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel9_text" layoutX="184.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog9_img" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel10_text" layoutX="421.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog10_img" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel11_text" layoutX="660.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="saledog11_img" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="hotel12_text" layoutX="888.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+	   <ImageView fx:id="saledog12_img" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />    
+    </children>
+ </AnchorPane>

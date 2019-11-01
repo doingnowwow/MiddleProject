@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.hotel.center.paycomplete.hotel_paycomplete_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="1280.0">
+         <image>
+            <Image url="/mainHotel/center/hotel_payCheck.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hotelImg" fitHeight="390.0" fitWidth="392.0" layoutX="192.0" layoutY="565.0" pickOnBounds="true" preserveRatio="true" />
+      <Text fx:id="hotelName" layoutX="643.0" layoutY="645.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font name="System Bold" size="45.0" />
+         </font>
+      </Text>
+      <Text fx:id="reservPriod" layoutX="731.0" layoutY="686.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="hotelAddr" layoutX="731.0" layoutY="718.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="com_email" layoutX="731.0" layoutY="751.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+      <Text fx:id="resPrice" layoutX="814.0" layoutY="806.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="276.1259765625">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Text>
+      <Text fx:id="reservNo" layoutX="640.0" layoutY="867.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="451.68994140625">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Text>
+      <Button fx:id="reservAdminLink" layoutX="621.0" layoutY="892.0" mnemonicParsing="false" opacity="0.0" prefHeight="67.0" prefWidth="473.0" text="Button" />
+   </children>
+</AnchorPane>

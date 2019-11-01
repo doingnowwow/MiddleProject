@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <BorderPane prefHeight="800.0" prefWidth="1280.0">
+         <top>
+            <VBox prefHeight="118.0" prefWidth="1401.0" BorderPane.alignment="CENTER">
+               <children>
+                  <StackPane prefHeight="40.0" prefWidth="1246.0" style="-fx-background-color: gray;">
+                     <children>
+                        <AnchorPane prefHeight="14.0" prefWidth="1246.0">
+                           <children>
+                              <StackPane layoutX="155.0" layoutY="-3.0" prefHeight="40.0" prefWidth="1246.0" style="-fx-background-color: gray;">
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                              </StackPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </StackPane>
+               </children>
+            </VBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="800.0" prefWidth="1401.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fx:id="read_title" layoutX="341.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="337.0">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="read_writer" layoutX="349.0" layoutY="163.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="263.12109375">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="read_content" layoutX="349.0" layoutY="204.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="read_date" layoutX="349.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Text>
+                  <Label layoutX="241.0" layoutY="134.0" prefHeight="41.0" prefWidth="113.0" text="분류">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="83.0" layoutY="175.0" prefHeight="41.0" prefWidth="230.0" text="주문한 물건 내용">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="241.0" layoutY="220.0" prefHeight="41.0" prefWidth="173.0" text="가격">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="215.0" layoutY="95.0" prefHeight="41.0" prefWidth="113.0" text="상품명">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="252.0" layoutY="8.0" prefHeight="41.0" prefWidth="397.0" text="주문한 상품 확인">
+                     <font>
+                        <Font name="System Bold" size="29.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </content>
+</ScrollPane>

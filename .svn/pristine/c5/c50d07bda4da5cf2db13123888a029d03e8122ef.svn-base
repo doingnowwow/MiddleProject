@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+
+<ScrollPane fx:id="master_main_scroll" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.main.mapage_Master_controller">
+  <content>
+	<BorderPane fx:id="masterInfoLinkRoot" prefHeight="1475.0" prefWidth="1280.0">
+	   <left>
+	      <AnchorPane prefHeight="1475.0" prefWidth="290.0" BorderPane.alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="1475.0" fitWidth="290.0">
+                     <image>
+                        <Image url="@../../../../../../../../img/mastermymenu/etc/My_Master_leftimg_290x1475.gif" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="info_main" layoutX="67.0" layoutY="256.0" mnemonicParsing="false" onAction="#myMasterInfoLink" opacity="0.41" prefHeight="25.0" prefWidth="144.0" text="Button" />
+                  <Button fx:id="memAdmin" layoutX="67.0" layoutY="347.0" mnemonicParsing="false" onAction="#masterMemadminLink" opacity="0.41" prefHeight="25.0" prefWidth="172.0" text="Button" />
+                  <Button fx:id="blacklist" layoutX="67.0" layoutY="385.0" mnemonicParsing="false" onAction="#masterBlacklistLink" opacity="0.41" prefHeight="25.0" prefWidth="172.0" text="Button" />
+                  <Button fx:id="shopInfo" layoutX="67.0" layoutY="475.0" mnemonicParsing="false" onAction="#masterShopinfoLink" opacity="0.41" prefHeight="25.0" prefWidth="132.0" text="Button" />
+                  <Button fx:id="productInsert" layoutX="67.0" layoutY="512.0" mnemonicParsing="false" onAction="#masterProductinsertLink" opacity="0.41" prefHeight="25.0" prefWidth="132.0" text="Button" />
+                  <Button fx:id="shipping" layoutX="67.0" layoutY="548.0" mnemonicParsing="false" onAction="#mastershippingLink" opacity="0.41" prefHeight="25.0" prefWidth="132.0" text="Button" />
+                  <Button fx:id="advertiseBtn" layoutX="67.0" layoutY="580.0" mnemonicParsing="false" onAction="#mastershippingLink" opacity="0.41" prefHeight="25.0" prefWidth="132.0" text="- 광고 관리" />
+               </children>
+	      </AnchorPane>
+	   </left>
+	   <center>
+	      <AnchorPane prefHeight="1475.0" prefWidth="990.0" BorderPane.alignment="CENTER" />
+	   </center>
+	</BorderPane>
+  </content>
+</ScrollPane>

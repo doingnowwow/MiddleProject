@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+
+<ScrollPane fx:controller="kr.or.ddit.view.qnaBoard.QnABoardController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="1800.0" fitWidth="1280.0" layoutX="20.0">
+               <image>
+                  <Image url="@00.QnA_board_1280x1400.gif" />
+               </image>
+            </ImageView>
+            <Button layoutX="75.0" layoutY="48.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="150.0" layoutY="48.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="225.0" layoutY="48.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="471.0" layoutY="9.0" mnemonicParsing="false" prefHeight="131.0" prefWidth="365.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="241.0" layoutY="178.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="124.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="473.0" layoutY="178.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="124.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="707.0" layoutY="178.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="124.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="946.0" layoutY="178.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="124.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="66.0" layoutY="1642.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="300.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="610.0" layoutY="1642.0" mnemonicParsing="false" prefHeight="122.0" prefWidth="300.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="999.0" layoutY="1677.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="1074.0" layoutY="1677.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="1149.0" layoutY="1677.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="33.0" style="-fx-background-color: transparents;" />
+            <Button layoutX="1048.0" layoutY="68.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="72.0" style="-fx-background-color: transparents;" text="join" />
+            <Button layoutX="1135.0" layoutY="71.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="62.0" style="-fx-background-color: transparents;" text="logout" />
+            <Button fx:id="qnawrite" layoutX="1035.0" layoutY="813.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="71.0" style="-fx-background-color: transparents;" text="글쓰기" />
+            <TableView fx:id="qnatable" layoutX="203.0" layoutY="861.0" prefHeight="627.0" prefWidth="902.0">
+              <columns>
+                <TableColumn fx:id="QA_NO" prefWidth="156.0" text="번호" />
+                <TableColumn fx:id="QA_WRITER" prefWidth="568.0" text="제목" />
+                  <TableColumn fx:id="QA_TITLE" prefWidth="177.0" text="작성자" />
+              </columns>
+            </TableView>
+            <Label fx:id="total_number" layoutX="234.0" layoutY="813.0" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

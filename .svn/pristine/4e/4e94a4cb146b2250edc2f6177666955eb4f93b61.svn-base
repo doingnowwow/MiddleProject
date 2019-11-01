@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.center.info_detail.Master_info_detail_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="@../../../../../../../../../img/mastermymenu/center/center_관리자-정보수정_detail_990x1475.gif" />
+         </image>
+      </ImageView>
+      <Text layoutX="300.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="master" wrappingWidth="125.03125">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <TextField fx:id="passTF" layoutX="300.0" layoutY="174.0" prefHeight="23.0" prefWidth="319.0" promptText="비밀번호를 입력해 주세요" />
+      <TextField fx:id="repassTF" layoutX="300.0" layoutY="213.0" prefHeight="23.0" prefWidth="319.0" promptText="비밀번호를 다시 입력해 주세요" />
+      <TextField fx:id="telTF" layoutX="300.0" layoutY="253.0" prefHeight="23.0" prefWidth="319.0" promptText="전화번호를 입력해 주세요" />
+      <TextField fx:id="addr1TF" layoutX="300.0" layoutY="293.0" prefHeight="23.0" prefWidth="319.0" promptText="주소를 입력해 주세요" />
+      <TextField fx:id="addr2TF" layoutX="300.0" layoutY="334.0" prefHeight="23.0" prefWidth="319.0" promptText="상세 주소를 입력해 주세요" />
+      <TextField fx:id="emailTF" layoutX="300.0" layoutY="374.0" prefHeight="23.0" prefWidth="319.0" promptText="이메일을 입력해 주세요" />
+      <Button fx:id="confirmBtn" layoutX="808.0" layoutY="421.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="75.0" text="확인" />
+   </children>
+</AnchorPane>

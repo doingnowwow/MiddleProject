@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.media.*?>
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<ScrollPane fx:id="ap_home" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <content>
+      <BorderPane prefHeight="1475.0" prefWidth="1280.0" style="-fx-background-color: white;">
+         <top>
+            <VBox BorderPane.alignment="CENTER" />
+         </top>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane layoutX="264.0" layoutY="153.0" prefHeight="425.0" prefWidth="719.0">
+                     <children>
+                        <Text layoutX="23.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="게시글 작성" wrappingWidth="186.6953125">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Text>
+                        <Text layoutX="44.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" text="제목" wrappingWidth="60.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="write_title" layoutX="113.0" layoutY="76.0" prefHeight="23.0" prefWidth="530.0" />
+                        <Text layoutX="39.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="작성자" wrappingWidth="71.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextField fx:id="write_writer" layoutX="113.0" layoutY="115.0" prefHeight="23.0" prefWidth="530.0" />
+                        <Text layoutX="43.0" layoutY="176.0" strokeType="OUTSIDE" strokeWidth="0.0" text="내용" wrappingWidth="41.0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <TextArea fx:id="write_content" layoutX="113.0" layoutY="159.0" prefHeight="197.0" prefWidth="531.0" />
+                        <Separator layoutX="16.0" layoutY="53.0" prefHeight="0.0" prefWidth="669.0" />
+                        <JFXButton fx:id="write_regist_btn" layoutX="580.0" layoutY="375.0" text="등록하기" />
+                        <JFXButton fx:id="write_cancle_btn" layoutX="503.0" layoutY="375.0" text="취소하기" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,323 @@
+package kr.or.ddit.view.login;
+
+import java.io.IOException;
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+import kr.or.ddit.clientMain.LoginSession;
+import kr.or.ddit.service.ILogin.ILoginService;
+import kr.or.ddit.util.AlertMsg;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.MemberVO;
+
+public class LoginController implements Initializable{
+
+	@FXML TextField loginId;
+	@FXML TextField loginPw;
+	@FXML Button loginBtn;
+	@FXML Button loginNaverBtn; // 소셜로그인
+	@FXML Button loginFacebookBtn; // 소셜로그인
+	@FXML Button loginjoinBtn; // 회원가입
+	@FXML Button fingIdBtn; // 아이디찾기	
+	@FXML Button findPwBtn; // 비밀번호찾기
+	@FXML Label loginMessage;
+	@FXML BorderPane MainPane;
+	@FXML Button comLoginBtn;  // 사업자 로그인
+	 
+	private Registry reg;
+	//private MemberService login;
+	public ILoginService iLog;
+	
+	List<MemberVO> list = new ArrayList<MemberVO>();
+	List<ComVO>comlist = new ArrayList<ComVO>();
+	
+	private MemberVO mv = new MemberVO();
+	private ComVO cv = new ComVO();
+	
+	
+	// 로그인 유저 정보
+	MemberVO log = LoginSession.session;  //일반회원
+	ComVO clog = LoginSession.comsession; //사업자회원
+	
+	String user = null;
+	
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+		try {
+			reg = LocateRegistry.getRegistry("localhost", 8888);
+			System.out.println("여기서도 확인");  // 이 아래로 오류
+			iLog = (ILoginService) reg.lookup("LoginUser");
+//			IMemberService clientInf = (IMemberService) reg.lookup("memberService");
+			// 이제부터는 불러온 객체의 메서드를 호출해서 사용할 수 있다.
+			System.out.println("되니?");
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		// 일반 회원 로그인
+		loginBtn.setOnAction(e->{
+			if(loginId.getText().equals("") || loginPw.getText().equals("")
+					|| loginId.getText() == null || loginPw.getText() == null ) {
+				AlertMsg.caution("아이디나 패스워드를 입력해 주세요!!!");
+				return;
+			}
+			String id = loginId.getText(); //유저가 입력한 아이디
+			String pass = loginPw.getText(); //유저가 입력한 비밀번호
+			
+//			String cid = loginId.getText(); //사업자 유자가 입력한 아이디
+//			String cpass = loginPw.getText();  //사업자 유저가 입력한 비밀번호
+			
+			ArrayList<MemberVO> mList = new ArrayList<>();
+			MemberVO mv = new MemberVO();
+			mv.setMem_id(id);
+			mv.setMem_pw(pass);
+			
+//			//사업자회원
+//			ArrayList<ComVO> cList = new ArrayList<>();
+//			ComVO cv = new ComVO();
+//			cv.setCom_id(cid);
+//			cv.setCom_pw(cpass);
+			
+			try {
+				mList = (ArrayList<MemberVO>) iLog.memberLogin(mv);
+//				cList = (ArrayList<ComVO>) iLog.isCom(cv);
+			}catch(RemoteException e1) {
+				e1.printStackTrace();
+			}
+			
+//			String mid = mList.get(0).getMem_id();
+//			String mpw = mList.get(0).getMem_pw();
+			
+//			String comid = cList.get(0).getCom_id();
+//			String compw = cList.get(0).getCom_pw();
+			
+//			if(id.equals(mid) && pass.equals(mpw)) {
+			if(mList.size() > 0) {
+				AlertMsg.info("로그인 성공!!!");
+				mv.setMem_id(id);
+				
+				MemberVO mv2 = new MemberVO();
+				mv2.setMem_id(id);
+				
+				try {
+					list = (ArrayList<MemberVO>) iLog.memNoSearch(mv2);
+				}catch (RemoteException e2) {
+					e2.printStackTrace();
+				}
+				
+				if(list.size() != 0) {
+					if(list.get(0).getMem_id().equals(loginId.getText())) {
+						list.add(mv2);
+						LoginSession.session = list.get(0);
+					}
+				}
+				
+				System.out.println(
+						LoginSession.session.getMem_no()
+						+ LoginSession.session.getMem_id()
+						+ LoginSession.session.getMem_pw()
+						+ LoginSession.session.getMem_name()
+						+ LoginSession.session.getMem_tel()
+						+ LoginSession.session.getMem_addr1()
+						+ LoginSession.session.getMem_addr2()
+						+ LoginSession.session.getMem_point()
+						+ LoginSession.session.getMem_level()
+						);
+				
+				/*private int mem_no; //회원번호
+				private String mem_id; //아이디
+				private String mem_pw; //비밀번호
+				private String mem_name;
+				private String mem_email; //이메일
+				private String mem_tel; //핸드폰번호
+				private String mem_addr1; //주소1
+				private String mem_addr2; //주소2
+				private int mem_point; //적립금
+				private String mem_level; //등급
+*/				
+				
+				
+				((Stage)MainPane.getScene().getWindow()).close();
+			}else {
+				AlertMsg.caution("아이디, 비밀번호가 일치하지 않습니다!!");
+				return;
+			}
+		});
+		
+		
+		// 사업자 로그인
+		comLoginBtn.setOnAction(e->{
+			if(loginId.getText().equals("") || loginPw.getText().equals("")
+					|| loginId.getText() == null || loginPw.getText() == null ) {
+				AlertMsg.caution("아이디나 패스워드를 입력해 주세요!!!");
+				return;
+			}
+			
+			String cid = loginId.getText(); //사업자 유자가 입력한 아이디
+			String cpass = loginPw.getText();  //사업자 유저가 입력한 비밀번호
+			
+			ArrayList<ComVO> comList = new ArrayList<>();
+			ComVO cv = new ComVO();
+			cv.setCom_id(cid);
+			cv.setCom_pw(cpass);
+			
+			//사업자회원
+			ArrayList<ComVO> cList = new ArrayList<>();
+			ComVO cv1 = new ComVO();
+			cv1.setCom_id(cid);
+			cv1.setCom_pw(cpass);
+			
+			try {
+				cList = (ArrayList<ComVO>) iLog.isCom(cv1);
+			}catch(RemoteException e1) {
+				e1.printStackTrace();
+			}
+			
+//			String mid = mList.get(0).getMem_id();
+//			String mpw = mList.get(0).getMem_pw();
+			
+//			String comid = cList.get(0).getCom_id();
+//			String compw = cList.get(0).getCom_pw();
+			
+//			if(id.equals(mid) && pass.equals(mpw)) {
+			if(cList.size() > 0) {
+				AlertMsg.info("로그인 성공!!!");
+				cv1.setCom_id(cid);
+				
+				ComVO cv2 = new ComVO();
+				cv2.setCom_id(cid);
+				
+				try {
+					comlist = (ArrayList<ComVO>) iLog.comnoSearch(cv2);
+				}catch (RemoteException e2) {
+					e2.printStackTrace();
+				}
+				
+				if(comlist.get(0).getCom_id().equals(loginId.getText().trim())) {
+					comlist.add(cv2);
+					LoginSession.comsession = comlist.get(0);
+				}
+				
+		
+		
+				
+				((Stage)MainPane.getScene().getWindow()).close();
+					
+			}else {
+				AlertMsg.caution("아이디, 비밀번호가 일치하지 않습니다!!");
+				return;
+			}
+		});
+		
+//		if(mList.size() > 0 ) {
+//			MemberVO mv2 = new MemberVO();
+//			mv2.setMem_id(id);
+//			
+//			try {
+//				list = (ArrayList<MemberVO>) iLog.memNoSearch(mv2);
+//			}catch(RemoteException e) {
+//				e.printStackTrace();
+//			}
+//			
+//			if(list.get(0).getMem_id().equals(loginId.getText())) {
+//				list.add(mv2);
+//				LoginSession.session = list.get(0);
+//			}
+//			
+//			
+//					
+//			System.out.println("확인"+LoginSession.session.getMem_id());
+//		
+//		}
+//	
+//		 //* ..계쏙 뭔가를 바꿔야해...에효 _한선
+//		
+//		
+//		if(comlist.size() > 0) {
+//			ComVO cv2 = new ComVO();
+//			cv2.setCom_id(cid);
+//			
+//			try {
+//				comlist = iLog.isCom(cv);
+//			} catch (RemoteException e1) {
+//				e1.printStackTrace();
+//			}
+//			
+//			if(comlist.get(0).getCom_id().equals(loginId.getText())) {
+//				comlist.add(cv2);
+//				LoginSession.comsession=comlist.get(0);
+//			}
+//			
+//			System.out.println("확인"+LoginSession.comsession.getCom_id());
+//			
+//		}
+		
+		
+		// 일반회원 아이디 찾기로 이동함.
+		fingIdBtn.setOnAction(e->{
+			
+			
+			 Parent change = null;
+			try {
+				change = FXMLLoader.load(getClass().getResource("SearchId.fxml"));
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+             Scene scene = new Scene(change);
+             Stage primaryStage = (Stage)fingIdBtn.getScene().getWindow();
+             primaryStage.setScene(scene);
+			
+			
+			
+			
+		});
+		
+		//비밀번호 찾기
+		findPwBtn.setOnAction(e->{
+			
+			 Parent change = null;
+				try {
+					change = FXMLLoader.load(getClass().getResource("SearchPw.fxml"));
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+	             Scene scene = new Scene(change);
+	             Stage primaryStage = (Stage)findPwBtn.getScene().getWindow();
+	             primaryStage.setScene(scene);
+		});
+		
+		
+		
+
+		
+		
+	}
+	
+
+	
+	
+	
+}

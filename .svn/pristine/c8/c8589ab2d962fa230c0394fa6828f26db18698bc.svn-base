@@ -1,0 +1,55 @@
+package kr.or.ddit.vo;
+
+import java.io.Serializable;
+
+public class CartVO implements Serializable{
+
+	private int prod_id; //상품번호
+ 	private int buy_no; //구매번호
+	private int cart_qty; //수량
+
+	
+	public CartVO()	{
+		
+	}
+	
+	public CartVO(int prod_id, int buy_no, int cart_qty) {
+		super();
+		this.prod_id = prod_id;
+		this.buy_no = buy_no;
+		this.cart_qty = cart_qty;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "CartVO [prod_id=" + prod_id
+						+ ", buy_no=" + buy_no
+						+ ", cart_qty=" + cart_qty + "]";		
+	}
+
+	public int getProd_id() {
+		return prod_id;
+	}
+
+	public void setProd_id(int prod_id) {
+		this.prod_id = prod_id;
+	}
+
+	public int getBuy_no() {
+		return buy_no;
+	}
+
+	public void setBuy_no(int buy_no) {
+		this.buy_no = buy_no;
+	}
+
+	public int getCart_qty() {
+		return cart_qty;
+	}
+
+	public void setCart_qty(int cart_qty) {
+		this.cart_qty = cart_qty;
+	}
+
+}

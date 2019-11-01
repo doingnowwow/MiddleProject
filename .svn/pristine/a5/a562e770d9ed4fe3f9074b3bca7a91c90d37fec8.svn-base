@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.center.shopinfo.Master_shopinfo_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="@../../../../../../../../../img/mastermymenu/center/center_관리자-판매정보관리_990x1475.gif" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="314.0" layoutX="64.0" layoutY="568.0" stroke="WHITE" strokeType="INSIDE" width="869.0" />
+      <TableView fx:id="tableView" layoutX="28.0" layoutY="139.0" prefHeight="519.0" prefWidth="920.0">
+        <columns>
+          <TableColumn fx:id="prod_gu" prefWidth="130.0" text="상품코드" />
+          <TableColumn fx:id="prod_name" prefWidth="268.0" text="상품명" />
+            <TableColumn fx:id="cart_qty" prefWidth="117.0" text="구매수량" />
+            <TableColumn fx:id="price" prefWidth="195.0" text="결제금액" />
+            <TableColumn fx:id="mem_id" prefWidth="209.0" text="구매자 아이디" />
+        </columns>
+      </TableView>
+      <BorderPane fx:id="chartset" layoutX="28.0" layoutY="691.0" prefHeight="628.0" prefWidth="920.0" style="-fx-background-color: white;" />
+   </children>
+</AnchorPane>

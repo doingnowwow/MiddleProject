@@ -1,0 +1,76 @@
+package kr.or.ddit.view.admin;
+
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
+import kr.or.ddit.service.com.ComService;
+import kr.or.ddit.service.member.MemberService;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.MemberVO;
+import javafx.scene.control.Button;
+
+public class JoinMemComChartController implements Initializable {
+
+	@FXML
+	PieChart chart;
+
+	@FXML Button onBtn;
+	
+	@FXML Button cancelBtn;
+	
+	
+	List<MemberVO> memList = new ArrayList<MemberVO>();
+	List<ComVO> comList = new ArrayList<ComVO>();
+
+	private MemberVO mv = new MemberVO();
+	private ComVO cv = new ComVO();
+
+	Registry reg;
+	private MemberService ms;
+	private ComService cs;
+
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+		try {
+			reg = LocateRegistry.getRegistry("localhost", 8888);
+			ms = (MemberService) reg.lookup("memberService");
+			cs = (ComService) reg.lookup("comservice");
+			
+			
+			memList = ms.getAllMember();
+			comList =cs.getAllComMember();
+			
+			
+			
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		ObservableList<Data> list = FXCollections.observableArrayList(
+				new PieChart.Data("일반회원", memList.size()),
+				new PieChart.Data("사업자회원", comList.size()),
+				new PieChart.Data("python", 30));
+			
+		chart.setData(list);
+
+	}
+
+}

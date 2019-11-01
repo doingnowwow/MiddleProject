@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.startMain.startMain_controller">
+   <content>
+	<BorderPane fx:id="mainBorder" prefHeight="1800.0" prefWidth="1280.0">
+	   <top>
+	      <AnchorPane prefHeight="173.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+	         <children>
+	            <ImageView fitHeight="173.0" fitWidth="1280.0">
+	               <image>
+	                  <Image url="/startMain/main_top_1280x173.gif" />
+	               </image>
+	            </ImageView>
+	            <Button fx:id="face" layoutX="47.0" layoutY="27.0" mnemonicParsing="false" onAction="#hotelMypageLink" prefHeight="50.0" prefWidth="50.0" text="face" />
+	            <Button fx:id="instar" layoutX="126.0" layoutY="27.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="instar" />
+	            <Button fx:id="kakao" layoutX="196.0" layoutY="27.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="kakao" />
+	            <Button fx:id="home" layoutX="528.0" layoutY="24.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="224.0" text="home" />
+	            <Button fx:id="login" layoutX="991.0" layoutY="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="90.0" text="login" />
+	            <Button fx:id="join" layoutX="1114.0" layoutY="52.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="89.0" text="join" />
+	            <Button fx:id="mainmenu1" layoutX="227.0" layoutY="136.0" mnemonicParsing="false" onAction="#HotelLink" prefHeight="30.0" prefWidth="120.0" text="mainmenu1" />
+	            <Button fx:id="mainmenu2" layoutX="462.0" layoutY="136.0" mnemonicParsing="false" onAction="#SaleLink" prefHeight="30.0" prefWidth="120.0" text="mainmenu2" />
+	            <Button fx:id="mainmenu3" layoutX="697.0" layoutY="136.0" mnemonicParsing="false" onAction="#ShopLink" prefHeight="30.0" prefWidth="120.0" text="mainmenu3" />
+	            <Button fx:id="mainmenu4" layoutX="931.0" layoutY="136.0" mnemonicParsing="false" onAction="#QnALink" prefHeight="30.0" prefWidth="120.0" text="mainmenu4" />
+	         </children>
+	      </AnchorPane>
+	   </top>
+	   <bottom>
+	      <AnchorPane prefHeight="152.0" prefWidth="1280.0" BorderPane.alignment="CENTER">
+	         <children>
+	            <ImageView fitHeight="152.0" fitWidth="1280.0">
+	               <image>
+	                  <Image url="/startMain/main_bottom_1280x152.gif" />
+	               </image>
+	            </ImageView>
+	            <Button fx:id="link1" layoutX="427.0" layoutY="29.0" mnemonicParsing="false" text="link1" />
+	            <Button fx:id="link2" layoutX="427.0" layoutY="54.0" mnemonicParsing="false" text="link2" />
+	            <Button fx:id="chat" layoutX="608.0" layoutY="29.0" mnemonicParsing="false" prefHeight="93.0" prefWidth="278.0" text="chat" />
+	         </children>
+	      </AnchorPane>
+	   </bottom>
+         <center>
+            <AnchorPane prefHeight="1475.0" prefWidth="1280.0" BorderPane.alignment="CENTER" />
+         </center>
+	</BorderPane>
+</content>
+</ScrollPane>

@@ -1,0 +1,76 @@
+package kr.or.ddit.view.main.hotel.center.paycomplete;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
+
+
+
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;import kr.or.ddit.clientMain.LoginSession;
+import kr.or.ddit.vo.ResBookVO;
+
+
+public class hotel_paycomplete_controller implements Initializable {
+	
+	@FXML ImageView hotelImg;
+	@FXML Text hotelName;
+	@FXML Text reservPriod;
+	@FXML Text hotelAddr;
+	@FXML Text com_email;
+	@FXML Text resPrice;
+	@FXML Text reservNo;
+	@FXML Button reservAdminLink;
+
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		ResBookVO resert = LoginSession.resBookssion;
+		//값넣기
+		//resert.getHimg()이미지는 어떻게하징
+
+
+		String himg = resert.getHimg().trim();
+		String hName = resert.gethName();
+		String rPriod = resert.getrPriod();
+		String hAddr = resert.gethAddr();
+		String cEmail = resert.getcEmail();
+		int rPrice = resert.getrPrice();
+		int rNo = resert.getrNo();
+		
+		//이미지 표출
+		hotelImg.setImage(new Image(himg));
+		
+		
+		
+		// 형변환
+		String rPricetxt = Integer.toString(rPrice) + "원";
+		String rNotxt = "[예약번호 : " + Integer.toString(rNo) + "] 고객님의 예약이 확정되었습니다.";
+		
+		//hotelImg.setImage(new Image(himg));
+		hotelName.setText(hName);
+		reservPriod.setText(rPriod);
+		hotelAddr.setText(hAddr);
+		com_email.setText(cEmail);
+		resPrice.setText(rPricetxt);
+		reservNo.setText(rNotxt);
+		
+		reservAdminLink.setOnAction(e->{
+			try {
+				LoginSession.myMain.humanResevLink();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		});
+		
+	}
+
+}

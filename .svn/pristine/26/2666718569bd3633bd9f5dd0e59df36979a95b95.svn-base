@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.shop.center.detail.main_shop_detail_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="1280.0">
+         <image>
+            <Image url="/mainshop/center/shop_detail_1280x2000.gif" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img_main" fitHeight="355.0" fitWidth="379.0" layoutX="184.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" />
+      <TextArea fx:id="prod_detail_text" layoutX="232.0" layoutY="985.0" prefHeight="40.0" prefWidth="392.0" />
+      <TextArea fx:id="prod_com_text" layoutX="232.0" layoutY="1035.0" prefHeight="57.0" prefWidth="392.0" />
+      <TableView fx:id="table" layoutX="232.0" layoutY="1109.0" prefHeight="125.0" prefWidth="819.0">
+        <columns>
+            <TableColumn fx:id="col_star" prefWidth="62.0" text="별점" />
+          <TableColumn fx:id="col_content" prefWidth="81.0" text="내용" />
+          <TableColumn fx:id="col_writer" minWidth="0.0" prefWidth="140.0" text="작성자" />
+            <TableColumn fx:id="col_date" prefWidth="142.0" text="작성날짜" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="page" layoutX="221.0" layoutY="1103.0" prefHeight="188.0" prefWidth="829.0" />
+      <Button fx:id="btn_insert" layoutX="979.0" layoutY="1058.0" mnemonicParsing="false" opacity="0.0" prefHeight="26.0" prefWidth="70.0" text="등록" />
+      <Label fx:id="title_lab" layoutX="657.0" layoutY="341.0" prefHeight="89.0" prefWidth="425.0" text="DD">
+         <font>
+            <Font size="39.0" />
+         </font></Label>
+      <ChoiceBox fx:id="select_num" layoutX="784.0" layoutY="603.0" prefHeight="25.0" prefWidth="213.0" />
+      <Button fx:id="pay_btn" layoutX="950.0" layoutY="478.0" mnemonicParsing="false" opacity="0.0" prefHeight="34.0" prefWidth="132.0" text="결제하기" />
+      <Button fx:id="cart_btn" layoutX="801.0" layoutY="478.0" mnemonicParsing="false" opacity="0.0" prefHeight="34.0" prefWidth="132.0" text="장바구니" />
+      <Label fx:id="price_btn" alignment="CENTER" layoutX="808.0" layoutY="644.0" prefHeight="47.0" prefWidth="189.0" text="price" textAlignment="RIGHT">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="img_detail" fitHeight="213.0" fitWidth="819.0" layoutX="232.0" layoutY="749.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="text_review" layoutX="638.0" layoutY="1058.0" prefHeight="26.0" prefWidth="326.0" />
+      <ComboBox fx:id="combo_star" layoutX="884.0" layoutY="1024.0" prefHeight="23.0" prefWidth="132.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="1538.0" prefWidth="947.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.hotel.center.hoteldetailpage.main_hotel_detailpage_controller">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="457.0" layoutX="413.0" layoutY="65.0" stroke="WHITE" strokeType="INSIDE" width="495.0" />
+      <Label fx:id="ho_telLabel" layoutX="531.0" layoutY="407.0" prefHeight="21.0" prefWidth="374.0" text="호텔 전화번호 넣는곳">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="224.0" text="호텔이미지" />
+      <DatePicker fx:id="bookend_date" layoutX="685.0" layoutY="445.0" prefHeight="48.0" prefWidth="216.0" />
+      <Label fx:id="ho_addrLabel" layoutX="531.0" layoutY="359.0" prefHeight="21.0" prefWidth="374.0" text="호텔 주소 넣는곳">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="hotel_img" fitHeight="393.0" fitWidth="393.0" layoutX="9.0" layoutY="147.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="book_btn" layoutX="827.0" layoutY="553.0" mnemonicParsing="false" prefHeight="71.0" prefWidth="78.0" style="-fx-background-radius: 15;" text="예약" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutY="7.0" stroke="WHITE" strokeType="INSIDE" width="653.0" />
+      <Label layoutX="424.0" layoutY="359.0" text="주소">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="424.0" layoutY="407.0" text="전화번호">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="bookst_date" layoutX="424.0" layoutY="446.0" prefHeight="48.0" prefWidth="216.0" />
+      <Label fx:id="ho_nameLabel" layoutX="9.0" layoutY="61.0" prefHeight="74.0" prefWidth="393.0" text="00 호텔">
+         <font>
+            <Font size="56.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="48.0" layoutX="591.0" layoutY="589.0" stroke="WHITE" strokeType="INSIDE" width="226.0" />
+      <Label layoutX="784.0" layoutY="588.0" prefHeight="37.0" prefWidth="33.0" text="원">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Label fx:id="moneyLabel" alignment="CENTER_RIGHT" layoutX="615.0" layoutY="588.0" prefHeight="37.0" prefWidth="159.0" text="Label">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="29.0" layoutX="457.0" layoutY="546.0" stroke="WHITE" strokeType="INSIDE" width="361.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="103.0" layoutY="546.0" stroke="WHITE" strokeType="INSIDE" width="408.0" />
+      <TableView fx:id="review_tb" layoutX="34.0" layoutY="952.0" prefHeight="194.0" prefWidth="855.0">
+        <columns>
+          <TableColumn fx:id="contentCol" prefWidth="668.0" text="내용" />
+          <TableColumn fx:id="writerCol" prefWidth="87.0" text="작성자" />
+            <TableColumn fx:id="writeDateCol" prefWidth="99.0" text="작성 날짜" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pnation" layoutX="24.0" layoutY="947.0" prefHeight="240.0" prefWidth="881.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="163.0" layoutX="24.0" layoutY="718.0" stroke="WHITE" strokeType="INSIDE" width="393.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="132.0" layoutX="420.0" layoutY="754.0" stroke="WHITE" strokeType="INSIDE" width="480.0" />
+      <TextArea fx:id="hotelInfoTA" layoutX="431.0" layoutY="764.0" prefHeight="132.0" prefWidth="457.0" />
+      <Label layoutX="432.0" layoutY="764.0" prefHeight="132.0" prefWidth="457.0" />
+      <TextArea fx:id="roomInfoTA" layoutX="37.0" layoutY="1203.0" prefHeight="303.0" prefWidth="855.0" />
+      <Label layoutX="37.0" layoutY="1203.0" prefHeight="303.0" prefWidth="855.0" />
+      <TextField fx:id="reviewTF" layoutX="66.0" layoutY="924.0" prefHeight="23.0" prefWidth="703.0" />
+      <Button fx:id="reviewBtn" layoutX="790.0" layoutY="924.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="72.0" text="버튼" />
+   </children>
+</AnchorPane>

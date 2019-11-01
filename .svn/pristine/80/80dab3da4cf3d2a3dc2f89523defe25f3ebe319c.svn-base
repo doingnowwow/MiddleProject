@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:controller="kr.or.ddit.view.mypage_home.MyPage_BookCheckController" fx:id="bookCheckPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="970.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView fx:id="bookTable" layoutX="35.0" layoutY="150.0" prefHeight="600.0" prefWidth="900.0">
+        <columns>
+          <TableColumn fx:id="btc1" prefWidth="130.0" text="예약 번호" />
+          <TableColumn fx:id="btc2" prefWidth="84.0" text="예약한 날짜" />
+            <TableColumn fx:id="btc3" prefWidth="73.0" text="예약 상태" />
+            <TableColumn fx:id="btc4" prefWidth="81.0" text="금액" />
+            <TableColumn fx:id="btc5" prefWidth="93.0" text="예약 강아지 수" />
+            <TableColumn fx:id="btc6" prefWidth="85.0" text="예약자 이름" />
+            <TableColumn fx:id="btc7" prefWidth="103.0" text="호텔이름" />
+            <TableColumn fx:id="btc8" prefWidth="82.0" text="CheckIn" />
+            <TableColumn fx:id="btc9" minWidth="6.0" prefWidth="94.0" text="CheckOut" />
+            <TableColumn fx:id="btc10" prefWidth="74.0" text="결제 여부" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="bpn" layoutX="35.0" layoutY="150.0" prefHeight="600.0" prefWidth="900.0" />
+      <Text layoutX="77.0" layoutY="91.0" strokeType="OUTSIDE" strokeWidth="0.0" text="나의 호텔 예약 현황">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

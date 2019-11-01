@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="img"/>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="jar/ibatis-2.3.4.726.jar"/>
+	<classpathentry kind="lib" path="jar/jfoenix-8.0.8.jar"/>
+	<classpathentry kind="lib" path="jar/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="jar/mail-1.5.0-b01.jar"/>
+	<classpathentry kind="lib" path="jar/json-simple-1.1.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="jar/assistant-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/commons-io-2.6.jar"/>
+	<classpathentry kind="lib" path="jar/commons-lang3-3.5.jar"/>
+	<classpathentry kind="lib" path="jar/conversation-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/core-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/discovery-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/gson-2.8.0.jar"/>
+	<classpathentry kind="lib" path="jar/java-sdk-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/jersey-jsr166e-2.25.1.jar"/>
+	<classpathentry kind="lib" path="jar/language-translator-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/logging-interceptor-3.11.0.jar"/>
+	<classpathentry kind="lib" path="jar/natural-language-classifier-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/natural-language-understanding-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/okhttp-3.11.0.jar"/>
+	<classpathentry kind="lib" path="jar/okhttp-urlconnection-3.11.0.jar"/>
+	<classpathentry kind="lib" path="jar/okio-1.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/personality-insights-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/speech-to-text-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/text-to-speech-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/tone-analyzer-6.14.0.jar"/>
+	<classpathentry kind="lib" path="jar/visual-recognition-6.14.0.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

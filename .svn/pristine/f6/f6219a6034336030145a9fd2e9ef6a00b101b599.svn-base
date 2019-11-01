@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--  text field 안만든거 없애주세염 승재오빠 -->
+<!-- 1.대표전화번호란 삭제 2.전화번호-> 호텔전화번호로 문구 변경 ,3. 사업자 등록번호는 com_no랑 같게 써요 4. email삭제부탁 5. 고지사항을 hotel_intro로 바꿈. 6.img는 어케 저장되쥬? -->
+
+
+<AnchorPane prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.manage.myhotel_center_manager_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="@../../../../../../../../../../../other/산출물/00.%20fx%20image/마이페이지_사업자/center_990x1475/center_사업자-호텔상세관리_990x1475.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="imgView" fitHeight="325.0" fitWidth="328.0" layoutX="104.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="imgView2" fitHeight="660.0" fitWidth="783.0" layoutX="104.0" layoutY="612.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="104.0" layoutY="486.0" mnemonicParsing="false" onAction="#fileChoose" prefHeight="42.0" prefWidth="331.0" text="이미지 삽입" />
+      <TextArea fx:id="hotel_intro" layoutX="578.0" layoutY="439.0" prefHeight="77.0" prefWidth="300.0" />
+      <TextField fx:id="hotel_tel" layoutX="578.0" layoutY="358.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="addr2" layoutX="578.0" layoutY="318.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="addr1" layoutX="578.0" layoutY="278.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="com_no" layoutX="578.0" layoutY="238.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="ho_name" layoutX="578.0" layoutY="158.0" prefHeight="30.0" prefWidth="300.0" />
+      <Button fx:id="commit" layoutX="792.0" layoutY="1285.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="commit" />
+      <Button fx:id="cancel" layoutX="685.0" layoutY="1285.0" mnemonicParsing="false" onDragDetected="#myHotelInfo" prefHeight="30.0" prefWidth="94.0" text="cancel" />
+      <TextField fx:id="file_detail_info" layoutX="200.0" layoutY="1285.0" prefHeight="30.0" prefWidth="230.0" />
+      <Button layoutX="106.0" layoutY="1278.0" mnemonicParsing="false" onAction="#fileChoose2" prefHeight="43.0" prefWidth="332.0" text="hotel_detail" />
+   </children>
+</AnchorPane>

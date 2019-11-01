@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.master.center.info_main.Master_info_main_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url= "img/mastermymenu/center/center_관리자-정보수정_990x1475.gif"/>
+         </image>
+      </ImageView>
+      <Button fx:id="confirmBtn" layoutX="410.0" layoutY="321.0" mnemonicParsing="false" onAction="#moving" opacity="0.0" prefHeight="23.0" prefWidth="171.0" text="확인" />
+      <TextField fx:id="passTF" layoutX="410.0" layoutY="292.0" prefHeight="23.0" prefWidth="171.0" promptText="비밀번호를 입력하세요" />
+      <TextField fx:id="idTF" layoutX="456.0" layoutY="263.0" prefHeight="23.0" prefWidth="131.0" promptText="아이디를 입력하세요" />
+   </children>
+</AnchorPane>

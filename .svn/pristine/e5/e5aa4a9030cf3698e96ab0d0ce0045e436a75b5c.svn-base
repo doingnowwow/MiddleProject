@@ -1,0 +1,176 @@
+package kr.or.ddit.view.main.shop.main;
+
+import java.io.IOException;
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.TextField;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import kr.or.ddit.service.prod.ProdService;
+import kr.or.ddit.vo.ProdVO;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+
+public class main_shop_controller implements Initializable {
+
+	@FXML
+	ImageView shopimg1;
+	@FXML
+	Label shopimg1_text1;
+
+	@FXML
+	ImageView shopimg2;
+	@FXML
+	Label shopimg1_text2;
+
+	@FXML
+	ImageView shopimg3;
+	@FXML
+	Label shopimg1_text3;
+
+	@FXML
+	ImageView shopimg4;
+	@FXML
+	Label shopimg1_text4;
+
+	@FXML
+	ImageView shopimg5;
+	@FXML
+	Label shopimg1_text5;
+
+	@FXML
+	ImageView shopimg6;
+	@FXML
+	Label shopimg1_text6;
+
+	@FXML
+	ImageView shopimg7;
+	@FXML
+	Label shopimg1_text7;
+
+	@FXML
+	ImageView shopimg8;
+	@FXML
+	Label shopimg1_text8;
+
+	@FXML
+	ImageView shopimg9;
+	@FXML
+	Label shopimg1_text9;
+
+	@FXML
+	ImageView shopimg10;
+	@FXML
+	Label shopimg1_text10;
+
+	@FXML
+	ImageView shopimg11;
+	@FXML
+	Label shopimg1_text11;
+
+	@FXML
+	Label shopimg1_text12;
+
+	public static ArrayList<ProdVO> prodlist = new ArrayList<>();
+	private ObservableList<ProdVO> AllTableData;
+	private ProdVO vo = new ProdVO();
+
+	private String url1 = "/kr/or/ddit/view/prodImg/";
+	private String url2 = ".jpg";
+
+	private List<ProdVO> prodList;
+	private ArrayList<ImageView> ivList = new ArrayList<>();
+	private ArrayList<Label> nameList = new ArrayList<>();
+	private ProdService ps;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+		ObservableList<ProdVO> data = FXCollections.observableArrayList();
+
+		// 디비연결부분
+
+		Registry reg;
+
+		try {
+
+			reg = LocateRegistry.getRegistry("localhost", 8888);
+			ps = (ProdService) reg.lookup("shopMain");
+
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+
+		/*
+		 * AllTableData = FXCollections.observableArrayList(prodlist);
+		 * AllTableData.setAll(prodlist); AllTableData.add(vo);
+		 */
+
+		/*
+		 * shopimg1.setImage(new Image("/kr/or/ddit/view/prodImg/본스틱개껌.jpg")); //
+		 * shopimg1.setImage(new Image(url1 +"상품이름"+ url2)); shopimg2.setImage(new
+		 * Image("/kr/or/ddit/view/prodImg/natural사료.jpg")); shopimg3.setImage(new
+		 * Image("/kr/or/ddit/view/prodImg/now사료.jpg")); shopimg4.setImage(new
+		 * Image("/kr/or/ddit/view/prodImg/pure사료.jpg")); shopimg5.setImage(new
+		 * Image("/kr/or/ddit/view/prodImg/3m리드줄.jpg")); shopimg6.setImage(new
+		 * Image("/kr/or/ddit/view/prodImg/t자용빗.jpg"));
+		 */
+
+		ivList.add(shopimg1);
+		ivList.add(shopimg2);
+		ivList.add(shopimg3);
+		ivList.add(shopimg4);
+		ivList.add(shopimg5);
+		ivList.add(shopimg6);
+		ivList.add(shopimg7);
+		ivList.add(shopimg8);
+
+		nameList.add(shopimg1_text1);
+		nameList.add(shopimg1_text2);
+		nameList.add(shopimg1_text3);
+		nameList.add(shopimg1_text4);
+		nameList.add(shopimg1_text5);
+		nameList.add(shopimg1_text6);
+		nameList.add(shopimg1_text7);
+		nameList.add(shopimg1_text8);
+		
+		prodList = new ArrayList<>();
+		try {
+			prodList=ps.getAllProd();
+			
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+
+		for (int i = 0; i < prodList.size(); i++) {
+
+			ivList.get(i).setImage(new Image(url1 + prodList.get(i).getProd_name().trim() + url2));
+			nameList.get(i).setText(prodList.get(i).getProd_name().trim());
+		}
+
+	}
+	
+	
+	
+
+}

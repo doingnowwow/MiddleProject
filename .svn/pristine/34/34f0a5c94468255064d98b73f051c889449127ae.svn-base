@@ -1,0 +1,16 @@
+package kr.or.ddit.view.mypage2.human.center.order;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+//작업하지 마시오
+public class mypage_human_center_order_controller implements Initializable{
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

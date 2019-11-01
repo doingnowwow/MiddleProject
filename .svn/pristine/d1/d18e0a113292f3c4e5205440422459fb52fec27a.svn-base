@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.human.center.loveDog.mypage_human_center_loveDog_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="@../../../../../../../../../img/humanmymenu/center/center_일반회원_찜한애견_990x1475.gif" />
+         </image>
+      </ImageView>
+      <TableView fx:id="table_like" layoutX="159.0" layoutY="116.0" prefHeight="738.0" prefWidth="673.0">
+        <columns>
+          <TableColumn fx:id="col_no" prefWidth="110.0" text="NO" />
+            <TableColumn fx:id="col_name" prefWidth="204.0" text="애견명" />
+          <TableColumn fx:id="col_gu" prefWidth="218.0" text="애견종" />
+            <TableColumn fx:id="col_gen" prefWidth="140.0" text="성별" />
+        </columns>
+      </TableView>
+      <Button fx:id="delete" layoutX="729.0" layoutY="878.0" mnemonicParsing="false" prefHeight="44.0" prefWidth="103.0" text="찜삭제" />
+   </children>
+</AnchorPane>

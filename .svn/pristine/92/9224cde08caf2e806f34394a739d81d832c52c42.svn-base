@@ -1,0 +1,76 @@
+package kr.or.ddit.view.login;
+
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import kr.or.ddit.service.ILogin.ILoginService;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.MemberVO;
+
+public class SearchIdController implements Initializable{
+
+	
+	private Registry reg;
+	private ILoginService iLog;
+	
+	List<MemberVO>	memlist = new ArrayList<MemberVO>();
+	List<ComVO> comlist = new ArrayList<ComVO>();
+	
+	private MemberVO mv = new MemberVO();
+	private ComVO cv = new ComVO();
+	
+	String user = null;
+	
+		
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		try {
+			reg = LocateRegistry.getRegistry("localhost",8888);
+			System.out.println("오류나는지 확인해보기");
+			iLog = (ILoginService) reg.lookup("LoginUser");
+		}catch(RemoteException e ) {
+			e.printStackTrace();
+		}catch(NotBoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+	}
+
+	
+	
+	private void errMsg(String headerText, String msg) {
+		Alert errAlert = new Alert(AlertType.ERROR);
+        errAlert.setTitle("오류");
+        errAlert.setHeaderText(headerText);
+        errAlert.setContentText(msg);
+        errAlert.showAndWait();		
+	}
+	
+	
+	 private void infoMsg(String headerText, String msg) {
+         Alert errAlert = new Alert(AlertType.INFORMATION);
+         errAlert.setTitle(" Id 찾기");
+         errAlert.setHeaderText(headerText);
+         errAlert.setContentText(msg);
+         errAlert.showAndWait();
+      }
+
+	
+	
+	
+	
+}

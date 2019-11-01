@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.shop.main.main_shop_controller">
+    <children>
+       <ImageView fitHeight="1475.0" fitWidth="1280.0">
+          <image>
+             <Image url="/mainShop/etc/shop_main_1280x1475.gif" />
+          </image>
+       </ImageView>
+       <ImageView fx:id="shopimg1" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text1" layoutX="184.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg2" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text2" layoutX="421.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg3" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text3" layoutX="660.0" layoutY="696.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg4" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="478.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text4" layoutX="888.0" layoutY="694.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg5" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text5" layoutX="184.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg6" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text6" layoutX="421.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg7" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text7" layoutX="660.0" layoutY="1010.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg8" fitHeight="210.0" fitWidth="210.0" layoutX="659.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text8" layoutX="888.0" layoutY="1001.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg9" fitHeight="210.0" fitWidth="210.0" layoutX="887.0" layoutY="783.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text9" layoutX="184.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg10" fitHeight="210.0" fitWidth="210.0" layoutX="184.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text10" layoutX="421.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg11" fitHeight="210.0" fitWidth="210.0" layoutX="420.0" layoutY="1089.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text11" layoutX="660.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <ImageView fx:id="shopimg12" fitHeight="210.0" fitWidth="210.0" layoutX="824.0" layoutY="1077.0" pickOnBounds="true" preserveRatio="true" />
+       <Label fx:id="shopimg1_text12" layoutX="888.0" layoutY="1299.0" prefHeight="17.0" prefWidth="209.0" text="Label" />
+       <Pagination layoutX="52.0" layoutY="478.0" prefHeight="980.0" prefWidth="1116.0" />
+    </children>
+ </AnchorPane>

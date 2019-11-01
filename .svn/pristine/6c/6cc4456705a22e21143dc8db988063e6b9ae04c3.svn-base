@@ -1,0 +1,154 @@
+package kr.or.ddit.view.loginMainPage;
+
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Cursor;
+import javafx.scene.Parent;
+import javafx.scene.control.Button;
+import javafx.scene.control.ButtonBase;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Pagination;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.web.WebEngine;
+import javafx.scene.web.WebView;
+
+public class LoginMainPageController implements Initializable{
+	
+	@FXML ScrollPane mainHotelScrollPane;
+	@FXML AnchorPane mainHotelAnchorPane;
+	@FXML ImageView mainHotelBackGroundImage;
+	@FXML Button mainFaceBookTopBtn;
+	@FXML Button mainInstarTopBtn;
+	@FXML Button mainKakaoTopBtn;
+	@FXML Button mainLogoBtn;
+	@FXML Button mainLogoutBtn;
+	@FXML Button mainMyPageBtn;
+	@FXML Button mainBarHotelBtn;
+	@FXML Button mainBarPetSaleBtn;
+	@FXML Button mainBarShopBtn;
+	@FXML Button mainBarQnABtn;
+	@FXML Button mainSearchBtn;
+	@FXML TextField mainKeywordBtn;
+	@FXML ChoiceBox mainAlignBtn;
+	@FXML DatePicker mainCheckInBtn;
+	@FXML DatePicker mainCheckOutBtn;
+	@FXML Button mainDelLunaInfoBtn;
+	@FXML Button mainQuestionBtn;
+	@FXML Button mainFaceBookLowBtn;
+	@FXML Button mainInstarLowBtn;
+	@FXML Button mainKakaoLowBtn;
+	@FXML ImageView mainImage1;
+	@FXML ImageView mainImage2;
+	@FXML ImageView mainImage3;
+	@FXML ImageView mainImage4;
+	@FXML ImageView mainImage5;
+	@FXML ImageView mainImage6;
+	@FXML ImageView mainImage7;
+	@FXML ImageView mainImage8;
+	@FXML ImageView mainImage12;
+	@FXML ImageView mainImage11;
+	@FXML ImageView mainImage10;
+	@FXML ImageView mainImage9;
+	@FXML Pagination mainHotelPageNationBtn;
+	@FXML Button mainClassificationBtn1;
+	@FXML Button mainClassificationBtn2;
+	@FXML Button mainClassificationBtn3;
+	@FXML Button mainClassificationBtn4;
+
+	@FXML public void myPageView() throws IOException {
+		mainHotelAnchorPane.getChildren().clear();
+		Parent root = FXMLLoader.load(getClass().getResource("/kr/or/ddit/view/mypage_home/mypage_home.fxml")); 
+		mainHotelAnchorPane.getChildren().add(root);
+	}
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		mainFaceBookTopBtn.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyButtonEventHandler());
+		mainInstarTopBtn.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyButtonEventHandler());
+		mainKakaoTopBtn.addEventHandler(MouseEvent.MOUSE_ENTERED, new MyButtonEventHandler());
+		
+		 final WebView browser = new WebView();
+	     final WebEngine webEngine = browser.getEngine();
+		
+
+		mainFaceBookTopBtn.setOnAction(e -> {
+			try {
+				Desktop.getDesktop().browse(new URI("https://ko-kr.facebook.com/FacebookKorea/"));
+			}catch(IOException i) {
+				i.printStackTrace();
+			}catch(URISyntaxException t) {
+				t.printStackTrace();
+			}
+		});
+		
+		mainInstarTopBtn.setOnAction(e -> {
+	        try {
+				Desktop.getDesktop().browse(new URI("https://www.instagram.com/?hl=ko"));
+			}catch(IOException i) {
+				i.printStackTrace();
+			}catch(URISyntaxException t) {
+				t.printStackTrace();
+			}
+		});
+		
+		mainKakaoTopBtn.setOnAction(e -> {
+			try {
+				Desktop.getDesktop().browse(new URI("https://www.kakaocorp.com/service/KakaoTalk"));
+			}catch(IOException i) {
+				i.printStackTrace();
+			}catch(URISyntaxException t) {
+				t.printStackTrace();
+			}
+		});
+		
+		mainLogoutBtn.setOnAction(e -> {
+			try {
+				myPageView();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		});
+		
+		
+		
+			
+	}
+		
+		
+	
+
+	/**
+	 * 버튼 위로 마우스 올리면 손가락 표시 나타나는 통합 메서드
+	 */
+	public class MyButtonEventHandler implements EventHandler<MouseEvent> {
+	    @Override
+	    public void handle( final MouseEvent ME )
+	    {
+	      Object obj = ME.getSource();
+	 
+	      /**
+	       * 모든 버튼을 포함하는 상위 클래스인 ButtonBase를 사용
+	       */
+	      ButtonBase button = (ButtonBase) obj;
+	      button.setCursor(Cursor.HAND);
+	    }
+	}
+
+
+}

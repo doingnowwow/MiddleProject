@@ -1,0 +1,32 @@
+
+package kr.or.ddit.view.cart2;
+
+import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+/**
+ * 메인화면 실행하는 기초 메인
+ * @author PC22
+ *
+ */
+public class cartpage extends Application{
+
+	@Override
+	public void start(Stage primaryStage) throws Exception {
+		Parent root = FXMLLoader.load(getClass().getResource("cart2.fxml"));
+		
+		primaryStage.setTitle("카트");
+		primaryStage.setScene(new Scene(root)); 
+		primaryStage.show();
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+
+}

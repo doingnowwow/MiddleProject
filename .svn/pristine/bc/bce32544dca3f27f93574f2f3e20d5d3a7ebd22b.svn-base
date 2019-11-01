@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.reserv.myhotel_center_reserv_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0" layoutX="2.0">
+         <image>
+            <Image url="@../../../../../../../../../img/hotelmymenu/center/center_사업자-호텔예약현황_990x1475.gif" />
+         </image>
+      </ImageView>
+      <TableView fx:id="infoTable" layoutX="115.0" layoutY="194.0" opacity="0.63" prefHeight="622.0" prefWidth="767.0">
+        <columns>
+            <TableColumn fx:id="reservDayCol" prefWidth="139.0" text="예약일" />
+            <TableColumn fx:id="dogCntCol" prefWidth="92.0" text="애견 숫자" />
+            <TableColumn fx:id="priceCol" prefWidth="103.0" text="금액" />
+            <TableColumn fx:id="AppDayCol" prefWidth="190.0" text="신청 날짜" />
+            <TableColumn fx:id="telCol" prefWidth="160.0" text="전화번호" />
+            <TableColumn fx:id="statusCol" prefWidth="82.0" text="상태" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="pnation" layoutX="95.0" layoutY="178.0" prefHeight="692.0" prefWidth="799.0" />
+      <TextField fx:id="smallTF" layoutX="590.0" layoutY="979.0" prefHeight="15.0" prefWidth="62.0" />
+      <TextField fx:id="middleTF" layoutX="702.0" layoutY="979.0" prefHeight="15.0" prefWidth="62.0" />
+      <TextField fx:id="bigTF" layoutX="817.0" layoutY="979.0" prefHeight="15.0" prefWidth="62.0" />
+      <Label fx:id="sellsumLabel" alignment="CENTER_RIGHT" layoutX="576.0" layoutY="923.0" prefHeight="48.0" prefWidth="314.0">
+         <font>
+            <Font size="41.0" />
+         </font>
+      </Label>
+      <ChoiceBox fx:id="yearPick" layoutX="551.0" layoutY="142.0" prefWidth="150.0" />
+      <ChoiceBox fx:id="monthPick" layoutX="714.0" layoutY="142.0" prefHeight="23.0" prefWidth="85.0" />
+      <Button fx:id="dateBtn" layoutX="814.0" layoutY="142.0" mnemonicParsing="false" style="-fx-background-color: transparent;" text="검색" underline="true" />
+   </children>
+</AnchorPane>

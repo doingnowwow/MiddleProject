@@ -1,0 +1,17 @@
+package kr.or.ddit.service.bookInfo;
+
+import java.rmi.RemoteException;
+
+import kr.or.ddit.vo.BookingInfoVO;
+
+public interface BookInfoService {
+	
+	/**
+	 * 퍼피 예약
+	 * @param vo
+	 * @return
+	 */
+	public int insertBookInfoReserv(BookingInfoVO vo) throws RemoteException;
+	
+
+}

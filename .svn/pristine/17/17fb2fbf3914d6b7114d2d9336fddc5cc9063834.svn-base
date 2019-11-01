@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<Pane fx:controller="SearchIdController" prefHeight="200.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Text layoutX="28.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="아이디찾기" textAlignment="CENTER" wrappingWidth="144.798828125">
+         <font>
+            <Font name="Serif Regular" size="12.0" />
+         </font>
+      </Text>
+      <Button fx:id="findPwBtn" layoutX="18.0" layoutY="154.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="165.0" style="-fx-background-color: transparent;" text="PASSWORD 찾기" />
+      <TextField fx:id="id" layoutX="86.0" layoutY="41.0" prefHeight="23.0" prefWidth="94.0" />
+      <Text layoutX="18.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="이름" wrappingWidth="55.12109375" />
+      <TextField fx:id="tel" layoutX="86.0" layoutY="89.0" prefHeight="23.0" prefWidth="94.0" />
+      <Text layoutX="18.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" text="전화번호" wrappingWidth="55.12109375" />
+      <Button fx:id="okBtn" layoutX="14.0" layoutY="124.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="확인" />
+      <Button fx:id="cacelBtn" layoutX="106.0" layoutY="124.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="76.0" text="취소" />
+   </children>
+</Pane>

@@ -1,0 +1,27 @@
+package kr.or.ddit.view.hotelmymenu.center.cominfo;
+
+import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.control.PasswordField;
+import javafx.scene.image.ImageView;
+import kr.or.ddit.vo.HotelVO;
+import javafx.scene.control.ListView;
+import javafx.scene.control.Button;
+
+public class HotelMypage_cominfo_controller {
+
+	@FXML TextField id;
+	@FXML PasswordField pass;
+	@FXML PasswordField re_pass;
+	@FXML TextField ho_name;
+	@FXML TextField ceo;
+	@FXML TextField tel;
+	@FXML TextField addr1;
+	@FXML TextField addr2;
+	@FXML TextField email;
+	@FXML ImageView infoimg;
+	@FXML ListView<HotelVO> filelist;
+	@FXML Button cancel;
+	@FXML Button commit;
+
+}

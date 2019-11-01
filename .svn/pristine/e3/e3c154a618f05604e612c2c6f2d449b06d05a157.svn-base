@@ -1,0 +1,122 @@
+package kr.or.ddit.view.main.hotel.center.hoteldetailpage;
+
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.text.TextFlow;
+import kr.or.ddit.service.horeview.HoReviewService;
+import kr.or.ddit.service.hotel.HotelService;
+import kr.or.ddit.util.DataModel;
+import kr.or.ddit.vo.BookVO;
+import kr.or.ddit.vo.HotelReviewVO;
+import kr.or.ddit.vo.HotelVO;
+import javafx.scene.control.Pagination;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TableColumn;
+
+public class main_hotel_detailpage_controller implements Initializable{
+	
+	@FXML Label ho_telLabel;
+	@FXML Label ho_addrLabel;
+	@FXML Label ho_nameLabel;
+	@FXML Label moneyLabel;
+	@FXML ImageView hotel_img;
+	@FXML TextArea hotelInfoTA;
+	@FXML TextArea roomInfoTA;
+	
+	@FXML DatePicker bookst_date;
+	@FXML DatePicker bookend_date;
+	@FXML Button book_btn;
+	
+	@FXML TableView<HotelReviewVO> review_tb;
+	@FXML TableColumn<HotelReviewVO, String> contentCol;
+	@FXML TableColumn<HotelReviewVO, String> writerCol;
+	@FXML TableColumn<HotelReviewVO, String> writeDateCol;
+	@FXML TextField reviewTF;
+	@FXML Button reviewBtn;
+	@FXML Pagination pnation;
+	
+	private Registry reg;
+	private HotelVO hv = new HotelVO();
+	HotelService hs;
+	public static ArrayList<HotelVO> list = new ArrayList<>();
+	private HotelVO hotel_no = new HotelVO();
+	
+	public main_hotel_detailpage_controller() {
+		
+		for(int i = 0; i <= DataModel.aList.size(); i++) {
+	
+		}
+		
+	}
+	
+	
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		ObservableList<HotelVO> data = FXCollections.observableArrayList();
+
+		// 서버의 DB연결하기 ........실패..ㅠㅠ
+		// 성공했는데 평점 날짜 안넘어옴 .
+		Registry reg;
+
+		try {
+			System.out.println("어디까지 넘어오니?");
+			reg = LocateRegistry.getRegistry("localhost", 8888);
+			hs = (HotelService) reg.lookup("hotelService");
+			System.out.println("불러오나?");
+			list = (ArrayList<HotelVO>) hs.selectHotelList(hotel_no);
+			System.out.println("확인해보자");
+
+		} catch (RemoteException e) {
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		// 서버 연결
+		
+		
+		
+		
+		
+			 
+	}
+
+	// datepicker 포맷바꿔주기
+	public String formatChange(LocalDate ld) {
+		DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+    	String rtn = ld.format(dtf);
+    	return rtn;
+	}
+}

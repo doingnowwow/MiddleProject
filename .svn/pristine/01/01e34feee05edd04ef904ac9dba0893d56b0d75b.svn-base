@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.horeview.Horeview_controller">
+   <children>
+      <TextArea fx:id="content" layoutX="105.0" layoutY="71.0" prefHeight="46.0" prefWidth="565.0" />
+      <TextField fx:id="writer" layoutX="115.0" layoutY="39.0" prefHeight="23.0" prefWidth="116.0" />
+      <Button fx:id="okBtn" layoutX="674.0" layoutY="39.0" mnemonicParsing="false" text="등록" />
+      <Button fx:id="updateBtn" layoutX="675.0" layoutY="67.0" mnemonicParsing="false" text="수정" />
+      <Button fx:id="deleteBtn" layoutX="675.0" layoutY="96.0" mnemonicParsing="false" text="삭제" />
+      <Label layoutX="69.0" layoutY="43.0" text="작성자" />
+      <Label layoutX="69.0" layoutY="73.0" text="내용" />
+      <Label layoutX="582.0" layoutY="43.0" text="평점" />
+      <ComboBox fx:id="star" layoutX="615.0" layoutY="39.0" prefHeight="23.0" prefWidth="40.0" />
+      <TableView fx:id="tableView" layoutX="59.0" layoutY="146.0" prefHeight="267.0" prefWidth="692.0">
+         <columns>
+            <TableColumn fx:id="review_no" prefWidth="99.0" text="리뷰번호" />
+            <TableColumn fx:id="view_writer" prefWidth="84.0" text="작성자" />
+            <TableColumn fx:id="view_contetn" prefWidth="265.0" text="내용" />
+            <TableColumn fx:id="veiw_star" prefWidth="45.0" text="평점" />
+            <TableColumn fx:id="date" prefWidth="115.0" text="날짜" />
+            <TableColumn fx:id="mem_no" prefWidth="83.0" text="회원번호" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>

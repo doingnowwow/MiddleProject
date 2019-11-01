@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.salse.center.petsale_detail_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="1280.0">
+         <image>
+            <Image url="/mainPetSale/center/PetSale_main_detail_1280x1475.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="dog_Img" fitHeight="413.0" fitWidth="414.0" layoutX="192.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="dog_name" layoutX="640.0" layoutY="318.0" prefHeight="20.0" prefWidth="324.0" text="이름">
+         <font>
+            <Font name="System Bold" size="54.0" />
+         </font>
+      </Label>
+      <Label fx:id="birthday" layoutX="914.0" layoutY="289.0" prefHeight="29.0" prefWidth="166.0" />
+      <Label fx:id="gender" layoutX="757.0" layoutY="519.0" prefHeight="20.0" prefWidth="67.0" text="GENDER">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="gubun" layoutX="757.0" layoutY="561.0" prefHeight="20.0" prefWidth="67.0" text="GUBUN">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="dog_intro1" layoutX="660.0" layoutY="686.0" prefHeight="29.0" prefWidth="431.0" />
+      <Button fx:id="dogsaleBtn" layoutX="1011.0" layoutY="810.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="73.0" text="분양신청" />
+      <Button fx:id="fbLink" layoutX="998.0" layoutY="598.0" mnemonicParsing="false" opacity="0.0" prefHeight="39.0" prefWidth="36.0" text="FBOK" />
+      <Button fx:id="instLink" layoutX="1052.0" layoutY="598.0" mnemonicParsing="false" opacity="0.0" prefHeight="39.0" prefWidth="36.0" text="instar" />
+      <Button fx:id="zzim" layoutX="920.0" layoutY="807.0" mnemonicParsing="false" opacity="0.0" prefHeight="45.0" prefWidth="73.0" text="♥" textFill="RED">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Region fx:id="likeBar" layoutX="640.0" layoutY="409.0" prefHeight="39.0" prefWidth="208.0" />
+      <Label fx:id="liketxt" layoutX="640.0" layoutY="454.0" prefHeight="17.0" prefWidth="208.0" text="Label" />
+      <ImageView fitHeight="39.0" fitWidth="208.0" layoutX="640.0" layoutY="409.0">
+         <image>
+            <Image url="/mainPetSale/호감도x210_40.gif" />
+         </image>
+      </ImageView>
+      <TextArea fx:id="dog_intro2" layoutX="660.0" layoutY="725.0" prefHeight="64.0" prefWidth="431.0" />
+   </children>
+</AnchorPane>

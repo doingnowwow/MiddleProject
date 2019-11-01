@@ -1,0 +1,158 @@
+package kr.or.ddit.view.mypage2.master.center.shopinfo;
+
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import kr.or.ddit.service.shopsell.ShopSellService;
+import kr.or.ddit.vo.SellVO;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
+import javafx.scene.Scene;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
+
+public class Master_shopinfo_controller implements Initializable{
+
+	@FXML TableColumn<SellVO, String> prod_gu;
+	@FXML TableColumn<SellVO, String> prod_name;
+	@FXML TableColumn<SellVO, Integer> cart_qty;
+	@FXML TableColumn<SellVO, String> price;
+	@FXML TableColumn<SellVO,String> mem_id;
+	@FXML TableView <SellVO> tableView;
+	
+	@FXML BarChart<String, Number> sellcntChart;
+	@FXML BorderPane chartset;
+	private ObservableList<SellVO> AllTableData;
+	
+	private SellVO vo = new SellVO	();
+	
+	public Master_shopinfo_controller() {
+		
+	}
+	ShopSellService ss;
+	
+	public static ArrayList<SellVO> list = new ArrayList<>();
+	public static ArrayList<SellVO> cntlist = new ArrayList<>();
+
+	
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		ObservableList<SellVO> data = FXCollections.observableArrayList();
+		
+		Registry reg ;
+		
+		try {
+			reg = LocateRegistry.getRegistry("localhost",8888);
+			ss = (ShopSellService) reg.lookup("sell");
+			
+			list = (ArrayList<SellVO>) ss.sellListAll();
+			cntlist = (ArrayList<SellVO>) ss.sellCnt();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		AllTableData = FXCollections.observableArrayList(list);
+		
+		AllTableData.setAll(list);
+		AllTableData.add(vo);
+		
+		
+		tableView.setItems(AllTableData);
+		
+		
+		prod_gu.setCellValueFactory(new PropertyValueFactory<>("prod_gu"));
+		prod_name.setCellValueFactory(new PropertyValueFactory<>("prod_name"));
+		cart_qty.setCellValueFactory(new PropertyValueFactory<>("cart_qty"));
+		price.setCellValueFactory(new PropertyValueFactory<>("cart_qty*prod_cost"));
+		mem_id.setCellValueFactory(new PropertyValueFactory<>("mem_id"));
+		
+		
+		CategoryAxis xAxis = new CategoryAxis();
+		NumberAxis yAxis = new NumberAxis();
+		
+		BarChart<String, Number> sellcntChart = new BarChart<>(xAxis, yAxis);
+		
+		sellcntChart.setTitle("판매량");
+		xAxis.setLabel("물품");
+		yAxis.setLabel("판매량");
+		
+		XYChart.Series<String, Number> ser1 = new XYChart.Series<>();
+		ser1.setName(cntlist.get(0).getProd_name());
+		ser1.getData().add(new XYChart.Data<String, Number>(cntlist.get(0).getProd_name(), cntlist.get(0).getSum()));
+		
+		XYChart.Series<String, Number> ser2 = new XYChart.Series<>();
+		ser2.setName(cntlist.get(1).getProd_name());
+		ser2.getData().add(new XYChart.Data<String, Number>(cntlist.get(1).getProd_name(), cntlist.get(1).getSum()));
+		
+		XYChart.Series<String, Number> ser3 = new XYChart.Series<>();
+		ser3.setName(cntlist.get(2).getProd_name());
+		ser3.getData().add(new XYChart.Data<String, Number>(cntlist.get(2).getProd_name(), cntlist.get(2).getSum()));
+		
+		XYChart.Series<String, Number> ser4 = new XYChart.Series<>();
+		ser4.setName(cntlist.get(3).getProd_name());
+		ser4.getData().add(new XYChart.Data<String, Number>(cntlist.get(3).getProd_name(), cntlist.get(3).getSum()));
+		
+		XYChart.Series<String, Number> ser5 = new XYChart.Series<>();
+		ser5.setName(cntlist.get(4).getProd_name());
+		ser5.getData().add(new XYChart.Data<String, Number>(cntlist.get(4).getProd_name(), cntlist.get(4).getSum()));
+		
+		XYChart.Series<String, Number> ser6 = new XYChart.Series<>();
+		ser6.setName(cntlist.get(5).getProd_name());
+		ser6.getData().add(new XYChart.Data<String, Number>(cntlist.get(5).getProd_name(), cntlist.get(5).getSum()));
+		
+//		XYChart.Series<String, Number> ser7 = new XYChart.Series<>();
+//		ser7.setName(cntlist.get(6).getProd_name());
+//		ser7.getData().add(new XYChart.Data<String, Number>(cntlist.get(6).getProd_name(), cntlist.get(6).getCart_qty()));
+//		
+//		XYChart.Series<String, Number> ser8 = new XYChart.Series<>();
+//		ser8.setName(cntlist.get(7).getProd_name());
+//		ser8.getData().add(new XYChart.Data<String, Number>(cntlist.get(7).getProd_name(), cntlist.get(7).getCart_qty()));
+//		
+//		XYChart.Series<String, Number> ser9 = new XYChart.Series<>();
+//		ser9.setName(cntlist.get(8).getProd_name());
+//		ser9.getData().add(new XYChart.Data<String, Number>(cntlist.get(8).getProd_name(), cntlist.get(8).getCart_qty()));
+//		
+//		XYChart.Series<String, Number> ser10 = new XYChart.Series<>();
+//		ser10.setName(cntlist.get(9).getProd_name());
+//		ser10.getData().add(new XYChart.Data<String, Number>(cntlist.get(9).getProd_name(), cntlist.get(9).getCart_qty()));
+//		
+//		XYChart.Series<String, Number> ser11 = new XYChart.Series<>();
+//		ser11.setName(cntlist.get(10).getProd_name());
+//		ser11.getData().add(new XYChart.Data<String, Number>(cntlist.get(10).getProd_name(), cntlist.get(10).getCart_qty()));
+		
+		sellcntChart.setData(FXCollections.observableArrayList(ser1, ser2, ser3, ser4, ser5, ser6));
+		
+//		Scene scene = new Scene(sellcntChart, 500, 500);
+		
+		chartset.setCenter(sellcntChart);
+		
+		
+		 
+		
+	}
+	
+
+}

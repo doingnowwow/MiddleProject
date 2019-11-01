@@ -1,0 +1,283 @@
+package kr.or.ddit.view.main.salse.center;
+
+import java.awt.Desktop;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.ResourceBundle;
+
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.Region;
+import kr.or.ddit.clientMain.LoginSession;
+import kr.or.ddit.service.com.ComService;
+import kr.or.ddit.service.dogSale.DogSaleService;
+import kr.or.ddit.service.playzzim.PlayZzimService;
+import kr.or.ddit.util.AlertMsg;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.DogSaleVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.PlayZzimVO;
+
+public class petsale_detail_controller implements Initializable{
+	
+	private Registry reg;
+	private DogSaleService ds;
+	private PlayZzimService zs;
+	private ComService cs;
+
+	
+	// 분양 정보 리스트
+	private static List<DogSaleVO> dogSaleList  = new ArrayList<>();
+	
+	
+	// 분양 사업자 정보 리스트
+	private static List<ComVO> comList = new ArrayList<>();
+	
+	@FXML TextArea dog_intro1;
+	@FXML ImageView dog_Img;
+	@FXML Label dog_name;
+	@FXML Label birthday;
+	@FXML Label gender;
+	@FXML Label gubun;
+	@FXML TextArea dog_intro2;
+	@FXML Button dogsaleBtn;
+
+	@FXML Button fbLink;
+	@FXML Button instLink;
+	
+	@FXML Button zzim;
+	@FXML Region likeBar;
+	@FXML Label liketxt;
+	
+	// 분양 정보 저장
+	DogSaleVO dsv;
+	DogSaleVO dsv2 = new DogSaleVO();
+	String dNo = "";
+	
+	// 찜하기 구현 --승재
+	
+	//저장객체 선언
+	PlayZzimVO resMemLike = new PlayZzimVO();
+	
+	int likeClick; //좋아요 클릭 수
+	int resLick; //저장되는 좋아요 갯수
+	String likeNum; // 형변환용
+	double likePer; //좋아요 수 표현 정도 설정
+	boolean likeChk = true; // 단 한번만 누르게끔 하는 메서드
+
+	
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		dsv = LoginSession.dogsession;
+		int dNo = LoginSession.dogsession.getDog_no();
+		DogSaleVO dogs = new DogSaleVO();
+		dogs.setDog_no(dNo);
+		MemberVO memin = LoginSession.session;
+		int memno = memin.getMem_no();
+		String memId = memin.getMem_id();
+		
+		// 필요할것 같아서 멤버 정보 받아옴 ▲
+		
+		// rmi연결
+		DogSaleVO vo = new DogSaleVO();
+	    try {   
+	       reg = LocateRegistry.getRegistry("localhost", 8888);
+	       ds = (DogSaleService) reg.lookup("dogsaleService");
+	       zs = (PlayZzimService) reg.lookup("zzimService");
+	    // 가꼬온 분양 정보 출력
+	       dogSaleList = ds.getAllDogSale();
+	    }catch (RemoteException e) {
+	       System.out.println("실패 ㅋ");
+	       e.printStackTrace();
+	    }catch(NotBoundException e) {
+	       e.printStackTrace();
+	    }
+			
+		// 화면에 가져온 정보 셋팅하기
+		LoginSession.dogsession = dsv;
+		String dName = dogSaleList.get(0).getDog_name();
+	    dog_name.setText(dName); 
+	    
+	    String dImg = dogSaleList.get(0).getDog_picture();
+	    dog_Img.setImage(new Image(dImg));
+	    
+	    int dBirth = dogSaleList.get(0).getDog_bir();
+	    birthday.setText(Integer.toString(dBirth));
+		
+	    String dGen = dogSaleList.get(0).getDog_gender();
+	    gender.setText(dGen);
+	    
+	    String dGu = dogSaleList.get(0).getDog_gu();
+	    gubun.setText(dGu);
+	    
+	    String dIntro1 = dogSaleList.get(0).getDog_intro();
+	    dog_intro1.setText(dIntro1);
+	    
+	    String dIntro2 = dogSaleList.get(0).getDog_infodetail();
+	    dog_intro2.setText(dIntro2);	
+			
+	    // 해당 사업자 정보 가져오기
+	    dogsaleBtn.setOnAction(e -> {
+	    int com_no = dogSaleList.get(0).getCom_no(); // 사업자번호
+	    ComVO cv = new ComVO();
+	    
+	   /* try {
+			comList = cs.SearchComInfo(com_no);
+		} catch (RemoteException e1) {
+			e1.printStackTrace();
+		}
+	
+	    String com_email = comList.get(0).getCom_email(); */// 여기서 해당 분양게시글 사업자 정보 가져올수있음
+	    												  // 이 이메일로 메일발송하면 됩니당.. 오케하징..ㅎㅎ
+		
+	    	AlertMsg.caution("해당 사업자에게 신청메일이 발송되었습니다.");
+		});
+		
+		fbLink.setOnAction(e -> {
+			try {
+				Desktop.getDesktop().browse(new URI("https://ko-kr.facebook.com/FacebookKorea/"));
+			} catch (IOException i) {
+				i.printStackTrace();
+			} catch (URISyntaxException t) {
+				t.printStackTrace();
+			}
+		});
+
+		instLink.setOnAction(e -> {
+			try {
+				Desktop.getDesktop().browse(new URI("https://www.instagram.com/?hl=ko"));
+			} catch (IOException i) {
+				i.printStackTrace();
+			} catch (URISyntaxException t) {
+				t.printStackTrace();
+			}
+		});
+		
+		/*zzim.setOnAction(e -> {
+			
+			dsv2.getGood_cnt()
+				
+		});*/
+	    
+		//찜하기 버튼 한번당 갯수 조절 
+		likeClick = 2;
+		
+		//좋아요 조건 주는 란
+		int lavel1 = 100;
+		int lavel2 = 200;
+		int lavel3 = 300;
+		
+		//색조정
+		String basicColor = "white";
+		String endColor = "#BF1616";
+		String color1 = "#FFE1D0";
+		String color2 = "#FFBFB4";
+		String color3 = "#FF837E";
+		
+		if(likePer <= lavel1){
+			likeNum = Double.toString(resLick);
+			likeBar.setStyle("-fx-background-color:linear-gradient(to left, " + color1 + " " + likeNum.trim() +"%, "+ basicColor +" " + likeNum.trim() + "%);");
+		}else{
+			likeBar.setStyle("-fx-background-color:red");
+		}
+		liketxt.setText("찜 갯수 : " + Integer.toString(resLick) + "개");
+
+		zzim.setOnAction(e->{
+			resLick = resLick + likeClick;
+			likePer = resLick * 10; //좋아요 수 표현 정도 설정
+			if(likePer <= lavel1){
+				likeNum = Double.toString(likePer);
+				likeBar.setStyle("-fx-background-color:linear-gradient(to left, " + color1 +" " + likeNum.trim() +"%, " + basicColor + " " + likeNum.trim() + "%);");
+				liketxt.setText("");
+			}else if(likePer >= (lavel1 + 1) && likePer <= lavel2){
+				likePer = likePer - lavel1;
+				likeNum = Double.toString(likePer);
+				likeBar.setStyle("-fx-background-color:linear-gradient(to left, " + color2 +" " + likeNum.trim() +"%, " + color1 + " " + likeNum.trim() + "%);");
+				liketxt.setText("");
+			}else if(likePer >= (lavel2 + 1) && likePer <= lavel3){
+				likePer = likePer - lavel2;
+				likeNum = Double.toString(likePer);
+				likeBar.setStyle("-fx-background-color:linear-gradient(to left, " + color3 +" " + likeNum.trim() +"%, " + color2 + " " + likeNum.trim() + "%);");
+				liketxt.setText("");
+			}else {
+				likeBar.setStyle("-fx-background-color:" + endColor);
+			}
+			liketxt.setText("찜 갯수 : " + Integer.toString(resLick) + "개");
+		});
+		
+		
+		//찜VO에 넣을 객체 생성 및 입력
+		int mem_no = LoginSession.session.getMem_no(); //회원번호 입력
+		int dog_no = dogSaleList.get(0).getDog_no(); // 애견번호 입력
+		
+		//분양버튼 클릭 이벤트
+		dogsaleBtn.setOnAction(e->{
+			
+			//찜하기 내용 저장
+			resMemLike.setDog_no(dog_no); // 애견번호
+			resMemLike.setMem_no(mem_no); // 회원번호
+			resMemLike.setLikeNum(resLick);
+			//찜하기VO 저장 실행
+			zs.insertZzimInfo(resMemLike);
+			
+		});
+		
+		
+		
+		
+	}
+	
+
+	
+	
+	
+	
+	
+	
+
+	
+	    
+	
+		
+      	
+/*	    @Override
+	    public Node call(Integer pageIndex) {
+	       from = pageIndex * itemsForPage;
+	       to = from + itemsForPage -1;
+	       hotelBookTb.setItems(getTableViewData(from, to));
+	       return hotelBookTb;
+	    }
+		     
+	    private ObservableList<BookVO> getTableViewData(int from, int to) {
+		currentPageData = FXCollections.observableArrayList(); //초기화
+		    int totSize = allTableData.size();
+		       
+		    for(int i=from; i<=to && i<totSize; i++) {
+		       currentPageData.add(allTableData.get(i));
+		    }
+		    return currentPageData;*/
+	}
+	
+	
+	
+	
+	
+

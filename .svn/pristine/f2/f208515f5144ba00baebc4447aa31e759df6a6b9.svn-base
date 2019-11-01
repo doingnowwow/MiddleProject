@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<!--  text field 안만든거 없애주세염 승재오빠 -->
+<!-- 1.대표전화번호란 삭제 2.전화번호-> 호텔전화번호로 문구 변경 ,3. 사업자 등록번호는 com_no랑 같게 써요 4. email삭제부탁 5. 고지사항을 hotel_intro로 바꿈. 6.img는 어케 저장되쥬? -->
+
+<ScrollPane fx:id="hotel_manage_scroll" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.hotel.center.manage.myhotel_center_manager_controller">
+   <content>
+      <AnchorPane prefHeight="1475.0" prefWidth="990.0">
+         <children>
+            <ImageView fitHeight="1475.0" fitWidth="990.0">
+               <image>
+                  <Image url="/hotelmymenu/center/center_사업자-호텔상세관리_990x1475.gif" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgView2" fitHeight="308.0" fitWidth="340.0" layoutX="96.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true" />
+            <TextArea fx:id="hotel_intro" layoutX="614.0" layoutY="389.0" prefHeight="77.0" prefWidth="265.0" />
+            <TextField fx:id="hotel_tel" layoutX="614.0" layoutY="348.0" prefHeight="30.0" prefWidth="265.0" />
+            <TextField fx:id="addr2" layoutX="614.0" layoutY="308.0" prefHeight="30.0" prefWidth="265.0" />
+            <TextField fx:id="addr1" layoutX="614.0" layoutY="269.0" prefHeight="30.0" prefWidth="265.0" />
+            <TextField fx:id="com_no" layoutX="614.0" layoutY="229.0" prefHeight="30.0" prefWidth="265.0" />
+            <TextField fx:id="ho_name" layoutX="614.0" layoutY="188.0" prefHeight="30.0" prefWidth="265.0" />
+            <Button fx:id="commit" layoutX="803.0" layoutY="488.0" mnemonicParsing="false" opacity="0.0" prefHeight="23.0" prefWidth="84.0" text="등록" />
+            <Button fx:id="modify" layoutX="708.0" layoutY="487.0" mnemonicParsing="false" onDragDetected="#myHotelInfo" opacity="0.0" prefHeight="24.0" prefWidth="86.0" text="수정" />
+            <TextField fx:id="file_detail_info" layoutX="202.0" layoutY="487.0" prefHeight="30.0" prefWidth="230.0" />
+            <Button layoutX="103.0" layoutY="487.0" mnemonicParsing="false" onAction="#fileChoose2" prefHeight="29.0" prefWidth="90.0" text="호텔디데일" />
+         </children>
+      </AnchorPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,12 @@
+package kr.or.ddit.service.like;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.List;
+
+import kr.or.ddit.vo.LikeVO;
+
+public interface LikeService extends Remote {
+	//찜 조회 회원 별
+		public List<LikeVO> dlikelist (int mem_no) throws RemoteException;
+}

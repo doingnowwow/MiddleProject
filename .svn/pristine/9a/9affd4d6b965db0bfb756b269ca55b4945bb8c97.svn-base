@@ -1,0 +1,244 @@
+package kr.or.ddit.vo;
+
+import java.io.Serializable;
+
+public class HotelVO implements Serializable{
+	private int hotel_no; // 호텔 번호
+	private String hotel_name; // 호텔 이름
+	private String hotel_addr1; // 주소1
+	private String hotel_addr2; // 주소2
+	private String hotel_tel; // 전화번호
+	private String hotel_intro; // 소개
+	private int hotel_cost; // 숙박비/일
+	private String com_no; //사업자회원번호
+	private String img;
+	private String use_yn; // 사용여부
+	
+	private String order;
+	private String sDate; // 체크인시작날짜
+	private String eDate; // 체크인아웃날짜
+	private int cnt_max; // 최대수용인원
+	private String book_ok_date; // 예약가능날짜
+	private String hotel_map; //호텔위치
+	
+	
+	
+	
+	
+	
+	public String getHotel_map() {
+		return hotel_map;
+	}
+
+
+	public void setHotel_map(String hotel_map) {
+		this.hotel_map = hotel_map;
+	}
+
+
+	public int getCnt_max() {
+		return cnt_max;
+	}
+
+
+	public void setCnt_max(int cnt_max) {
+		this.cnt_max = cnt_max;
+	}
+
+
+	public String getBookOkDate() {
+		return book_ok_date;
+	}
+
+
+	public void setBookOkDate(String book_ok_date) {
+		this.book_ok_date = book_ok_date;
+	}
+
+
+	public String getOrder() {
+		return order;
+	}
+
+
+	public void setOrder(String order) {
+		this.order = order;
+	}
+
+	
+
+
+	public String getCom_no() {
+		return com_no;
+	}
+
+
+	public void setCom_no(String com_no) {
+		this.com_no = com_no;
+	}
+
+
+	public String getBook_ok_date() {
+		return book_ok_date;
+	}
+
+
+	public void setBook_ok_date(String book_ok_date) {
+		this.book_ok_date = book_ok_date;
+	}
+
+
+	public String getImg() {
+		return img;
+	}
+
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+
+	
+
+
+	public int getHotel_no() {
+		return hotel_no;
+	}
+
+
+	public void setHotel_no(int hotel_no) {
+		this.hotel_no = hotel_no;
+	}
+
+	public String getHotel_name() {
+		return hotel_name;
+	}
+
+
+
+
+	public void setHotel_name(String hotel_name) {
+		this.hotel_name = hotel_name;
+	}
+
+
+
+
+	public String getHotel_addr1() {
+		return hotel_addr1;
+	}
+
+
+
+
+	public void setHotel_addr1(String hotel_addr1) {
+		this.hotel_addr1 = hotel_addr1;
+	}
+
+
+
+
+	public String getHotel_addr2() {
+		return hotel_addr2;
+	}
+
+
+
+
+	public void setHotel_addr2(String hotel_addr2) {
+		this.hotel_addr2 = hotel_addr2;
+	}
+
+
+
+
+	public String getHotel_tel() {
+		return hotel_tel;
+	}
+
+
+
+
+	public void setHotel_tel(String hotel_tel) {
+		this.hotel_tel = hotel_tel;
+	}
+
+
+
+
+	
+
+
+
+
+	public String getHotel_intro() {
+		return hotel_intro;
+	}
+
+
+
+
+	public void setHotel_intro(String hotel_intro) {
+		this.hotel_intro = hotel_intro;
+	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "HotelVO [hotel_no=" + hotel_no
+						+ ", com_no=" + com_no
+						+ ", hotel_name=" + hotel_name
+						+ ", hotel_addr1=" + hotel_addr1
+						+ ", hotel_addr2=" + hotel_addr2
+						+ ", hotel_tel=" + hotel_tel
+						+ ", hotel_intro=" + hotel_intro 
+						+ ", hotel_cost=" + hotel_cost + "]";
+	
+	}
+	
+	public int getHotel_cost() {
+		return hotel_cost;
+	}
+
+
+	public void setHotel_cost(int hotel_cost) {
+		this.hotel_cost = hotel_cost;
+	}
+
+
+	public HotelVO() {
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public String getsDate() {
+		return sDate;
+	}
+
+
+	public void setsDate(String sDate) {
+		this.sDate = sDate;
+	}
+
+
+	public String geteDate() {
+		return eDate;
+	}
+
+
+	public void seteDate(String eDate) {
+		this.eDate = eDate;
+	}
+
+
+	public String getUse_yn() {
+		return use_yn;
+	}
+
+
+	public void setUse_yn(String use_yn) {
+		this.use_yn = use_yn;
+	}
+}

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.human.center.ranking.mypage_human_center_ranking_controller">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0" opacity="0.21">
+         <image>
+            <Image url="/humanmymenu/center/center_일반회원_구매-등급-안내_990x1475.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="img_rank" fitHeight="190.0" fitWidth="243.0" layoutX="110.0" layoutY="125.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="goalId" alignment="CENTER_RIGHT" layoutX="109.0" layoutY="96.0" prefHeight="25.0" prefWidth="53.0" style="-fx-background-color: whitesmoke;" text="goalId">
+         <font>
+            <Font size="15.0" />
+         </font></Label>
+      <TableView fx:id="mileage" layoutX="111.0" layoutY="524.0" prefHeight="505.0" prefWidth="797.0">
+        <columns>
+          <TableColumn fx:id="point_date" prefWidth="101.0" text="날짜" />
+            <TableColumn fx:id="save_contents" prefWidth="353.0" text="내용" />
+            <TableColumn fx:id="save_point" prefWidth="110.0" text="적립포인트" />
+          <TableColumn fx:id="use_point" minWidth="1.0" prefWidth="110.0" text="사용포인트" />
+            <TableColumn fx:id="sumPoint" prefWidth="122.0" text="총 포인트" />
+        </columns>
+      </TableView>
+      <Pagination fx:id="mileage_page" layoutX="112.0" layoutY="524.0" prefHeight="567.0" prefWidth="797.0" />
+      <Text fx:id="rankingRtandard" layoutX="616.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="253.541015625">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITESMOKE" height="90.0" layoutX="588.0" layoutY="292.0" stroke="WHITESMOKE" strokeType="INSIDE" width="321.0" />
+      <Text layoutX="607.0" layoutY="318.0" strokeType="OUTSIDE" strokeWidth="0.0" text="목표 구매 등급은 " />
+      <Text layoutX="655.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="입니다." />
+      <Text fx:id="goalRanktext" layoutX="607.0" layoutY="338.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="39.79687761515379" />
+      <Text fx:id="goalMission" layoutX="607.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="647.0" layoutY="368.0" strokeType="OUTSIDE" strokeWidth="0.0" text="등급으로 상승하시려면?" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f5f5f5" height="126.0" layoutX="364.0" layoutY="180.0" stroke="WHITESMOKE" strokeType="INSIDE" width="198.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITESMOKE" height="25.0" layoutX="112.0" layoutY="332.0" stroke="WHITESMOKE" strokeType="INSIDE" width="154.0" />
+   </children>
+</AnchorPane>

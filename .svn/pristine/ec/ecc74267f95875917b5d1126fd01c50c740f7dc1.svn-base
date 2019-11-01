@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane fx:controller="kr.or.ddit.view.mypage2.master.center.allmemberChart.JoinMemComChartController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="610.0" prefWidth="705.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <PieChart fx:id="chart" layoutX="103.0" layoutY="99.0" title="회원가입량 조회" />
+      <Text layoutX="86.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="퍼피델루나 회원">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

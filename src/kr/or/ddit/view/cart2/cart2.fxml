@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+
+<AnchorPane prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.cart2.CartController">
+   <children>
+      <AnchorPane prefHeight="1475.0" prefWidth="990.0">
+         <children>
+            <ImageView fitHeight="1475.0" fitWidth="990.0">
+               <image>
+                  <Image url="/humanmymenu/center/center_일반회원_장바구니_990x1475.gif" />
+               </image>
+            </ImageView>
+            <TableView fx:id="cart_table" layoutX="46.0" layoutY="102.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="329.0" prefWidth="900.0">
+              <columns>
+                <TableColumn fx:id="cart_no" prefWidth="72.0" text="구매날짜" />
+                <TableColumn fx:id="prod_gu_nm" prefWidth="92.0" text="상품분류" />
+                <TableColumn fx:id="prod_name" prefWidth="108.0" text="상품이름" />
+                <TableColumn fx:id="cart_qty" prefWidth="75.0" text="수량" />
+                <TableColumn fx:id="prod_total_cost" prefWidth="234.0" text="결제가" />
+                <TableColumn fx:id="prod_info" prefWidth="253.0" text="상품정보" />
+              </columns>
+            </TableView>
+            <Pagination fx:id="pagination" layoutX="46.0" layoutY="94.0" prefHeight="391.0" prefWidth="900.0" />
+            <Label fx:id="totalCost" alignment="CENTER_RIGHT" layoutX="606.0" layoutY="545.0" prefHeight="42.0" prefWidth="274.0" textAlignment="RIGHT">
+	            <font>
+	               <Font size="28.0" />
+	            </font>
+            </Label>
+            <Label layoutX="894.0" layoutY="544.0" text="원">
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button fx:id="buyBtn" layoutX="817.0" layoutY="604.0" mnemonicParsing="false" opacity="0.0" prefHeight="22.0" prefWidth="126.0" text="구매하기" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

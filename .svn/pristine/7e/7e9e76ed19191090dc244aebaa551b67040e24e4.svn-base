@@ -1,0 +1,70 @@
+package kr.or.ddit.vo;
+
+import java.io.Serializable;
+
+public class ProdPayVO implements Serializable{
+	private String prod_pay_no; //결제번호
+	private String prod_pay_card;  //카드명
+	private String prod_pay_account; //계좌번호
+    private String prod_pay_date; //결제일
+	private String prod_pay_bank;  //거래은행
+	private int buy_no; // 구매번호
+  
+	@Override
+	public String toString() {
+		return "ProdPayVO [prod_pay_no=" + prod_pay_no
+						+ ", prod_pay_card=" + prod_pay_card
+						+ ", prod_pay_account=" + prod_pay_account
+						+ ", prod_pay_date=" + prod_pay_date
+						+ ", prod_pay_bank=" + prod_pay_bank + "]";
+	}
+
+	public String getProd_pay_no() {
+		return prod_pay_no;
+	}
+
+	public void setProd_pay_no(String prod_pay_no) {
+		this.prod_pay_no = prod_pay_no;
+	}
+
+	public String getProd_pay_card() {
+		return prod_pay_card;
+	}
+
+	public void setProd_pay_card(String prod_pay_card) {
+		this.prod_pay_card = prod_pay_card;
+	}
+
+	public String getProd_pay_account() {
+		return prod_pay_account;
+	}
+
+	public void setProd_pay_account(String prod_pay_account) {
+		this.prod_pay_account = prod_pay_account;
+	}
+
+	public String getProd_pay_bank() {
+		return prod_pay_bank;
+	}
+
+	public void setProd_pay_bank(String prod_pay_bank) {
+		this.prod_pay_bank = prod_pay_bank;
+	}
+
+	public int getBuy_no() {
+		return buy_no;
+	}
+
+	public void setBuy_no(int buy_no) {
+		this.buy_no = buy_no;
+	}
+
+	public String getProd_pay_date() {
+		return prod_pay_date;
+	}
+
+	public void setProd_pay_date(String prod_pay_date) {
+		this.prod_pay_date = prod_pay_date;
+	}
+    
+}

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.join.ComJoinController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="600.0">
+         <image>
+            <Image url="@../../../../../../../../other/산출물/00.%20fx%20image/로그인화면/join_page_사업자_600X700.gif" />
+         </image>
+      </ImageView>
+      <TextField fx:id="joinHotelId" layoutX="216.0" layoutY="11.0" prefHeight="30.0" prefWidth="250.0" />
+      <TextField fx:id="joinHotelPass" layoutX="216.0" layoutY="59.0" prefHeight="30.0" prefWidth="340.0" />
+      <TextField fx:id="joinHotelPassCheck" layoutX="216.0" layoutY="107.0" prefHeight="30.0" prefWidth="340.0" />
+      <TextField fx:id="joinHotelName" layoutX="216.0" layoutY="155.0" prefHeight="30.0" prefWidth="340.0" />
+      <TextField fx:id="joinHotelOwnerName" layoutX="216.0" layoutY="203.0" prefHeight="30.0" prefWidth="340.0" />
+      <TextField fx:id="RegistrationNum" layoutX="216.0" layoutY="250.0" prefHeight="30.0" prefWidth="340.0" />
+      <TextField fx:id="joinHotelTel" layoutX="216.0" layoutY="298.0" prefHeight="30.0" prefWidth="340.0" />
+      <Button fx:id="hotelIdCheck" layoutX="477.0" layoutY="11.0" mnemonicParsing="false" prefHeight="30.0" text="중복 검사" />
+      <TextField fx:id="joinHotelAddr1" layoutX="216.0" layoutY="345.0" prefHeight="30.0" prefWidth="340.0" />
+      <TextField fx:id="joinHotelEmail" layoutX="216.0" layoutY="442.0" prefHeight="30.0" prefWidth="250.0" />
+      <Button fx:id="hotelJoinCheck" layoutX="486.0" layoutY="487.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="가입" />
+      <Button fx:id="cancle" layoutX="397.0" layoutY="487.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="80.0" text="취소" />
+      <TextField fx:id="joinHotelAddr2" layoutX="216.0" layoutY="393.0" prefHeight="30.0" prefWidth="340.0" />
+      <Button fx:id="hotelEmailCheck" layoutX="477.0" layoutY="442.0" mnemonicParsing="false" prefHeight="30.0" text="유효성검사" />
+      <Label fx:id="state" layoutX="46.0" layoutY="487.0" prefHeight="17.0" prefWidth="340.0" />
+   </children>
+</AnchorPane>

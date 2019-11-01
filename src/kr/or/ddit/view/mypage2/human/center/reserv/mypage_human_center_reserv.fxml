@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Pagination?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.mypage2.human.center.reserv.mypage_human_center_reserv_controller">
+    <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="/humanmymenu/center/center_일반회원_호텔예약조회_990x1475.gif" />
+         </image>
+      </ImageView>
+       <TextField fx:id="delBNo" layoutX="565.0" layoutY="528.0" prefHeight="25.0" prefWidth="143.0" promptText="예약번호입력해주세요" />
+       <Button fx:id="todayActBtn" layoutX="129.0" layoutY="109.0" mnemonicParsing="false" opacity="0.0" prefHeight="20.0" prefWidth="46.0" text="오늘">
+          <font>
+             <Font size="9.0" />
+          </font>
+       </Button>
+       <Button fx:id="weekActBtn" layoutX="186.0" layoutY="109.0" mnemonicParsing="false" opacity="0.0" prefHeight="20.0" prefWidth="46.0" text="1주일">
+          <font>
+             <Font size="9.0" />
+          </font>
+       </Button>
+       <Button fx:id="monthActBtn" layoutX="239.0" layoutY="109.0" mnemonicParsing="false" opacity="0.0" prefHeight="20.0" prefWidth="46.0" text="1개월">
+          <font>
+             <Font size="9.0" />
+          </font>
+       </Button>
+       <Button fx:id="sixMonthActBtn" layoutX="296.0" layoutY="109.0" mnemonicParsing="false" opacity="0.0" prefHeight="20.0" prefWidth="46.0" text="6개월">
+          <font>
+             <Font size="9.0" />
+          </font>
+       </Button>
+       <Label layoutX="463.0" layoutY="111.0" text="~ " />
+       <TextField fx:id="detailSearchTF" layoutX="582.0" layoutY="107.0" prefHeight="25.0" prefWidth="126.0" />
+       <Button fx:id="detailSearchBtn" layoutX="715.0" layoutY="108.0" mnemonicParsing="false" opacity="0.0" prefHeight="22.0" prefWidth="154.0" text="조회하기">
+          <font>
+             <Font size="9.0" />
+          </font>
+       </Button>
+       <TableView fx:id="hotelBookTb" layoutX="123.0" layoutY="149.0" prefHeight="330.0" prefWidth="748.0">
+         <columns>
+             <TableColumn fx:id="bookNo" prefWidth="70.0" text="예약번호" />
+           <TableColumn fx:id="bookDate" text="예약날짜" />
+           <TableColumn fx:id="hotelNm" prefWidth="198.0" text="호텔명" />
+             <TableColumn fx:id="chkIn" text="체크인" />
+             <TableColumn fx:id="chkOut" text="체크아웃" />
+             <TableColumn fx:id="payCost" prefWidth="152.0" text="결제금액" />
+             <TableColumn fx:id="chkPay" prefWidth="66.0" text="결제여부" />
+         </columns>
+       </TableView>
+       <Pagination fx:id="pagenation" layoutX="123.0" layoutY="148.0" prefHeight="381.0" prefWidth="748.0" />
+       <DatePicker fx:id="endDate" layoutX="475.0" layoutY="107.0" prefHeight="20.0" prefWidth="100.0" />
+       <DatePicker fx:id="startDate" layoutX="358.0" layoutY="107.0" prefHeight="25.0" prefWidth="100.0" />
+       <Button fx:id="DelBBtn" layoutX="715.0" layoutY="527.0" mnemonicParsing="false" opacity="0.0" prefHeight="25.0" prefWidth="154.0" text="취소요청" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="kr.or.ddit.view.main.hotel.center.paycheck.hotel_payCheck_controller">
+   <children>
+      <ImageView fx:id="hotel_Rimg" fitHeight="394.0" fitWidth="395.0" layoutX="189.0" layoutY="410.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="1475.0" fitWidth="1280.0">
+         <image>
+            <Image url="/mainHotel/center/hotel_payCheck_1280x1475.gif" />
+         </image>
+      </ImageView>
+      <Text fx:id="hotel_Rname" layoutX="614.0" layoutY="446.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="470.9482421875">
+         <font>
+            <Font size="42.0" />
+         </font>
+      </Text>
+      <Text fx:id="hotel_Raddr" layoutX="614.0" layoutY="515.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="470.9482421875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="save_mileage" layoutX="791.0" layoutY="580.0" prefHeight="25.0" prefWidth="295.0" />
+      <TextField fx:id="hotelUse_mileage" layoutX="791.0" layoutY="623.0" prefHeight="25.0" prefWidth="295.0" />
+      <TextField fx:id="res_maileage" layoutX="791.0" layoutY="668.0" prefHeight="25.0" prefWidth="295.0" />
+      <Text fx:id="reserv_info" layoutX="606.0" layoutY="738.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="395.0">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text fx:id="hotelreserv_respay" layoutX="606.0" layoutY="781.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" textAlignment="RIGHT" wrappingWidth="395.0">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Button fx:id="reservButton" layoutX="1017.0" layoutY="725.0" mnemonicParsing="false" prefHeight="63.0" prefWidth="68.0" text="Button" />
+      <TextField fx:id="hotel_name" layoutX="378.0" layoutY="1011.0" prefHeight="25.0" prefWidth="715.0" />
+      <TextField fx:id="hotel_addr" layoutX="378.0" layoutY="1050.0" prefHeight="25.0" prefWidth="715.0" />
+      <TextField fx:id="hotel_tel" layoutX="378.0" layoutY="1091.0" prefHeight="25.0" prefWidth="715.0" />
+      <TextField fx:id="hotel_email" layoutX="378.0" layoutY="1129.0" prefHeight="25.0" prefWidth="715.0" />
+      <TextField fx:id="reserv_contents" layoutX="378.0" layoutY="909.0" prefHeight="25.0" prefWidth="715.0" />
+      <TextField fx:id="reserv_dogNum" layoutX="378.0" layoutY="868.0" prefHeight="25.0" prefWidth="715.0" />
+      <Label fx:id="status" layoutX="791.0" layoutY="693.0" prefHeight="21.0" prefWidth="295.0" textFill="RED" />
+      <CheckBox fx:id="chk_saveMaileage" layoutX="952.0" layoutY="552.0" mnemonicParsing="false" text="마일리지 사용하기">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </CheckBox>
+   </children>   
+</AnchorPane>

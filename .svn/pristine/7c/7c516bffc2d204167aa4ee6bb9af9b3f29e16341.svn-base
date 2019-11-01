@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<ScrollPane fx:controller="kr.or.ddit.view.mypage_home.MyPageHomeController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+  <content>
+    <AnchorPane fx:id="AnchorPane" minHeight="0.0" minWidth="0.0" prefHeight="1800.0" prefWidth="1280.0">
+         <children>
+            <ImageView fitHeight="1800.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="mypage/00.일반회원-마이메뉴_회원정보수정_1280x1800.gif" />
+               </image></ImageView>
+            <Pane fx:id="ChangePage" layoutX="294.0" layoutY="174.0" prefHeight="1470.0" prefWidth="970.0">
+               <children>
+                  <TextField fx:id="IdField" layoutX="456.0" layoutY="265.0" />
+                  <PasswordField fx:id="PWCheckField" layoutX="411.0" layoutY="294.0" prefHeight="23.0" prefWidth="157.0" />
+                  <JFXButton fx:id="ConfirmBtn" layoutX="410.0" layoutY="323.0" prefHeight="27.0" prefWidth="160.0" text="확인" />
+               </children></Pane>
+            <JFXButton fx:id="TopFacebookBtn" layoutX="55.0" layoutY="40.0" prefHeight="33.0" prefWidth="46.0" />
+            <JFXButton fx:id="TopInstagramBtn" layoutX="135.0" layoutY="40.0" prefHeight="33.0" prefWidth="46.0" />
+            <JFXButton fx:id="TopKakaoBtn" layoutX="203.0" layoutY="40.0" prefHeight="33.0" prefWidth="46.0" />
+            <JFXButton fx:id="LogoBtn" layoutX="458.0" layoutY="7.0" prefHeight="101.0" prefWidth="364.0" />
+            <JFXButton fx:id="LogoutBtn" layoutX="1040.0" layoutY="57.0" prefHeight="25.0" prefWidth="66.0" text="로그인" />
+            <JFXButton fx:id="MyPageBtn" layoutX="1115.0" layoutY="56.0" prefHeight="28.0" prefWidth="44.0" text="회원가입" />
+            <JFXButton fx:id="barHotelBtn" layoutX="226.0" layoutY="134.0" prefHeight="33.0" prefWidth="129.0" text="호텔" />
+            <JFXButton fx:id="barPetSaleBtn" layoutX="458.0" layoutY="134.0" prefHeight="33.0" prefWidth="129.0" text="분양" />
+            <JFXButton fx:id="barShopBtn" layoutX="693.0" layoutY="134.0" prefHeight="33.0" prefWidth="129.0" text="쇼핑몰" />
+            <JFXButton fx:id="barQnABtn" layoutX="926.0" layoutY="134.0" prefHeight="33.0" prefWidth="129.0" text="게시판" />
+            <ImageView fx:id="image1" fitHeight="238.0" fitWidth="1258.0" layoutX="1.0" layoutY="198.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="ModifyBtn" layoutX="60.0" layoutY="420.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="188.0" text="회원정보수정" />
+            <Button fx:id="PetInfoCheckBtn" layoutX="60.0" layoutY="456.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="188.0" text="내 애견정보 확인" />
+            <JFXButton fx:id="ShoppingBagBtn" layoutX="78.0" layoutY="559.0" prefHeight="33.0" prefWidth="121.0" text="장바구니" />
+            <JFXButton fx:id="ShippingBtn" layoutX="78.0" layoutY="592.0" prefHeight="33.0" prefWidth="123.0" text="배송내역" />
+            <JFXButton fx:id="HotelBookingBtn" layoutX="78.0" layoutY="697.0" prefHeight="33.0" prefWidth="127.0" text="호텔예약조회" />
+            <JFXButton fx:id="CancelBookingBtn" layoutX="78.0" layoutY="733.0" prefHeight="33.0" prefWidth="128.0" text="예약취소" />
+            <JFXButton fx:id="ChoicePetBtn" layoutX="77.0" layoutY="874.0" prefHeight="33.0" prefWidth="150.0" text="찜애견확인" />
+            <JFXButton fx:id="PostCheckBtn" layoutX="78.0" layoutY="910.0" prefHeight="33.0" prefWidth="168.0" text="내가쓴게시물" />
+            <JFXButton fx:id="MyActivityBtn" layoutX="78.0" layoutY="836.0" prefHeight="33.0" prefWidth="145.0" text="나의 활동" />
+         </children></AnchorPane>
+  </content>
+</ScrollPane>

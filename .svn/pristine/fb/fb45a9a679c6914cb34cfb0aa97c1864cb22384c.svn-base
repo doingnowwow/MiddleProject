@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="607.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TableView layoutX="35.0" layoutY="168.0" prefHeight="401.0" prefWidth="348.0">
+        <columns>
+          <TableColumn fx:id="mem_no" prefWidth="74.0" text="번호" />
+          <TableColumn fx:id="mem_id" prefWidth="147.0" text="아이디" />
+            <TableColumn fx:id="mem_name" prefWidth="126.0" text="회원이름" />
+        </columns>
+      </TableView>
+      <TableView layoutX="407.0" layoutY="168.0" prefHeight="401.0" prefWidth="364.0">
+         <columns>
+            <TableColumn fx:id="com_no" prefWidth="71.0" text="번호" />
+            <TableColumn fx:id="com_id" prefWidth="163.0" text="아이디" />
+            <TableColumn fx:id="com_name" prefWidth="129.0" text="업체명" />
+         </columns>
+      </TableView>
+      <Text layoutX="35.0" layoutY="46.0" strokeType="OUTSIDE" strokeWidth="0.0" text="회원가입량 조회" textAlignment="CENTER">
+         <font>
+            <Font name="Serif Regular" size="29.0" />
+         </font>
+      </Text>
+      <Text layoutX="35.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="일반회원" textAlignment="CENTER" wrappingWidth="106.0">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <Text layoutX="407.0" layoutY="123.0" strokeType="OUTSIDE" strokeWidth="0.0" text="사업자회원" textAlignment="CENTER" wrappingWidth="120.0">
+         <font>
+            <Font name="System Bold Italic" size="22.0" />
+         </font>
+      </Text>
+      <Label fx:id="sumMem" layoutX="266.0" layoutY="138.0" prefHeight="19.0" prefWidth="86.0" textAlignment="JUSTIFY" />
+      <Label fx:id="sumCom" layoutX="642.0" layoutY="138.0" prefHeight="19.0" prefWidth="106.0" textAlignment="JUSTIFY" />
+      <Text layoutX="240.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="총" />
+      <Text layoutX="627.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="총" />
+      <Text layoutX="359.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="명" />
+      <Text layoutX="756.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="명" />
+      <Button fx:id="cancelBtn" layoutX="653.0" layoutY="22.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="120.0" text="닫기" />
+   </children>
+</AnchorPane>

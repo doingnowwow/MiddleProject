@@ -1,0 +1,47 @@
+package kr.or.ddit.clientMain;
+
+import java.awt.print.Book;
+
+import kr.or.ddit.view.main.shop.main.main_shop_controller;
+import kr.or.ddit.view.mypage2.hotel.main.hotelmypage_main_controller;
+import kr.or.ddit.view.mypage2.human.main.mypage_human_main_controller;
+import kr.or.ddit.view.mypage2.master.main.mapage_Master_controller;
+import kr.or.ddit.view.startMain.startMain_controller;
+import kr.or.ddit.vo.BoardVO;
+import kr.or.ddit.vo.BookVO;
+import kr.or.ddit.vo.ComVO;
+import kr.or.ddit.vo.DogSaleVO;
+import kr.or.ddit.vo.HotelVO;
+import kr.or.ddit.vo.MemberVO;
+import kr.or.ddit.vo.ProdVO;
+import kr.or.ddit.vo.ResBookVO;
+
+public class LoginSession {
+
+	// 로그인 정보 임시저장 및 로그아웃시 null 체크
+	
+	public static MemberVO session = new MemberVO();
+	
+	public static ComVO comsession = new ComVO();
+	
+	public static HotelVO hosession = new HotelVO();
+	public static BookVO bookssion = new BookVO();
+	public static ResBookVO resBookssion = new ResBookVO();//예약결과를 담겠습니당
+	public static DogSaleVO dogsession = new DogSaleVO(); 
+	public static ProdVO prodsssion = new ProdVO();
+	public static BoardVO brodsession = new BoardVO();
+
+	public static int ch_up = 0;
+	public static int ch_down = 0;
+	public static boolean isClicked = false;
+	public static startMain_controller startMain;
+	public static mypage_human_main_controller myMain;
+	public static hotelmypage_main_controller hotelMain;/////
+	public static main_shop_controller shopMain;
+	public static mapage_Master_controller masterMain;
+	
+
+	
+	
+	
+}

@@ -1,0 +1,126 @@
+package kr.or.ddit.view.mypage2.human.main;
+
+import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.BorderPane;
+import kr.or.ddit.clientMain.LoginSession;
+import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+
+public class mypage_human_main_controller implements Initializable {
+
+	@FXML
+	ScrollPane human_main_scroll;
+	@FXML
+	BorderPane reMyInfoLinkRoot;
+	@FXML
+	Label rankText;
+	@FXML
+	Button myinfo;
+	@FXML
+	Button rankandmileage;
+	@FXML
+	Button cart;
+	@FXML
+	Button orderSearch;
+	@FXML
+	Button reserv;
+	@FXML
+	Button myact;
+	@FXML
+	Button lovedog;
+
+	// 사업자 마이페이지 좌측메뉴 링크 기능
+	static AnchorPane humanlinkRoot;
+
+	@FXML // 회원정보 수정
+	public void myHotelInfoLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../center/myinfo/mypage_human_center_myinfo.fxml"));
+		reMyInfoLinkRoot.setCenter(reMyInfoLinkRoot.getCenter());
+
+		try {
+			linkRoot = FXMLLoader.load(getClass().getResource("../center/myinfo/mypage_human_center_myinfo.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		reMyInfoLinkRoot.setCenter(linkRoot);
+	}
+
+	@FXML // 회원정보 상세 이동
+	public void myHotelInfoDetailLink() throws IOException {
+		humanlinkRoot = FXMLLoader
+				.load(getClass().getResource("../center/myinfo_detail/mypage_human_center_myinfo_detail.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+
+	@FXML // 회원등급 및 마일리지
+	public void humanRankInfoLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../center/ranking/mypage_human_center_ranking.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+
+	@FXML // 장바구니 내역
+	public void humanCartLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../../../cart2/cart2.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+
+	@FXML // 주문배송조회
+	public void humanOrderLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../center/order/mypage_human_center_order.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+
+	@FXML // 호텔 예약 조회
+	public void humanResevLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../center/reserv/mypage_human_center_reserv.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+
+	@FXML // 나의 활동
+	public void humanMyactLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../center/myact/mypage_human_center_myact.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+
+	@FXML // 찜한 애견
+	public void humanLoveDogLink() throws IOException {
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../center/loveDog/mypage_human_center_loveDog.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+	}
+	
+	@FXML // 장바구니결제
+	public void humanProdPayLink() throws IOException{
+		humanlinkRoot = FXMLLoader.load(getClass().getResource("../../salse/center/cartPayCheck/cart_payCheck.fxml"));
+		reMyInfoLinkRoot.setCenter(humanlinkRoot);
+		
+	}
+
+	
+	
+	AnchorPane linkRoot;
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+
+		LoginSession.myMain = this;
+
+		try {
+			myHotelInfoLink();
+			// linkRoot =
+			// FXMLLoader.load(getClass().getResource("../center/myinfo/mypage_human_center_myinfo.fxml"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		// reMyInfoLinkRoot.setCenter(linkRoot);
+
+	}
+
+}

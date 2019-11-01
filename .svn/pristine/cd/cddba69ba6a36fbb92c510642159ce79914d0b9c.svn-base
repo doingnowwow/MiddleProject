@@ -1,0 +1,86 @@
+package kr.or.ddit.view.mypage2.master.center.shopinfo;
+
+import java.net.URL;
+import java.rmi.NotBoundException;
+import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
+import java.util.ArrayList;
+import java.util.ResourceBundle;
+
+import javafx.fxml.Initializable;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.TableColumn;
+import kr.or.ddit.service.shopsell.ShopSellService;
+import kr.or.ddit.vo.SellVO;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
+public class Master_shopinfo_controller implements Initializable{
+
+	@FXML TableColumn<SellVO, String> prod_gu;
+	@FXML TableColumn<SellVO, String> prod_name;
+	@FXML TableColumn<SellVO, Integer> cart_qty;
+	@FXML TableColumn<SellVO, String> price;
+	@FXML TableColumn<SellVO,String> mem_id;
+	@FXML TableView <SellVO> tableView;
+	
+	private ObservableList<SellVO> AllTableData;
+	
+	private SellVO vo = new SellVO	();
+	
+	public Master_shopinfo_controller() {
+		
+	}
+	ShopSellService ss;
+	
+	public static ArrayList<SellVO> list = new ArrayList<>();
+
+	
+	
+	
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {
+		
+		ObservableList<SellVO> data = FXCollections.observableArrayList();
+		
+		Registry reg ;
+		
+		try {
+			reg = LocateRegistry.getRegistry("localhost",8888);
+			ss = (ShopSellService) reg.lookup("sell");
+			
+			list = (ArrayList<SellVO>) ss.sellListAll();
+		} catch (RemoteException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NotBoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		AllTableData = FXCollections.observableArrayList(list);
+		
+		AllTableData.setAll(list);
+		AllTableData.add(vo);
+		
+		
+		tableView.setItems(AllTableData);
+		
+		
+		prod_gu.setCellValueFactory(new PropertyValueFactory<>("prod_gu"));
+		prod_name.setCellValueFactory(new PropertyValueFactory<>("prod_name"));
+		cart_qty.setCellValueFactory(new PropertyValueFactory<>("cart_qty"));
+		price.setCellValueFactory(new PropertyValueFactory<>("cart_qty*prod_cost"));
+		mem_id.setCellValueFactory(new PropertyValueFactory<>("mem_id"));
+		
+		
+		
+	}
+	
+
+}

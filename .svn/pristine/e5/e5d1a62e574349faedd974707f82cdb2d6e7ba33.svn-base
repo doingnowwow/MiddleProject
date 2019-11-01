@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<!-- 대표전화번호 삭제
+전화번호 -> 호텔전화번호로 바꿈
+사업자 등록번호는 = com_no로 받기
+email삭제
+공지사항란을 hotel_intro (소개) 넣는 란으로 바꿈
+hotel_img => 호텔 상세등록 그 이미지에도 활용해야하는데 어케?
+그리고 첨부파일 넣기로 이미지 등록하게 되어있는데 그부분 어케..? -->
+
+
+<AnchorPane fx:controller="kr.or.ddit.view.hotelmymenu.center.manage.HotelMypage_manage_controller" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1475.0" prefWidth="990.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="1475.0" fitWidth="990.0">
+         <image>
+            <Image url="@../../마이페이지_사업자/center_990x1475/center_사업자-호텔상세관리_990x1475.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hotel_img" fitHeight="325.0" fitWidth="328.0" layoutX="106.0" layoutY="153.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="file_img" layoutX="105.0" layoutY="492.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="file" />
+      <TextField fx:id="file_info" layoutX="201.0" layoutY="492.0" prefHeight="30.0" prefWidth="230.0" />
+      <TextField fx:id="ho_name" layoutX="579.0" layoutY="158.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="com_no" layoutX="579.0" layoutY="238.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="addr1" layoutX="579.0" layoutY="278.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="addr2" layoutX="579.0" layoutY="318.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="hotel_tel" layoutX="579.0" layoutY="358.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextArea fx:id="hotel_intro" layoutX="579.0" layoutY="439.0" prefHeight="77.0" prefWidth="300.0" />
+      <ImageView fx:id="hotel_detail" fitHeight="660.0" fitWidth="783.0" layoutX="101.0" layoutY="609.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="file_detail" layoutX="105.0" layoutY="1285.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="file_detail" />
+      <TextField fx:id="file_detail_info" layoutX="199.0" layoutY="1285.0" prefHeight="30.0" prefWidth="230.0" />
+      <Button fx:id="cencel" layoutX="684.0" layoutY="1285.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="cencel" />
+      <Button fx:id="commit" layoutX="791.0" layoutY="1285.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="94.0" text="commit" />
+   </children>
+</AnchorPane>

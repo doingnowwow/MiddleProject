@@ -1,0 +1,32 @@
+package kr.or.ddit.service.cart2;
+
+import java.rmi.Remote;
+import java.rmi.RemoteException;
+import java.util.List;
+
+import kr.or.ddit.vo.ProdVO;
+
+
+
+public interface Cart2Service extends Remote {
+	
+	//장바구니 수정
+	public int updateCart(ProdVO vo) throws RemoteException;
+	
+	//장바구니 삭제
+	public int deleteCart(ProdVO vo) throws RemoteException;
+	
+	//장바구니 전체 리스트 조회
+	public List<ProdVO> getAllList() throws RemoteException;
+	
+	//장바구니 확인
+	public List<ProdVO> readCart(ProdVO vo) throws RemoteException;
+	
+	//장바구니 존재여부 확인
+	public boolean getCartNo(Integer prod_id) throws RemoteException;
+		
+	
+	
+
+	
+}
